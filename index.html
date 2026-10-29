@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>021 Bible — Study Version (Tradition Style)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #ffffff; --fg: #1c1c1e; --muted: #555; --faint: #777; --credit: #888; --line: #e3e3e6; --accent: #c0392b; --accent-border: #c0392b; --red: #b91c1c; --note-fg: #333; }
+  body.dark { --bg: #141416; --fg: #e8e6e3; --muted: #a1a1a6; --faint: #8e8e93; --credit: #8e8e93; --line: #2c2c31; --accent: #e0655a; --accent-border: #d64541; --red: #ff7a6b; --note-fg: #c9c9ce; }
+  body { font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: var(--fg); background: var(--bg); margin: 0; line-height: 1.65; font-size: var(--reader, 18px); }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 32px 20px 64px; }
+  .sitehead { text-align: center; border-bottom: 3px solid var(--accent-border); padding-bottom: 18px; margin-bottom: 8px; }
+  .sitehead .t { font-size: 40px; font-weight: 700; letter-spacing: 2px; }
+  .sitehead .s { color: var(--muted); font-size: 16px; margin-top: 2px; }
+  .nav { text-align: center; margin: 14px 0 6px; }
+  .nav a { color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 10px; }
+  h1.book { text-align: center; font-size: 30px; letter-spacing: 3px; margin: 44px 0 2px; }
+  .epigraph { text-align: center; color: var(--muted); font-style: italic; margin: 0 0 10px; }
+  h2.chapter { font-size: 21px; letter-spacing: 1.5px; margin: 34px 0 8px; border-top: 1px solid var(--line); padding-top: 20px; }
+  p.text { margin: 0 0 14px; text-align: left; }
+  sup.vn { font-size: 0.66em; font-weight: 600; color: var(--accent); vertical-align: super; line-height: 0; margin-right: 1px; }
+  sup.fn a { color: var(--accent); text-decoration: none; font-size: 0.95em; font-weight: 600; }
+  .red { color: var(--red); }
+  .notes, .xrefs { font-size: calc(var(--reader, 18px) * 0.81); color: var(--note-fg); border-top: 1px solid var(--line); margin-top: 30px; padding-top: 14px; }
+  .notes h3, .xrefs h3 { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); margin: 6px 0; }
+  .notes ol { margin: 4px 0 4px 18px; padding: 0; }
+  .notes li { margin-bottom: 5px; }
+  .fnref { font-weight: 700; }
+  .xrefs p { margin: 2px 0; }
+  .go-open, .go-close { font-size: 21px; text-align: center; margin: 22px 0; }
+  .go-note { text-align: center; color: var(--faint); }
+  .credit { text-align: center; color: var(--credit); font-size: 13.5px; margin-top: 48px; border-top: 1px solid var(--line); padding-top: 14px; }
+  .theme-btn { position: fixed; top: 12px; right: 12px; z-index: 10; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  .totop { position: fixed; right: 16px; bottom: 16px; z-index: 10; width: 44px; height: 44px; font-size: 20px; font-weight: 700; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 50%; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity .2s; }
+  .totop.show { opacity: 1; visibility: visible; }
+  .chapnav { text-align: center; margin: 10px 0 6px; }
+  .chapnav select { font-family: inherit; font-size: 15px; font-weight: 600; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  .textsize { margin-left: 8px; white-space: nowrap; }
+  .textsize button { font-family: inherit; font-size: 15px; font-weight: 700; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 11px; cursor: pointer; margin: 0 2px; }
+  #ts-label { font-size: 14px; color: var(--muted); margin: 0 2px; }
+</style>
+</head>
+<body>
+<button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+<button id="to-top" class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">↑</button>
+<div class="wrap">
+  <div class="sitehead"><div class="t">021 BIBLE</div><div class="s">Study Version — Tradition Style</div></div>
+  <div class="nav"><a href="#garden">Garden</a> · <a href="#gospel">Gospel</a> · <a href="#go">Go</a></div>
+  <div class="chapnav"><select id="chapter-jump" onchange="var v=this.value;if(v){document.getElementById(v).scrollIntoView();this.selectedIndex=0;}"><option value="">Jump to chapter…</option><optgroup label="Garden"><option value="garden-1">Garden 1</option><option value="garden-2">Garden 2</option><option value="garden-3">Garden 3</option><option value="garden-4">Garden 4</option><option value="garden-5">Garden 5</option></optgroup><optgroup label="Gospel"><option value="gospel-1">Gospel 1</option><option value="gospel-2">Gospel 2</option><option value="gospel-3">Gospel 3</option><option value="gospel-4">Gospel 4</option><option value="gospel-5">Gospel 5</option><option value="gospel-6">Gospel 6</option><option value="gospel-7">Gospel 7</option><option value="gospel-8">Gospel 8</option><option value="gospel-9">Gospel 9</option><option value="gospel-10">Gospel 10</option><option value="gospel-11">Gospel 11</option><option value="gospel-12">Gospel 12</option><option value="gospel-13">Gospel 13</option><option value="gospel-14">Gospel 14</option><option value="gospel-15">Gospel 15</option><option value="gospel-16">Gospel 16</option></optgroup><option value="go">Go</option></select><span class="textsize"><button onclick="textSize(-1)" aria-label="Smaller text">A−</button><span id="ts-label">18px</span><button onclick="textSize(1)" aria-label="Larger text">A+</button></span></div>
+<h1 class="book" id="garden">GARDEN</h1>
+<h2 class="chapter" id="garden-1">GARDEN 1</h2>
+<p class="text">
+<sup class="vn">1</sup>In the beginning, God<sup class="fn"><a id="ref-Garden-1-1" href="#fn-Garden-1-1">1</a></sup> created the heavens and the earth. 
+<sup class="vn">2</sup>The earth was formless and empty. Darkness was on the surface of the deep and God’s Spirit was hovering over the surface of the waters. 
+</p>
+<p class="text">
+<sup class="vn">3</sup>God said, “Let there be light,” and there was light. 
+<sup class="vn">4</sup>God saw the light, and saw that it was good. God divided the light from the darkness. 
+<sup class="vn">5</sup>God called the light “day”, and the darkness he called “night”. There was evening and there was morning, the first day. 
+</p>
+<p class="text">
+<sup class="vn">6</sup>God said, “Let there be an expanse in the middle of the waters, and let it divide the waters from the waters.” 
+<sup class="vn">7</sup>God made the expanse, and divided the waters which were under the expanse from the waters which were above the expanse; and it was so. 
+<sup class="vn">8</sup>God called the expanse “sky”. There was evening and there was morning, a second day. 
+</p>
+<p class="text">
+<sup class="vn">9</sup>God said, “Let the waters under the sky be gathered together to one place, and let the dry land appear;” and it was so. 
+<sup class="vn">10</sup>God called the dry land “earth”, and the gathering together of the waters he called “seas”. God saw that it was good. 
+<sup class="vn">11</sup>God said, “Let the earth yield grass, herbs yielding seeds, and fruit trees bearing fruit after their kind, with their seeds in it, on the earth;” and it was so. 
+<sup class="vn">12</sup>The earth yielded grass, herbs yielding seed after their kind, and trees bearing fruit, with their seeds in it, after their kind; and God saw that it was good. 
+<sup class="vn">13</sup>There was evening and there was morning, a third day. 
+</p>
+<p class="text">
+<sup class="vn">14</sup>God said, “Let there be lights in the expanse of the sky to divide the day from the night; and let them be for signs to mark seasons, days, and years; 
+<sup class="vn">15</sup>and let them be for lights in the expanse of the sky to give light on the earth;” and it was so. 
+<sup class="vn">16</sup>God made the two great lights: the greater light to rule the day, and the lesser light to rule the night. He also made the stars. 
+<sup class="vn">17</sup>God set them in the expanse of the sky to give light to the earth, 
+<sup class="vn">18</sup>and to rule over the day and over the night, and to divide the light from the darkness. God saw that it was good. 
+<sup class="vn">19</sup>There was evening and there was morning, a fourth day. 
+</p>
+<p class="text">
+<sup class="vn">20</sup>God said, “Let the waters abound with living creatures, and let birds fly above the earth in the open expanse of the sky.” 
+<sup class="vn">21</sup>God created the large sea creatures and every living creature that moves, with which the waters swarmed, after their kind, and every winged bird after its kind. God saw that it was good. 
+<sup class="vn">22</sup>God blessed them, saying, “Be fruitful, and multiply, and fill the waters in the seas, and let birds multiply on the earth.” 
+<sup class="vn">23</sup>There was evening and there was morning, a fifth day. 
+</p>
+<p class="text">
+<sup class="vn">24</sup>God said, “Let the earth produce living creatures after their kind, livestock, creeping things, and animals of the earth after their kind;” and it was so. 
+<sup class="vn">25</sup>God made the animals of the earth after their kind, and the livestock after their kind, and everything that creeps on the ground after its kind. God saw that it was good. 
+</p>
+<p class="text">
+<sup class="vn">26</sup>God said, “Let’s make man in our image, after our likeness. Let them have dominion over the fish of the sea, and over the birds of the sky, and over the livestock, and over all the earth, and over every creeping thing that creeps on the earth.” 
+<sup class="vn">27</sup>God created man in his own image. In God’s image he created him; male and female he created them. 
+<sup class="vn">28</sup>God blessed them. God said to them, “Be fruitful, multiply, fill the earth, and subdue it. Have dominion over the fish of the sea, over the birds of the sky, and over every living thing that moves on the earth.” 
+<sup class="vn">29</sup>God said, “Behold,<sup class="fn"><a id="ref-Garden-1-2" href="#fn-Garden-1-2">2</a></sup> I have given you every herb yielding seed, which is on the surface of all the earth, and every tree, which bears fruit yielding seed. It will be your food. 
+<sup class="vn">30</sup>To every animal of the earth, and to every bird of the sky, and to everything that creeps on the earth, in which there is life, I have given every green herb for food;” and it was so. 
+</p>
+<p class="text">
+<sup class="vn">31</sup>God saw everything that he had made, and, behold, it was very good. There was evening and there was morning, a sixth day. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Garden-1-1"><span class="fnref">1:1</span> The Hebrew word rendered “God” is “אֱלֹהִ֑ים” (Elohim).</li>
+<li id="fn-Garden-1-2"><span class="fnref">1:29</span> “Behold”, from “הִנֵּה”, means look at, take notice, observe, see, or gaze at. It is often used as an interjection.</li>
+</ol></div>
+<h2 class="chapter" id="garden-2">GARDEN 2</h2>
+<p class="text">
+<sup class="vn">1</sup>The heavens, the earth, and all their vast array were finished. 
+<sup class="vn">2</sup>On the seventh day God finished his work which he had done; and he rested on the seventh day from all his work which he had done. 
+<sup class="vn">3</sup>God blessed the seventh day, and made it holy, because he rested in it from all his work of creation which he had done. 
+</p>
+<p class="text">
+<sup class="vn">4</sup>This is the history of the generations of the heavens and of the earth when they were created, in the day that Yahweh<sup class="fn"><a id="ref-Garden-2-1" href="#fn-Garden-2-1">1</a></sup> God made the earth and the heavens. 
+<sup class="vn">5</sup>No plant of the field was yet on the earth, and no herb of the field had yet sprung up; for Yahweh God had not caused it to rain on the earth. There was not a man to till the ground, 
+<sup class="vn">6</sup>but a mist went up from the earth, and watered the whole surface of the ground. 
+<sup class="vn">7</sup>Yahweh God formed man from the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul. 
+<sup class="vn">8</sup>Yahweh God planted a garden eastward, in Eden, and there he put the man whom he had formed. 
+<sup class="vn">9</sup>Out of the ground Yahweh God made every tree to grow that is pleasant to the sight, and good for food, including the tree of life in the middle of the garden and the tree of the knowledge of good and evil. 
+<sup class="vn">10</sup>A river went out of Eden to water the garden; and from there it was parted, and became the source of four rivers. 
+<sup class="vn">11</sup>The name of the first is Pishon: it flows through the whole land of Havilah, where there is gold; 
+<sup class="vn">12</sup>and the gold of that land is good. Bdellium<sup class="fn"><a id="ref-Garden-2-2" href="#fn-Garden-2-2">2</a></sup> and onyx stone are also there. 
+<sup class="vn">13</sup>The name of the second river is Gihon. It is the same river that flows through the whole land of Cush. 
+<sup class="vn">14</sup>The name of the third river is Hiddekel. This is the one which flows in front of Assyria. The fourth river is the Euphrates. 
+<sup class="vn">15</sup>Yahweh God took the man, and put him into the garden of Eden to cultivate and keep it. 
+<sup class="vn">16</sup>Yahweh God commanded the man, saying, “You may freely eat of every tree of the garden; 
+<sup class="vn">17</sup>but you shall not eat of the tree of the knowledge of good and evil; for in the day that you eat of it, you will surely die.” 
+</p>
+<p class="text">
+<sup class="vn">18</sup>Yahweh God said, “It is not good for the man to be alone. I will make him a helper comparable to<sup class="fn"><a id="ref-Garden-2-3" href="#fn-Garden-2-3">3</a></sup> him.” 
+<sup class="vn">19</sup>Out of the ground Yahweh God formed every animal of the field, and every bird of the sky, and brought them to the man to see what he would call them. Whatever the man called every living creature became its name. 
+<sup class="vn">20</sup>The man gave names to all livestock, and to the birds of the sky, and to every animal of the field; but for man there was not found a helper comparable to him. 
+<sup class="vn">21</sup>Yahweh God caused the man to fall into a deep sleep. As the man slept, he took one of his ribs, and closed up the flesh in its place. 
+<sup class="vn">22</sup>Yahweh God made a woman from the rib which he had taken from the man, and brought her to the man. 
+<sup class="vn">23</sup>The man said, “This is now bone of my bones, and flesh of my flesh. She will be called ‘woman,’ because she was taken out of Man.” 
+<sup class="vn">24</sup>Therefore a man will leave his father and his mother, and will join with his wife, and they will be one flesh. 
+<sup class="vn">25</sup>The man and his wife were both naked, and they were not ashamed. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Garden-2-1"><span class="fnref">2:4</span> God’s Proper Name (Hebrew “יהוה”) is rendered “Yahweh” in the 021 Bible. Most English translations substitute “LORD” for the Name; the source text gives the Name itself. <strong>Study note — the Name.</strong> 021 chose to use the actual name of God, “Yahweh,” rather than the traditional “Lord,” since the origin text uses YHWH and “lord” is a misdirect pointing to slaves and masters, which is not what was intended by the original text. “LORD” is not a translation of any word in the phrase YHWH Elohim; it is a substitute the tradition reads over the Name. The Name is given to be called on — “then men began to call on Yahweh’s name” (Gen 4:26) — not hidden under a title. (Decision and rationale logged 2026-10-20; see Changelog.)</li>
+<li id="fn-Garden-2-2"><span class="fnref">2:12</span> or, aromatic resin</li>
+<li id="fn-Garden-2-3"><span class="fnref">2:18</span> or, suitable for, or appropriate for.</li>
+</ol></div>
+<h2 class="chapter" id="garden-3">GARDEN 3</h2>
+<p class="text">
+<sup class="vn">1</sup>Now the serpent was more subtle than any animal of the field which Yahweh God had made. He said to the woman, “Has God really said, ‘You shall not eat of any tree of the garden’?” 
+</p>
+<p class="text">
+<sup class="vn">2</sup>The woman said to the serpent, “We may eat fruit from the trees of the garden, 
+<sup class="vn">3</sup>but not the fruit of the tree which is in the middle of the garden. God has said, ‘You shall not eat of it. You shall not touch it, lest you die.’” 
+</p>
+<p class="text">
+<sup class="vn">4</sup>The serpent said to the woman, “You won’t really die, 
+<sup class="vn">5</sup>for God knows that in the day you eat it, your eyes will be opened, and you will be like God, knowing good and evil.” 
+</p>
+<p class="text">
+<sup class="vn">6</sup>When the woman saw that the tree was good for food, and that it was a delight to the eyes, and that the tree was to be desired to make one wise, she took some of its fruit, and ate. Then she gave some to her husband with her, and he ate it, too. 
+<sup class="vn">7</sup>Their eyes were opened, and they both knew that they were naked. They sewed fig leaves together, and made coverings for themselves. 
+<sup class="vn">8</sup>They heard Yahweh God’s voice walking in the garden in the cool of the day, and the man and his wife hid themselves from the presence of Yahweh God among the trees of the garden. 
+</p>
+<p class="text">
+<sup class="vn">9</sup>Yahweh God called to the man, and said to him, “Where are you?” 
+</p>
+<p class="text">
+<sup class="vn">10</sup>The man said, “I heard your voice in the garden, and I was afraid, because I was naked; so I hid myself.” 
+</p>
+<p class="text">
+<sup class="vn">11</sup>God said, “Who told you that you were naked? Have you eaten from the tree that I commanded you not to eat from?” 
+</p>
+<p class="text">
+<sup class="vn">12</sup>The man said, “The woman whom you gave to be with me, she gave me fruit from the tree, and I ate it.” 
+</p>
+<p class="text">
+<sup class="vn">13</sup>Yahweh God said to the woman, “What have you done?” The woman said, “The serpent deceived me, and I ate.” 
+</p>
+<p class="text">
+<sup class="vn">14</sup>Yahweh God said to the serpent, “Because you have done this, you are cursed above all livestock, and above every animal of the field. You shall go on your belly and you shall eat dust all the days of your life. 
+</p>
+<p class="text">
+<sup class="vn">15</sup>I will put hostility between you and the woman, and between your offspring and her offspring. He will bruise your head, and you will bruise his heel.” 
+</p>
+<p class="text">
+<sup class="vn">16</sup>To the woman he said, “I will greatly multiply your pain in childbirth. You will bear children in pain. Your desire will be for your husband, and he will rule over you.” 
+</p>
+<p class="text">
+<sup class="vn">17</sup>To Adam he said, “Because you have listened to your wife’s voice, and have eaten from the tree, about which I commanded you, saying, ‘You shall not eat of it,’ the ground is cursed for your sake. You will eat from it with much labor all the days of your life. 
+</p>
+<p class="text">
+<sup class="vn">18</sup>It will yield thorns and thistles to you; and you will eat the herb of the field. 
+</p>
+<p class="text">
+<sup class="vn">19</sup>You will eat bread by the sweat of your face until you return to the ground, for you were taken out of it. For you are dust, and you shall return to dust.” 
+</p>
+<p class="text">
+<sup class="vn">20</sup>The man called his wife Eve because she would be the mother of all the living. 
+<sup class="vn">21</sup>Yahweh God made garments of animal skins for Adam and for his wife, and clothed them. 
+</p>
+<p class="text">
+<sup class="vn">22</sup>Yahweh God said, “Behold, the man has become like one of us, knowing good and evil. Now, lest he reach out his hand, and also take of the tree of life, and eat, and live forever—” 
+<sup class="vn">23</sup>Therefore Yahweh God sent him out from the garden of Eden, to till the ground from which he was taken. 
+<sup class="vn">24</sup>So he drove out the man; and he placed cherubim<sup class="fn"><a id="ref-Garden-3-1" href="#fn-Garden-3-1">1</a></sup> at the east of the garden of Eden, and a flaming sword which turned every way, to guard the way to the tree of life. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Garden-3-1"><span class="fnref">3:24</span> cherubim are powerful angelic creatures, messengers of God with wings. See Ezekiel 10.</li>
+</ol></div>
+<h2 class="chapter" id="garden-4">GARDEN 4</h2>
+<p class="text">
+<sup class="vn">1</sup>The man knew<sup class="fn"><a id="ref-Garden-4-1" href="#fn-Garden-4-1">1</a></sup> Eve his wife. She conceived,<sup class="fn"><a id="ref-Garden-4-2" href="#fn-Garden-4-2">2</a></sup> and gave birth to Cain, and said, “I have gotten a man with Yahweh’s help.” 
+<sup class="vn">2</sup>Again she gave birth, to Cain’s brother Abel. Abel was a keeper of sheep, but Cain was a tiller of the ground. 
+<sup class="vn">3</sup>As time passed, Cain brought an offering to Yahweh from the fruit of the ground. 
+<sup class="vn">4</sup>Abel also brought some of the firstborn of his flock and of its fat. Yahweh respected Abel and his offering, 
+<sup class="vn">5</sup>but he didn’t respect Cain and his offering. Cain was very angry, and the expression on his face fell. 
+<sup class="vn">6</sup>Yahweh said to Cain, “Why are you angry? Why has the expression of your face fallen? 
+<sup class="vn">7</sup>If you do well, won’t it be lifted up? If you don’t do well, sin crouches at the door. Its desire is for you, but you are to rule over it.” 
+<sup class="vn">8</sup>Cain said to Abel, his brother, “Let’s go into the field.” While they were in the field, Cain rose up against Abel, his brother, and killed him. 
+</p>
+<p class="text">
+<sup class="vn">9</sup>Yahweh said to Cain, “Where is Abel, your brother?” He said, “I don’t know. Am I my brother’s keeper?” 
+</p>
+<p class="text">
+<sup class="vn">10</sup>Yahweh said, “What have you done? The voice of your brother’s blood cries to me from the ground. 
+<sup class="vn">11</sup>Now you are cursed because of the ground, which has opened its mouth to receive your brother’s blood from your hand. 
+<sup class="vn">12</sup>From now on, when you till the ground, it won’t yield its strength to you. You will be a fugitive and a wanderer on the earth.” 
+</p>
+<p class="text">
+<sup class="vn">13</sup>Cain said to Yahweh, “My punishment is greater than I can bear. 
+<sup class="vn">14</sup>Behold, you have driven me out today from the surface of the ground. I will be hidden from your face, and I will be a fugitive and a wanderer on the earth. Whoever finds me will kill me.” 
+</p>
+<p class="text">
+<sup class="vn">15</sup>Yahweh said to him, “Therefore whoever slays Cain, vengeance will be taken on him sevenfold.” Yahweh appointed a sign for Cain, so that anyone finding him would not strike him. 
+</p>
+<p class="text">
+<sup class="vn">16</sup>Cain left Yahweh’s presence, and lived in the land of Nod, east of Eden. 
+<sup class="vn">17</sup>Cain knew his wife. She conceived, and gave birth to Enoch. He built a city, and named the city after the name of his son, Enoch. 
+<sup class="vn">18</sup>Irad was born to Enoch. Irad became the father of Mehujael. Mehujael became the father of Methushael. Methushael became the father of Lamech. 
+<sup class="vn">19</sup>Lamech took two wives: the name of the first one was Adah, and the name of the second one was Zillah. 
+<sup class="vn">20</sup>Adah gave birth to Jabal, who was the father of those who dwell in tents and have livestock. 
+<sup class="vn">21</sup>His brother’s name was Jubal, who was the father of all who handle the harp and pipe. 
+<sup class="vn">22</sup>Zillah also gave birth to Tubal Cain, the forger of every cutting instrument of bronze and iron. Tubal Cain’s sister was Naamah. 
+<sup class="vn">23</sup>Lamech said to his wives, “Adah and Zillah, hear my voice. You wives of Lamech, listen to my speech, for I have slain a man for wounding me, a young man for bruising me. 
+</p>
+<p class="text">
+<sup class="vn">24</sup>If Cain will be avenged seven times, truly Lamech seventy-seven times.” 
+</p>
+<p class="text">
+<sup class="vn">25</sup>Adam knew his wife again. She gave birth to a son, and named him Seth, saying, “for God has given me another child instead of Abel, for Cain killed him.” 
+<sup class="vn">26</sup>A son was also born to Seth, and he named him Enosh. At that time men began to call on Yahweh’s name. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Garden-4-1"><span class="fnref">4:1</span> or, lay with, or, had relations with</li>
+<li id="fn-Garden-4-2"><span class="fnref">4:1</span> or, became pregnant</li>
+</ol></div>
+<h2 class="chapter" id="garden-5">GARDEN 5</h2>
+<p class="text">
+<sup class="vn">1</sup>This is the book of the generations of Adam. In the day that God created man, he made him in God’s likeness. 
+<sup class="vn">2</sup>He created them male and female, and blessed them. On the day they were created, he named them Adam.<sup class="fn"><a id="ref-Garden-5-1" href="#fn-Garden-5-1">1</a></sup> 
+<sup class="vn">3</sup>Adam lived one hundred thirty years, and became the father of a son in his own likeness, after his image, and named him Seth. 
+<sup class="vn">4</sup>The days of Adam after he became the father of Seth were eight hundred years, and he became the father of other sons and daughters. 
+<sup class="vn">5</sup>All the days that Adam lived were nine hundred thirty years, then he died. 
+</p>
+<p class="text">
+<sup class="vn">6</sup>Seth lived one hundred five years, then became the father of Enosh. 
+<sup class="vn">7</sup>Seth lived after he became the father of Enosh eight hundred seven years, and became the father of other sons and daughters. 
+<sup class="vn">8</sup>All of the days of Seth were nine hundred twelve years, then he died. 
+</p>
+<p class="text">
+<sup class="vn">9</sup>Enosh lived ninety years, and became the father of Kenan. 
+<sup class="vn">10</sup>Enosh lived after he became the father of Kenan eight hundred fifteen years, and became the father of other sons and daughters. 
+<sup class="vn">11</sup>All of the days of Enosh were nine hundred five years, then he died. 
+</p>
+<p class="text">
+<sup class="vn">12</sup>Kenan lived seventy years, then became the father of Mahalalel. 
+<sup class="vn">13</sup>Kenan lived after he became the father of Mahalalel eight hundred forty years, and became the father of other sons and daughters 
+<sup class="vn">14</sup>and all of the days of Kenan were nine hundred ten years, then he died. 
+</p>
+<p class="text">
+<sup class="vn">15</sup>Mahalalel lived sixty-five years, then became the father of Jared. 
+<sup class="vn">16</sup>Mahalalel lived after he became the father of Jared eight hundred thirty years, and became the father of other sons and daughters. 
+<sup class="vn">17</sup>All of the days of Mahalalel were eight hundred ninety-five years, then he died. 
+</p>
+<p class="text">
+<sup class="vn">18</sup>Jared lived one hundred sixty-two years, then became the father of Enoch. 
+<sup class="vn">19</sup>Jared lived after he became the father of Enoch eight hundred years, and became the father of other sons and daughters. 
+<sup class="vn">20</sup>All of the days of Jared were nine hundred sixty-two years, then he died. 
+</p>
+<p class="text">
+<sup class="vn">21</sup>Enoch lived sixty-five years, then became the father of Methuselah. 
+<sup class="vn">22</sup>After Methuselah’s birth, Enoch walked with God for three hundred years, and became the father of more sons and daughters. 
+<sup class="vn">23</sup>All the days of Enoch were three hundred sixty-five years. 
+<sup class="vn">24</sup>Enoch walked with God, and he was not found, for God took him. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Garden-5-1"><span class="fnref">5:2</span> “Adam” and “Man” are spelled with the exact same consonants in Hebrew, so this can be correctly translated either way.</li>
+</ol></div>
+<h1 class="book" id="gospel">GOSPEL</h1>
+<h2 class="chapter" id="gospel-1">GOSPEL 1</h2>
+<p class="text">
+<sup class="vn">1</sup>The beginning of the Gospel of Jesus Christ, the Son of God. 
+</p>
+<p class="text">
+<sup class="vn">2</sup>As it is written in the prophets, “Behold,<sup class="fn"><a id="ref-Gospel-1-1" href="#fn-Gospel-1-1">1</a></sup> I send my messenger before your face, who will prepare your way before you: 
+</p>
+<p class="text">
+<sup class="vn">3</sup>the voice of one crying in the wilderness, ‘Make ready the way of the Lord! Make his paths straight!’” 
+</p>
+<p class="text">
+<sup class="vn">4</sup>John came baptizing<sup class="fn"><a id="ref-Gospel-1-2" href="#fn-Gospel-1-2">2</a></sup> in the wilderness and preaching the baptism of repentance for forgiveness of sins. 
+<sup class="vn">5</sup>All the country of Judea and all those of Jerusalem went out to him. They were baptized by him in the Jordan river, confessing their sins. 
+<sup class="vn">6</sup>John was clothed with camel’s hair and a leather belt around his waist. He ate locusts and wild honey. 
+<sup class="vn">7</sup>He preached, saying, “After me comes he who is mightier than I, the strap of whose sandals I am not worthy to stoop down and loosen. 
+<sup class="vn">8</sup>I baptized you in<sup class="fn"><a id="ref-Gospel-1-3" href="#fn-Gospel-1-3">3</a></sup> water, but he will baptize you in the Holy Spirit.” 
+</p>
+<p class="text">
+<sup class="vn">9</sup>In those days, Jesus came from Nazareth of Galilee, and was baptized by John in the Jordan. 
+<sup class="vn">10</sup>Immediately coming up from the water, he saw the heavens parting and the Spirit descending on him like a dove. 
+<sup class="vn">11</sup>A voice came out of the sky, “You are my beloved Son, in whom I am well pleased.” 
+</p>
+<p class="text">
+<sup class="vn">12</sup>Immediately the Spirit drove him out into the wilderness. 
+<sup class="vn">13</sup>He was there in the wilderness forty days, tempted by Satan. He was with the wild animals; and the angels were serving him. 
+</p>
+<p class="text">
+<sup class="vn">14</sup>Now after John was taken into custody, Jesus came into Galilee, preaching the Gospel of God’s Kingdom, 
+<sup class="vn">15</sup>and saying, <span class="red">“The time is fulfilled, and God’s Kingdom is at hand! Repent, and believe in the Gospel.”</span> 
+</p>
+<p class="text">
+<sup class="vn">16</sup>Passing along by the sea of Galilee, he saw Simon and Andrew, the brother of Simon, casting a net into the sea, for they were fishermen. 
+<sup class="vn">17</sup>Jesus said to them, <span class="red">“Come after me, and I will make you into fishers for men.”</span> 
+</p>
+<p class="text">
+<sup class="vn">18</sup>Immediately they left their nets, and followed him. 
+</p>
+<p class="text">
+<sup class="vn">19</sup>Going on a little further from there, he saw James the son of Zebedee, and John his brother, who were also in the boat mending the nets. 
+<sup class="vn">20</sup>Immediately he called them, and they left their father, Zebedee, in the boat with the hired servants, and went after him. 
+</p>
+<p class="text">
+<sup class="vn">21</sup>They went into Capernaum, and immediately on the Sabbath day he entered into the synagogue and taught. 
+<sup class="vn">22</sup>They were astonished at his teaching, for he taught them as having authority, and not as the scribes. 
+<sup class="vn">23</sup>Immediately there was in their synagogue a man with an unclean spirit, and he cried out, 
+<sup class="vn">24</sup>saying, “Ha! What do we have to do with you, Jesus, you Nazarene? Have you come to destroy us? I know who you are: the Holy One of God!” 
+</p>
+<p class="text">
+<sup class="vn">25</sup>Jesus rebuked him, saying, <span class="red">“Be quiet, and come out of him!”</span> 
+</p>
+<p class="text">
+<sup class="vn">26</sup>The unclean spirit, convulsing him and crying with a loud voice, came out of him. 
+<sup class="vn">27</sup>They were all amazed, so that they questioned among themselves, saying, “What is this? What can this new doctrine be? For with authority he commands even the unclean spirits, and they obey him!” 
+<sup class="vn">28</sup>The report of him went out immediately into all the region of Galilee and its surrounding area. 
+</p>
+<p class="text">
+<sup class="vn">29</sup>Immediately, when they had come out of the synagogue, they came into the house of Simon and Andrew, with James and John. 
+<sup class="vn">30</sup>Now Simon’s wife’s mother lay sick with a fever, and immediately they told him about her. 
+<sup class="vn">31</sup>He came and took her by the hand and raised her up. The fever left her immediately,<sup class="fn"><a id="ref-Gospel-1-4" href="#fn-Gospel-1-4">4</a></sup> and she served them. 
+</p>
+<p class="text">
+<sup class="vn">32</sup>At evening, when the sun had set, they brought to him all who were sick and those who were possessed by demons. 
+<sup class="vn">33</sup>All the city was gathered together at the door. 
+<sup class="vn">34</sup>He healed many who were sick with various diseases and cast out many demons. He didn’t allow the demons to speak, because they knew him. 
+</p>
+<p class="text">
+<sup class="vn">35</sup>Early in the morning, while it was still dark, he rose up and went out, and departed into a deserted place, and prayed there. 
+<sup class="vn">36</sup>Simon and those who were with him searched for him. 
+<sup class="vn">37</sup>They found him and told him, “Everyone is looking for you.” 
+</p>
+<p class="text">
+<sup class="vn">38</sup>He said to them, <span class="red">“Let’s go elsewhere into the next towns, that I may preach there also, because I came out for this reason.”</span> 
+<sup class="vn">39</sup>He went into their synagogues throughout all Galilee, preaching and casting out demons. 
+</p>
+<p class="text">
+<sup class="vn">40</sup>A leper came to him, begging him, kneeling down to him, and saying to him, “If you want to, you can make me clean.” 
+</p>
+<p class="text">
+<sup class="vn">41</sup>Being moved with compassion, he stretched out his hand, and touched him, and said to him, <span class="red">“I want to. Be made clean.”</span> 
+<sup class="vn">42</sup>When he had said this, immediately the leprosy departed from him and he was made clean. 
+<sup class="vn">43</sup>He strictly warned him and immediately sent him out, 
+<sup class="vn">44</sup>and said to him, <span class="red">“See that you say nothing to anybody, but go show yourself to the priest and offer for your cleansing the things which Moses commanded, for a testimony to them.”</span> 
+</p>
+<p class="text">
+<sup class="vn">45</sup>But he went out, and began to proclaim it much, and to spread about the matter, so that Jesus could no more openly enter into a city, but was outside in desert places. People came to him from everywhere. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-1-1"><span class="fnref">1:2</span> “Behold”, from “ἰδοὺ”, means look at, take notice, observe, see, or gaze at. It is often used as an interjection.</li>
+<li id="fn-Gospel-1-2"><span class="fnref">1:4</span> or, immersing</li>
+<li id="fn-Gospel-1-3"><span class="fnref">1:8</span> The Greek word (en) translated here as “in” could also be translated as “with” in some contexts.</li>
+<li id="fn-Gospel-1-4"><span class="fnref">1:31</span> NU omits “immediately”.</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>1:2 — Malachi 3:1 · 1:3 — Isaiah 40:3</p></div>
+<h2 class="chapter" id="gospel-2">GOSPEL 2</h2>
+<p class="text">
+<sup class="vn">1</sup>When he entered again into Capernaum after some days, it was heard that he was at home. 
+<sup class="vn">2</sup>Immediately many were gathered together, so that there was no more room, not even around the door; and he spoke the word to them. 
+<sup class="vn">3</sup>Four people came, carrying a paralytic to him. 
+<sup class="vn">4</sup>When they could not come near to him for the crowd, they removed the roof where he was. When they had broken it up, they let down the mat that the paralytic was lying on. 
+<sup class="vn">5</sup>Jesus, seeing their faith, said to the paralytic, <span class="red">“Son, your sins are forgiven you.”</span> 
+</p>
+<p class="text">
+<sup class="vn">6</sup>But there were some of the scribes sitting there and reasoning in their hearts, 
+<sup class="vn">7</sup>“Why does this man speak blasphemies like that? Who can forgive sins but God alone?” 
+</p>
+<p class="text">
+<sup class="vn">8</sup>Immediately Jesus, perceiving in his spirit that they so reasoned within themselves, said to them, <span class="red">“Why do you reason these things in your hearts?</span> 
+<sup class="vn">9</sup><span class="red">Which is easier, to tell the paralytic, ‘Your sins are forgiven;’ or to say, ‘Arise, and take up your bed, and walk’?</span> 
+<sup class="vn">10</sup><span class="red">But that you may know that the Son of Man has authority on earth to forgive sins”</span>—he said to the paralytic— 
+<sup class="vn">11</sup><span class="red">“I tell you, arise, take up your mat, and go to your house.”</span> 
+</p>
+<p class="text">
+<sup class="vn">12</sup>He arose, and immediately took up the mat and went out in front of them all, so that they were all amazed and glorified God, saying, “We never saw anything like this!” 
+</p>
+<p class="text">
+<sup class="vn">13</sup>He went out again by the seaside. All the multitude came to him, and he taught them. 
+<sup class="vn">14</sup>As he passed by, he saw Levi the son of Alphaeus sitting at the tax office. He said to him, <span class="red">“Follow me.”</span> And he arose and followed him. 
+</p>
+<p class="text">
+<sup class="vn">15</sup>He was reclining at the table in his house, and many tax collectors and sinners sat down with Jesus and his disciples, for there were many, and they followed him. 
+<sup class="vn">16</sup>The scribes and the Pharisees, when they saw that he was eating with the sinners and tax collectors, said to his disciples, “Why is it that he eats and drinks with tax collectors and sinners?” 
+</p>
+<p class="text">
+<sup class="vn">17</sup>When Jesus heard it, he said to them, <span class="red">“Those who are healthy have no need for a physician, but those who are sick. I came not to call the righteous, but sinners to repentance.”</span> 
+</p>
+<p class="text">
+<sup class="vn">18</sup>John’s disciples and the Pharisees were fasting, and they came and asked him, “Why do John’s disciples and the disciples of the Pharisees fast, but your disciples don’t fast?” 
+</p>
+<p class="text">
+<sup class="vn">19</sup>Jesus said to them, <span class="red">“Can the groomsmen fast while the bridegroom is with them? As long as they have the bridegroom with them, they can’t fast.</span> 
+<sup class="vn">20</sup><span class="red">But the days will come when the bridegroom will be taken away from them, and then they will fast in that day.</span> 
+<sup class="vn">21</sup><span class="red">No one sews a piece of unshrunk cloth on an old garment, or else the patch shrinks and the new tears away from the old, and a worse hole is made.</span> 
+<sup class="vn">22</sup><span class="red">No one puts new wine into old wineskins; or else the new wine will burst the skins, and the wine pours out, and the skins will be destroyed; but they put new wine into fresh wineskins.”</span> 
+</p>
+<p class="text">
+<sup class="vn">23</sup>He was going on the Sabbath day through the grain fields; and his disciples began, as they went, to pluck the ears of grain. 
+<sup class="vn">24</sup>The Pharisees said to him, “Behold, why do they do that which is not lawful on the Sabbath day?” 
+</p>
+<p class="text">
+<sup class="vn">25</sup>He said to them, <span class="red">“Did you never read what David did when he had need and was hungry—he, and those who were with him?</span> 
+<sup class="vn">26</sup><span class="red">How he entered into God’s house at the time of Abiathar the high priest, and ate the show bread, which is not lawful to eat except for the priests, and gave also to those who were with him?”</span> 
+</p>
+<p class="text">
+<sup class="vn">27</sup>He said to them, <span class="red">“The Sabbath was made for man, not man for the Sabbath.</span> 
+<sup class="vn">28</sup><span class="red">Therefore the Son of Man is lord even of the Sabbath.”</span> 
+</p>
+<h2 class="chapter" id="gospel-3">GOSPEL 3</h2>
+<p class="text">
+<sup class="vn">1</sup>He entered again into the synagogue, and there was a man there whose hand was withered. 
+<sup class="vn">2</sup>They watched him, whether he would heal him on the Sabbath day, that they might accuse him. 
+<sup class="vn">3</sup>He said to the man whose hand was withered, <span class="red">“Stand up.”</span> 
+<sup class="vn">4</sup>He said to them, <span class="red">“Is it lawful on the Sabbath day to do good or to do harm? To save a life or to kill?”</span> But they were silent. 
+<sup class="vn">5</sup>When he had looked around at them with anger, being grieved at the hardening of their hearts, he said to the man, <span class="red">“Stretch out your hand.”</span> He stretched it out, and his hand was restored as healthy as the other. 
+<sup class="vn">6</sup>The Pharisees went out, and immediately conspired with the Herodians against him, how they might destroy him. 
+</p>
+<p class="text">
+<sup class="vn">7</sup>Jesus withdrew to the sea with his disciples; and a great multitude followed him from Galilee, from Judea, 
+<sup class="vn">8</sup>from Jerusalem, from Idumaea, beyond the Jordan, and those from around Tyre and Sidon. A great multitude, hearing what great things he did, came to him. 
+<sup class="vn">9</sup>He spoke to his disciples that a little boat should stay near him because of the crowd, so that they wouldn’t press on him. 
+<sup class="vn">10</sup>For he had healed many, so that as many as had diseases pressed on him that they might touch him. 
+<sup class="vn">11</sup>The unclean spirits, whenever they saw him, fell down before him and cried, “You are the Son of God!” 
+<sup class="vn">12</sup>He sternly warned them that they should not make him known. 
+</p>
+<p class="text">
+<sup class="vn">13</sup>He went up into the mountain and called to himself those whom he wanted, and they went to him. 
+<sup class="vn">14</sup>He appointed twelve, that they might be with him, and that he might send them out to preach 
+<sup class="vn">15</sup>and to have authority to heal sicknesses and to cast out demons: 
+<sup class="vn">16</sup>Simon (to whom he gave the name Peter); 
+<sup class="vn">17</sup>James the son of Zebedee; and John, the brother of James, (whom he called Boanerges, which means, Sons of Thunder); 
+<sup class="vn">18</sup>Andrew; Philip; Bartholomew; Matthew; Thomas; James, the son of Alphaeus; Thaddaeus; Simon the Zealot; 
+<sup class="vn">19</sup>and Judas Iscariot, who also betrayed him. Then he came into a house. 
+</p>
+<p class="text">
+<sup class="vn">20</sup>The multitude came together again, so that they could not so much as eat bread. 
+<sup class="vn">21</sup>When his friends heard it, they went out to seize him; for they said, “He is insane.” 
+<sup class="vn">22</sup>The scribes who came down from Jerusalem said, “He has Beelzebul,” and, “By the prince of the demons he casts out the demons.” 
+</p>
+<p class="text">
+<sup class="vn">23</sup>He summoned them and said to them in parables, <span class="red">“How can Satan cast out Satan?</span> 
+<sup class="vn">24</sup><span class="red">If a kingdom is divided against itself, that kingdom cannot stand.</span> 
+<sup class="vn">25</sup><span class="red">If a house is divided against itself, that house cannot stand.</span> 
+<sup class="vn">26</sup><span class="red">If Satan has risen up against himself, and is divided, he can’t stand, but has an end.</span> 
+<sup class="vn">27</sup><span class="red">But no one can enter into the house of the strong man to plunder unless he first binds the strong man; then he will plunder his house.</span> 
+</p>
+<p class="text">
+<sup class="vn">28</sup><span class="red">“Most certainly I tell you, all sins of the descendants of man will be forgiven, including their blasphemies with which they may blaspheme;</span> 
+<sup class="vn">29</sup><span class="red">but whoever may blaspheme against the Holy Spirit never has forgiveness, but is subject to eternal condemnation.”</span><sup class="fn"><a id="ref-Gospel-3-1" href="#fn-Gospel-3-1">1</a></sup> 
+<sup class="vn">30</sup>—because they said, “He has an unclean spirit.” 
+</p>
+<p class="text">
+<sup class="vn">31</sup>His mother and his brothers came, and standing outside, they sent to him, calling him. 
+<sup class="vn">32</sup>A multitude was sitting around him, and they told him, “Behold, your mother, your brothers, and your sisters<sup class="fn"><a id="ref-Gospel-3-2" href="#fn-Gospel-3-2">2</a></sup> are outside looking for you.” 
+</p>
+<p class="text">
+<sup class="vn">33</sup>He answered them, <span class="red">“Who are my mother and my brothers?”</span> 
+<sup class="vn">34</sup>Looking around at those who sat around him, he said, <span class="red">“Behold, my mother and my brothers!</span> 
+<sup class="vn">35</sup><span class="red">For whoever does the will of God is my brother, my sister, and mother.”</span> 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-3-1"><span class="fnref">3:29</span> NU reads, guilty of an eternal sin.</li>
+<li id="fn-Gospel-3-2"><span class="fnref">3:32</span> TR omits “your sisters”</li>
+</ol></div>
+<h2 class="chapter" id="gospel-4">GOSPEL 4</h2>
+<p class="text">
+<sup class="vn">1</sup>Again he began to teach by the seaside. A great multitude was gathered to him, so that he entered into a boat in the sea and sat down. All the multitude were on the land by the sea. 
+<sup class="vn">2</sup>He taught them many things in parables, and told them in his teaching, 
+<sup class="vn">3</sup><span class="red">“Listen! Behold, the farmer went out to sow.</span> 
+<sup class="vn">4</sup><span class="red">As he sowed, some seed fell by the road, and the birds<sup class="fn"><a id="ref-Gospel-4-1" href="#fn-Gospel-4-1">1</a></sup> came and devoured it.</span> 
+<sup class="vn">5</sup><span class="red">Others fell on the rocky ground, where it had little soil, and immediately it sprang up, because it had no depth of soil.</span> 
+<sup class="vn">6</sup><span class="red">When the sun had risen, it was scorched; and because it had no root, it withered away.</span> 
+<sup class="vn">7</sup><span class="red">Others fell among the thorns, and the thorns grew up and choked it, and it yielded no fruit.</span> 
+<sup class="vn">8</sup><span class="red">Others fell into the good ground and yielded fruit, growing up and increasing. Some produced thirty times, some sixty times, and some one hundred times as much.”</span> 
+<sup class="vn">9</sup>He said, <span class="red">“Whoever has ears to hear, let him hear.”</span> 
+</p>
+<p class="text">
+<sup class="vn">10</sup>When he was alone, those who were around him with the twelve asked him about the parables. 
+<sup class="vn">11</sup>He said to them, <span class="red">“To you is given the mystery of God’s Kingdom, but to those who are outside, all things are done in parables,</span> 
+<sup class="vn">12</sup><span class="red">that ‘seeing they may see and not perceive, and hearing they may hear and not understand, lest perhaps they should turn again, and their sins should be forgiven them.’”</span> 
+</p>
+<p class="text">
+<sup class="vn">13</sup>He said to them, <span class="red">“Don’t you understand this parable? How will you understand all of the parables?</span> 
+<sup class="vn">14</sup><span class="red">The farmer sows the word.</span> 
+<sup class="vn">15</sup><span class="red">The ones by the road are the ones where the word is sown; and when they have heard, immediately Satan comes and takes away the word which has been sown in them.</span> 
+<sup class="vn">16</sup><span class="red">These in the same way are those who are sown on the rocky places, who, when they have heard the word, immediately receive it with joy.</span> 
+<sup class="vn">17</sup><span class="red">They have no root in themselves, but are short-lived. When oppression or persecution arises because of the word, immediately they stumble.</span> 
+<sup class="vn">18</sup><span class="red">Others are those who are sown among the thorns. These are those who have heard the word,</span> 
+<sup class="vn">19</sup><span class="red">and the cares of this age, and the deceitfulness of riches, and the lusts of other things entering in choke the word, and it becomes unfruitful.</span> 
+<sup class="vn">20</sup><span class="red">Those which were sown on the good ground are those who hear the word, accept it, and bear fruit, some thirty times, some sixty times, and some one hundred times.”</span> 
+</p>
+<p class="text">
+<sup class="vn">21</sup>He said to them, <span class="red">“Is a lamp brought to be put under a basket <sup class="fn"><a id="ref-Gospel-4-2" href="#fn-Gospel-4-2">2</a></sup> or under a bed? Isn’t it put on a stand?</span> 
+<sup class="vn">22</sup><span class="red">For there is nothing hidden except that it should be made known, neither was anything made secret but that it should come to light.</span> 
+<sup class="vn">23</sup><span class="red">If any man has ears to hear, let him hear.”</span> 
+</p>
+<p class="text">
+<sup class="vn">24</sup>He said to them, <span class="red">“Take heed what you hear. With whatever measure you measure, it will be measured to you; and more will be given to you who hear.</span> 
+<sup class="vn">25</sup><span class="red">For whoever has, to him more will be given; and he who doesn’t have, even that which he has will be taken away from him.”</span> 
+</p>
+<p class="text">
+<sup class="vn">26</sup>He said, <span class="red">“God’s Kingdom is as if a man should cast seed on the earth,</span> 
+<sup class="vn">27</sup><span class="red">and should sleep and rise night and day, and the seed should spring up and grow, though he doesn’t know how.</span> 
+<sup class="vn">28</sup><span class="red">For the earth bears fruit by itself: first the blade, then the ear, then the full grain in the ear.</span> 
+<sup class="vn">29</sup><span class="red">But when the fruit is ripe, immediately he puts in the sickle, because the harvest has come.”</span> 
+</p>
+<p class="text">
+<sup class="vn">30</sup>He said, <span class="red">“How will we liken God’s Kingdom? Or with what parable will we illustrate it?</span> 
+<sup class="vn">31</sup><span class="red">It’s like a grain of mustard seed, which, when it is sown in the earth, though it is less than all the seeds that are on the earth,</span> 
+<sup class="vn">32</sup><span class="red">yet when it is sown, grows up and becomes greater than all the herbs, and puts out great branches, so that the birds of the sky can lodge under its shadow.”</span> 
+</p>
+<p class="text">
+<sup class="vn">33</sup>With many such parables he spoke the word to them, as they were able to hear it. 
+<sup class="vn">34</sup>Without a parable he didn’t speak to them; but privately to his own disciples he explained everything. 
+</p>
+<p class="text">
+<sup class="vn">35</sup>On that day, when evening had come, he said to them, <span class="red">“Let’s go over to the other side.”</span> 
+<sup class="vn">36</sup>Leaving the multitude, they took him with them, even as he was, in the boat. Other small boats were also with him. 
+<sup class="vn">37</sup>A big wind storm arose, and the waves beat into the boat, so much that the boat was already filled. 
+<sup class="vn">38</sup>He himself was in the stern, asleep on the cushion; and they woke him up and asked him, “Teacher, don’t you care that we are dying?” 
+</p>
+<p class="text">
+<sup class="vn">39</sup>He awoke and rebuked the wind, and said to the sea, <span class="red">“Peace! Be still!”</span> The wind ceased and there was a great calm. 
+<sup class="vn">40</sup>He said to them, <span class="red">“Why are you so afraid? How is it that you have no faith?”</span> 
+</p>
+<p class="text">
+<sup class="vn">41</sup>They were greatly afraid and said to one another, “Who then is this, that even the wind and the sea obey him?” 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-4-1"><span class="fnref">4:4</span> TR adds “of the air”</li>
+<li id="fn-Gospel-4-2"><span class="fnref">4:21</span> literally, a modion, a dry measuring basket containing about a peck (about 9 liters)</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>4:12 — Isaiah 6:9-10</p></div>
+<h2 class="chapter" id="gospel-5">GOSPEL 5</h2>
+<p class="text">
+<sup class="vn">1</sup>They came to the other side of the sea, into the country of the Gadarenes. 
+<sup class="vn">2</sup>When he had come out of the boat, immediately a man with an unclean spirit met him out of the tombs. 
+<sup class="vn">3</sup>He lived in the tombs. Nobody could bind him any more, not even with chains, 
+<sup class="vn">4</sup>because he had been often bound with fetters and chains, and the chains had been torn apart by him, and the fetters broken in pieces. Nobody had the strength to tame him. 
+<sup class="vn">5</sup>Always, night and day, in the tombs and in the mountains, he was crying out, and cutting himself with stones. 
+<sup class="vn">6</sup>When he saw Jesus from afar, he ran and bowed down to him, 
+<sup class="vn">7</sup>and crying out with a loud voice, he said, “What have I to do with you, Jesus, you Son of the Most High God? I adjure you by God, don’t torment me.” 
+<sup class="vn">8</sup>For he said to him, “Come out of the man, you unclean spirit!” 
+</p>
+<p class="text">
+<sup class="vn">9</sup>He asked him, <span class="red">“What is your name?”</span> He said to him, “My name is Legion, for we are many.” 
+</p>
+<p class="text">
+<sup class="vn">10</sup>He begged him much that he would not send them away out of the country. 
+<sup class="vn">11</sup>Now on the mountainside there was a great herd of pigs feeding. 
+<sup class="vn">12</sup>All the demons begged him, saying, “Send us into the pigs, that we may enter into them.” 
+</p>
+<p class="text">
+<sup class="vn">13</sup>At once Jesus gave them permission. The unclean spirits came out and entered into the pigs. The herd of about two thousand rushed down the steep bank into the sea, and they were drowned in the sea. 
+<sup class="vn">14</sup>Those who fed the pigs fled, and told it in the city and in the country. The people came to see what it was that had happened. 
+</p>
+<p class="text">
+<sup class="vn">15</sup>They came to Jesus, and saw him who had been possessed by demons sitting, clothed, and in his right mind, even him who had the legion; and they were afraid. 
+<sup class="vn">16</sup>Those who saw it declared to them what happened to him who was possessed by demons, and about the pigs. 
+<sup class="vn">17</sup>They began to beg him to depart from their region. 
+</p>
+<p class="text">
+<sup class="vn">18</sup>As he was entering into the boat, he who had been possessed by demons begged him that he might be with him. 
+<sup class="vn">19</sup>He didn’t allow him, but said to him, <span class="red">“Go to your house, to your friends, and tell them what great things the Lord has done for you and how he had mercy on you.”</span> 
+</p>
+<p class="text">
+<sup class="vn">20</sup>He went his way, and began to proclaim in Decapolis how Jesus had done great things for him, and everyone marveled. 
+</p>
+<p class="text">
+<sup class="vn">21</sup>When Jesus had crossed back over in the boat to the other side, a great multitude was gathered to him; and he was by the sea. 
+<sup class="vn">22</sup>Behold, one of the rulers of the synagogue, Jairus by name, came; and seeing him, he fell at his feet 
+<sup class="vn">23</sup>and begged him much, saying, “My little daughter is at the point of death. Please come and lay your hands on her, that she may be made healthy, and live.” 
+</p>
+<p class="text">
+<sup class="vn">24</sup>He went with him, and a great multitude followed him, and they pressed upon him on all sides. 
+<sup class="vn">25</sup>A certain woman who had a discharge of blood for twelve years, 
+<sup class="vn">26</sup>and had suffered many things by many physicians, and had spent all that she had, and was no better, but rather grew worse, 
+<sup class="vn">27</sup>having heard the things concerning Jesus, came up behind him in the crowd and touched his clothes. 
+<sup class="vn">28</sup>For she said, “If I just touch his clothes, I will be made well.” 
+<sup class="vn">29</sup>Immediately the flow of her blood was dried up, and she felt in her body that she was healed of her affliction. 
+</p>
+<p class="text">
+<sup class="vn">30</sup>Immediately Jesus, perceiving in himself that the power had gone out from him, turned around in the crowd and asked, <span class="red">“Who touched my clothes?”</span> 
+</p>
+<p class="text">
+<sup class="vn">31</sup>His disciples said to him, “You see the multitude pressing against you, and you say, ‘Who touched me?’” 
+</p>
+<p class="text">
+<sup class="vn">32</sup>He looked around to see her who had done this thing. 
+<sup class="vn">33</sup>But the woman, fearing and trembling, knowing what had been done to her, came and fell down before him, and told him all the truth. 
+</p>
+<p class="text">
+<sup class="vn">34</sup>He said to her, <span class="red">“Daughter, your faith has made you well. Go in peace, and be cured of your disease.”</span> 
+</p>
+<p class="text">
+<sup class="vn">35</sup>While he was still speaking, people came from the synagogue ruler’s house, saying, “Your daughter is dead. Why bother the Teacher any more?” 
+</p>
+<p class="text">
+<sup class="vn">36</sup>But Jesus, when he heard the message spoken, immediately said to the ruler of the synagogue, <span class="red">“Don’t be afraid, only believe.”</span> 
+<sup class="vn">37</sup>He allowed no one to follow him except Peter, James, and John the brother of James. 
+<sup class="vn">38</sup>He came to the synagogue ruler’s house, and he saw an uproar, weeping, and great wailing. 
+<sup class="vn">39</sup>When he had entered in, he said to them, <span class="red">“Why do you make an uproar and weep? The child is not dead, but is asleep.”</span> 
+</p>
+<p class="text">
+<sup class="vn">40</sup>They ridiculed him. But he, having put them all out, took the father of the child, her mother, and those who were with him, and went in where the child was lying. 
+<sup class="vn">41</sup>Taking the child by the hand, he said to her, <span class="red">“Talitha cumi!”</span> which means, being interpreted, “Girl, I tell you, get up!” 
+<sup class="vn">42</sup>Immediately the girl rose up and walked, for she was twelve years old. They were amazed with great amazement. 
+<sup class="vn">43</sup>He strictly ordered them that no one should know this, and commanded that something should be given to her to eat. 
+</p>
+<h2 class="chapter" id="gospel-6">GOSPEL 6</h2>
+<p class="text">
+<sup class="vn">1</sup>He went out from there. He came into his own country, and his disciples followed him. 
+<sup class="vn">2</sup>When the Sabbath had come, he began to teach in the synagogue, and many hearing him were astonished, saying, “Where did this man get these things?” and, “What is the wisdom that is given to this man, that such mighty works come about by his hands? 
+<sup class="vn">3</sup>Isn’t this the carpenter, the son of Mary and brother of James, Joses, Judah, and Simon? Aren’t his sisters here with us?” So they were offended at him. 
+</p>
+<p class="text">
+<sup class="vn">4</sup>Jesus said to them, <span class="red">“A prophet is not without honor, except in his own country, and among his own relatives, and in his own house.”</span> 
+<sup class="vn">5</sup>He could do no mighty work there, except that he laid his hands on a few sick people and healed them. 
+<sup class="vn">6</sup>He marveled because of their unbelief. He went around the villages teaching. 
+</p>
+<p class="text">
+<sup class="vn">7</sup>He called to himself the twelve, and began to send them out two by two; and he gave them authority over the unclean spirits. 
+<sup class="vn">8</sup>He commanded them that they should take nothing for their journey, except a staff only: no bread, no wallet, no money in their purse, 
+<sup class="vn">9</sup>but to wear sandals, and not put on two tunics. 
+<sup class="vn">10</sup>He said to them, <span class="red">“Wherever you enter into a house, stay there until you depart from there.</span> 
+<sup class="vn">11</sup><span class="red">Whoever will not receive you nor hear you, as you depart from there, shake off the dust that is under your feet for a testimony against them. Assuredly, I tell you, it will be more tolerable for Sodom and Gomorrah in the day of judgment than for that city!”</span> 
+</p>
+<p class="text">
+<sup class="vn">12</sup>They went out and preached that people should repent. 
+<sup class="vn">13</sup>They cast out many demons, and anointed many with oil who were sick and healed them. 
+<sup class="vn">14</sup>King Herod heard this, for his name had become known, and he said, “John the Baptizer has risen from the dead, and therefore these powers are at work in him.” 
+<sup class="vn">15</sup>But others said, “He is Elijah.” Others said, “He is a prophet, or like one of the prophets.” 
+<sup class="vn">16</sup>But Herod, when he heard this, said, “This is John, whom I beheaded. He has risen from the dead.” 
+<sup class="vn">17</sup>For Herod himself had sent out and arrested John and bound him in prison for the sake of Herodias, his brother Philip’s wife, for he had married her. 
+<sup class="vn">18</sup>For John had said to Herod, “It is not lawful for you to have your brother’s wife.” 
+<sup class="vn">19</sup>Herodias set herself against him and desired to kill him, but she couldn’t, 
+<sup class="vn">20</sup>for Herod feared John, knowing that he was a righteous and holy man, and kept him safe. When he heard him, he did many things, and he heard him gladly. 
+</p>
+<p class="text">
+<sup class="vn">21</sup>Then a convenient day came when Herod on his birthday made a supper for his nobles, the high officers, and the chief men of Galilee. 
+<sup class="vn">22</sup>When the daughter of Herodias herself came in and danced, she pleased Herod and those sitting with him. The king said to the young lady, “Ask me whatever you want, and I will give it to you.” 
+<sup class="vn">23</sup>He swore to her, “Whatever you ask of me, I will give you, up to half of my kingdom.” 
+</p>
+<p class="text">
+<sup class="vn">24</sup>She went out and said to her mother, “What shall I ask?” She said, “The head of John the Baptizer.” 
+</p>
+<p class="text">
+<sup class="vn">25</sup>She came in immediately with haste to the king and requested, “I want you to give me right now the head of John the Baptizer on a platter.” 
+</p>
+<p class="text">
+<sup class="vn">26</sup>The king was exceedingly sorry, but for the sake of his oaths and of his dinner guests, he didn’t wish to refuse her. 
+<sup class="vn">27</sup>Immediately the king sent out a soldier of his guard and commanded to bring John’s head; and he went and beheaded him in the prison, 
+<sup class="vn">28</sup>and brought his head on a platter, and gave it to the young lady; and the young lady gave it to her mother. 
+</p>
+<p class="text">
+<sup class="vn">29</sup>When his disciples heard this, they came and took up his corpse and laid it in a tomb. 
+</p>
+<p class="text">
+<sup class="vn">30</sup>The apostles gathered themselves together to Jesus, and they told him all things, whatever they had done, and whatever they had taught. 
+<sup class="vn">31</sup>He said to them, <span class="red">“Come away into a deserted place, and rest awhile.”</span> For there were many coming and going, and they had no leisure so much as to eat. 
+<sup class="vn">32</sup>They went away in the boat to a deserted place by themselves. 
+<sup class="vn">33</sup>They<sup class="fn"><a id="ref-Gospel-6-1" href="#fn-Gospel-6-1">1</a></sup> saw them going, and many recognized him and ran there on foot from all the cities. They arrived before them and came together to him. 
+<sup class="vn">34</sup>Jesus came out, saw a great multitude, and he had compassion on them because they were like sheep without a shepherd; and he began to teach them many things. 
+<sup class="vn">35</sup>When it was late in the day, his disciples came to him and said, “This place is deserted, and it is late in the day. 
+<sup class="vn">36</sup>Send them away, that they may go into the surrounding country and villages and buy themselves bread, for they have nothing to eat.” 
+</p>
+<p class="text">
+<sup class="vn">37</sup>But he answered them, <span class="red">“You give them something to eat.”</span> They asked him, “Shall we go and buy two hundred denarii<sup class="fn"><a id="ref-Gospel-6-2" href="#fn-Gospel-6-2">2</a></sup> worth of bread and give them something to eat?” 
+</p>
+<p class="text">
+<sup class="vn">38</sup>He said to them, <span class="red">“How many loaves do you have? Go see.”</span> When they knew, they said, “Five, and two fish.” 
+</p>
+<p class="text">
+<sup class="vn">39</sup>He commanded them that everyone should sit down in groups on the green grass. 
+<sup class="vn">40</sup>They sat down in ranks, by hundreds and by fifties. 
+<sup class="vn">41</sup>He took the five loaves and the two fish; and looking up to heaven, he blessed and broke the loaves, and he gave to his disciples to set before them, and he divided the two fish among them all. 
+<sup class="vn">42</sup>They all ate and were filled. 
+<sup class="vn">43</sup>They took up twelve baskets full of broken pieces and also of the fish. 
+<sup class="vn">44</sup>Those who ate the loaves were<sup class="fn"><a id="ref-Gospel-6-3" href="#fn-Gospel-6-3">3</a></sup> five thousand men. 
+</p>
+<p class="text">
+<sup class="vn">45</sup>Immediately he made his disciples get into the boat and go ahead to the other side, to Bethsaida, while he himself sent the multitude away. 
+<sup class="vn">46</sup>After he had taken leave of them, he went up the mountain to pray. 
+</p>
+<p class="text">
+<sup class="vn">47</sup>When evening had come, the boat was in the middle of the sea, and he was alone on the land. 
+<sup class="vn">48</sup>Seeing them distressed in rowing, for the wind was contrary to them, about the fourth watch of the night he came to them, walking on the sea; and he would have passed by them, 
+<sup class="vn">49</sup>but they, when they saw him walking on the sea, supposed that it was a ghost, and cried out; 
+<sup class="vn">50</sup>for they all saw him and were troubled. But he immediately spoke with them and said to them, <span class="red">“Cheer up! It is I!<sup class="fn"><a id="ref-Gospel-6-4" href="#fn-Gospel-6-4">4</a></sup> Don’t be afraid.”</span> 
+<sup class="vn">51</sup>He got into the boat with them; and the wind ceased, and they were very amazed among themselves, and marveled; 
+<sup class="vn">52</sup>for they hadn’t understood about the loaves, but their hearts were hardened. 
+</p>
+<p class="text">
+<sup class="vn">53</sup>When they had crossed over, they came to land at Gennesaret and moored to the shore. 
+<sup class="vn">54</sup>When they had come out of the boat, immediately the people recognized him, 
+<sup class="vn">55</sup>and ran around that whole region, and began to bring those who were sick on their mats to where they heard he was. 
+<sup class="vn">56</sup>Wherever he entered—into villages, or into cities, or into the country—they laid the sick in the marketplaces and begged him that they might just touch the fringe<sup class="fn"><a id="ref-Gospel-6-5" href="#fn-Gospel-6-5">5</a></sup> of his garment; and as many as touched him were made well. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-6-1"><span class="fnref">6:33</span> TR reads “The multitudes” instead of “They”</li>
+<li id="fn-Gospel-6-2"><span class="fnref">6:37</span> 200 denarii was about 7 or 8 months wages for an agricultural laborer.</li>
+<li id="fn-Gospel-6-3"><span class="fnref">6:44</span> TR adds “about”</li>
+<li id="fn-Gospel-6-4"><span class="fnref">6:50</span> or, “I AM!”</li>
+<li id="fn-Gospel-6-5"><span class="fnref">6:56</span> or, tassel</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>6:48 — See Job 9:8</p></div>
+<h2 class="chapter" id="gospel-7">GOSPEL 7</h2>
+<p class="text">
+<sup class="vn">1</sup>Then the Pharisees and some of the scribes gathered together to him, having come from Jerusalem. 
+<sup class="vn">2</sup>Now when they saw some of his disciples eating bread with defiled, that is unwashed, hands, they found fault. 
+<sup class="vn">3</sup>(For the Pharisees and all the Jews don’t eat unless they wash their hands and forearms, holding to the tradition of the elders. 
+<sup class="vn">4</sup>They don’t eat when they come from the marketplace unless they bathe themselves, and there are many other things which they have received to hold to: washings of cups, pitchers, bronze vessels, and couches.) 
+<sup class="vn">5</sup>The Pharisees and the scribes asked him, “Why don’t your disciples walk according to the tradition of the elders, but eat their bread with unwashed hands?” 
+</p>
+<p class="text">
+<sup class="vn">6</sup>He answered them, <span class="red">“Well did Isaiah prophesy of you hypocrites, as it is written, ‘This people honors me with their lips, but their heart is far from me.</span> 
+</p>
+<p class="text">
+<sup class="vn">7</sup><span class="red">They worship me in vain, teaching as doctrines the commandments of men.’</span> 
+</p>
+<p class="text">
+<sup class="vn">8</sup><span class="red">“For you set aside the commandment of God, and hold tightly to the tradition of men—the washing of pitchers and cups, and you do many other such things.”</span> 
+<sup class="vn">9</sup>He said to them, <span class="red">“Full well do you reject the commandment of God, that you may keep your tradition.</span> 
+<sup class="vn">10</sup><span class="red">For Moses said, ‘Honor your father and your mother;’ and, ‘He who speaks evil of father or mother, let him be put to death.’</span> 
+<sup class="vn">11</sup><span class="red">But you say, ‘If a man tells his father or his mother, “Whatever profit you might have received from me is Corban,”’”</span><sup class="fn"><a id="ref-Gospel-7-1" href="#fn-Gospel-7-1">1</a></sup> that is to say, given to God, 
+<sup class="vn">12</sup><span class="red">“then you no longer allow him to do anything for his father or his mother,</span> 
+<sup class="vn">13</sup><span class="red">making void the word of God by your tradition which you have handed down. You do many things like this.”</span> 
+</p>
+<p class="text">
+<sup class="vn">14</sup>He called all the multitude to himself and said to them, <span class="red">“Hear me, all of you, and understand.</span> 
+<sup class="vn">15</sup><span class="red">There is nothing from outside of the man that going into him can defile him; but the things which proceed out of the man are those that defile the man.</span> 
+<sup class="vn">16</sup><span class="red">If anyone has ears to hear, let him hear!”</span><sup class="fn"><a id="ref-Gospel-7-2" href="#fn-Gospel-7-2">2</a></sup> 
+</p>
+<p class="text">
+<sup class="vn">17</sup>When he had entered into a house away from the multitude, his disciples asked him about the parable. 
+<sup class="vn">18</sup>He said to them, <span class="red">“Are you also without understanding? Don’t you perceive that whatever goes into the man from outside can’t defile him,</span> 
+<sup class="vn">19</sup><span class="red">because it doesn’t go into his heart, but into his stomach, then into the latrine, making all foods clean?”</span><sup class="fn"><a id="ref-Gospel-7-3" href="#fn-Gospel-7-3">3</a></sup> 
+<sup class="vn">20</sup>He said, <span class="red">“That which proceeds out of the man, that defiles the man.</span> 
+<sup class="vn">21</sup><span class="red">For from within, out of the hearts of men, proceed evil thoughts, adulteries, sexual sins, murders, thefts,</span> 
+<sup class="vn">22</sup><span class="red">covetings, wickedness, deceit, lustful desires, an evil eye, blasphemy, pride, and foolishness.</span> 
+<sup class="vn">23</sup><span class="red">All these evil things come from within and defile the man.”</span> 
+</p>
+<p class="text">
+<sup class="vn">24</sup>From there he arose and went away into the borders of Tyre and Sidon. He entered into a house and didn’t want anyone to know it, but he couldn’t escape notice. 
+<sup class="vn">25</sup>For a woman whose little daughter had an unclean spirit, having heard of him, came and fell down at his feet. 
+<sup class="vn">26</sup>Now the woman was a Greek, a Syrophoenician by race. She begged him that he would cast the demon out of her daughter. 
+<sup class="vn">27</sup>But Jesus said to her, <span class="red">“Let the children be filled first, for it is not appropriate to take the children’s bread and throw it to the dogs.”</span> 
+</p>
+<p class="text">
+<sup class="vn">28</sup>But she answered him, “Yes, Lord. Yet even the dogs under the table eat the children’s crumbs.” 
+</p>
+<p class="text">
+<sup class="vn">29</sup>He said to her, <span class="red">“For this saying, go your way. The demon has gone out of your daughter.”</span> 
+</p>
+<p class="text">
+<sup class="vn">30</sup>She went away to her house, and found the child having been laid on the bed, with the demon gone out. 
+</p>
+<p class="text">
+<sup class="vn">31</sup>Again he departed from the borders of Tyre and Sidon, and came to the sea of Galilee through the middle of the region of Decapolis. 
+<sup class="vn">32</sup>They brought to him one who was deaf and had an impediment in his speech. They begged him to lay his hand on him. 
+<sup class="vn">33</sup>He took him aside from the multitude privately and put his fingers into his ears; and he spat and touched his tongue. 
+<sup class="vn">34</sup>Looking up to heaven, he sighed, and said to him, <span class="red">“Ephphatha!”</span> that is, “Be opened!” 
+<sup class="vn">35</sup>Immediately his ears were opened, and the impediment of his tongue was released, and he spoke clearly. 
+<sup class="vn">36</sup>He commanded them that they should tell no one, but the more he commanded them, so much the more widely they proclaimed it. 
+<sup class="vn">37</sup>They were astonished beyond measure, saying, “He has done all things well. He makes even the deaf hear and the mute speak!” 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-7-1"><span class="fnref">7:11</span> Corban is a Hebrew word for an offering devoted to God.</li>
+<li id="fn-Gospel-7-2"><span class="fnref">7:16</span> NU omits verse 16.</li>
+<li id="fn-Gospel-7-3"><span class="fnref">7:19</span> NU ends Jesus’ direct quote and question after “latrine”, ending the verse with “Thus he declared all foods clean.</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>7:7 — Isaiah 29:13 · 7:10 — Exodus 20:12; Deuteronomy 5:16 · 7:10 — Exodus 21:17; Leviticus 20:9</p></div>
+<h2 class="chapter" id="gospel-8">GOSPEL 8</h2>
+<p class="text">
+<sup class="vn">1</sup>In those days, when there was a very great multitude, and they had nothing to eat, Jesus called his disciples to himself and said to them, 
+<sup class="vn">2</sup><span class="red">“I have compassion on the multitude, because they have stayed with me now three days and have nothing to eat.</span> 
+<sup class="vn">3</sup><span class="red">If I send them away fasting to their home, they will faint on the way, for some of them have come a long way.”</span> 
+</p>
+<p class="text">
+<sup class="vn">4</sup>His disciples answered him, “From where could one satisfy these people with bread here in a deserted place?” 
+</p>
+<p class="text">
+<sup class="vn">5</sup>He asked them, <span class="red">“How many loaves do you have?”</span> They said, “Seven.” 
+</p>
+<p class="text">
+<sup class="vn">6</sup>He commanded the multitude to sit down on the ground, and he took the seven loaves. Having given thanks, he broke them and gave them to his disciples to serve, and they served the multitude. 
+<sup class="vn">7</sup>They also had a few small fish. Having blessed them, he said to serve these also. 
+<sup class="vn">8</sup>They ate and were filled. They took up seven baskets of broken pieces that were left over. 
+<sup class="vn">9</sup>Those who had eaten were about four thousand. Then he sent them away. 
+</p>
+<p class="text">
+<sup class="vn">10</sup>Immediately he entered into the boat with his disciples and came into the region of Dalmanutha. 
+<sup class="vn">11</sup>The Pharisees came out and began to question him, seeking from him a sign from heaven and testing him. 
+<sup class="vn">12</sup>He sighed deeply in his spirit and said, <span class="red">“Why does this generation<sup class="fn"><a id="ref-Gospel-8-1" href="#fn-Gospel-8-1">1</a></sup> seek a sign? Most certainly I tell you, no sign will be given to this generation.”</span> 
+</p>
+<p class="text">
+<sup class="vn">13</sup>He left them, and again entering into the boat, departed to the other side. 
+<sup class="vn">14</sup>They forgot to take bread; and they didn’t have more than one loaf in the boat with them. 
+<sup class="vn">15</sup>He warned them, saying, <span class="red">“Take heed: beware of the yeast of the Pharisees and the yeast of Herod.”</span> 
+</p>
+<p class="text">
+<sup class="vn">16</sup>They reasoned with one another, saying, “It’s because we have no bread.” 
+</p>
+<p class="text">
+<sup class="vn">17</sup>Jesus, perceiving it, said to them, <span class="red">“Why do you reason that it’s because you have no bread? Don’t you perceive yet or understand? Is your heart still hardened?</span> 
+<sup class="vn">18</sup><span class="red">Having eyes, don’t you see? Having ears, don’t you hear? Don’t you remember?</span> 
+<sup class="vn">19</sup><span class="red">When I broke the five loaves among the five thousand, how many baskets full of broken pieces did you take up?”</span> They told him, “Twelve.” 
+</p>
+<p class="text">
+<sup class="vn">20</sup><span class="red">“When the seven loaves fed the four thousand, how many baskets full of broken pieces did you take up?”</span> They told him, “Seven.” 
+</p>
+<p class="text">
+<sup class="vn">21</sup>He asked them, <span class="red">“Don’t you understand yet?”</span> 
+</p>
+<p class="text">
+<sup class="vn">22</sup>He came to Bethsaida. They brought a blind man to him and begged him to touch him. 
+<sup class="vn">23</sup>He took hold of the blind man by the hand, and brought him out of the village. When he had spat on his eyes, and laid his hands on him, he asked him if he saw anything. 
+</p>
+<p class="text">
+<sup class="vn">24</sup>He looked up, and said, “I see men, but I see them like walking trees.” 
+</p>
+<p class="text">
+<sup class="vn">25</sup>Then again he laid his hands on his eyes. He looked intently, and was restored, and saw everyone clearly. 
+<sup class="vn">26</sup>He sent him away to his house, saying, <span class="red">“Don’t enter into the village, nor tell anyone in the village.”</span> 
+</p>
+<p class="text">
+<sup class="vn">27</sup>Jesus went out, with his disciples, into the villages of Caesarea Philippi. On the way he asked his disciples, <span class="red">“Who do men say that I am?”</span> 
+</p>
+<p class="text">
+<sup class="vn">28</sup>They told him, “John the Baptizer, and others say Elijah, but others, one of the prophets.” 
+</p>
+<p class="text">
+<sup class="vn">29</sup>He said to them, <span class="red">“But who do you say that I am?”</span> Peter answered, “You are the Christ.” 
+</p>
+<p class="text">
+<sup class="vn">30</sup>He commanded them that they should tell no one about him. 
+<sup class="vn">31</sup>He began to teach them that the Son of Man must suffer many things, and be rejected by the elders, the chief priests, and the scribes, and be killed, and after three days rise again. 
+<sup class="vn">32</sup>He spoke to them openly. Peter took him and began to rebuke him. 
+<sup class="vn">33</sup>But he, turning around and seeing his disciples, rebuked Peter, and said, <span class="red">“Get behind me, Satan! For you have in mind not the things of God, but the things of men.”</span> 
+</p>
+<p class="text">
+<sup class="vn">34</sup>He called the multitude to himself with his disciples and said to them, <span class="red">“Whoever wants to come after me, let him deny himself, and take up his cross, and follow me.</span> 
+<sup class="vn">35</sup><span class="red">For whoever wants to save his life will lose it; and whoever will lose his life for my sake and the sake of the Gospel will save it.</span> 
+<sup class="vn">36</sup><span class="red">For what does it profit a man to gain the whole world and forfeit his life?</span> 
+<sup class="vn">37</sup><span class="red">For what will a man give in exchange for his life?</span> 
+<sup class="vn">38</sup><span class="red">For whoever will be ashamed of me and of my words in this adulterous and sinful generation, the Son of Man also will be ashamed of him when he comes in his Father’s glory with the holy angels.”</span> 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-8-1"><span class="fnref">8:12</span> The word translated “generation” here (genea) could also be translated “people”, “race”, or “family”.</li>
+</ol></div>
+<h2 class="chapter" id="gospel-9">GOSPEL 9</h2>
+<p class="text">
+<sup class="vn">1</sup>He said to them, <span class="red">“Most certainly I tell you, there are some standing here who will in no way taste death until they see God’s Kingdom come with power.”</span> 
+</p>
+<p class="text">
+<sup class="vn">2</sup>After six days Jesus took with him Peter, James, and John, and brought them up onto a high mountain privately by themselves, and he was changed into another form in front of them. 
+<sup class="vn">3</sup>His clothing became glistening, exceedingly white, like snow, such as no launderer on earth can whiten them. 
+<sup class="vn">4</sup>Elijah and Moses appeared to them, and they were talking with Jesus. 
+</p>
+<p class="text">
+<sup class="vn">5</sup>Peter answered Jesus, “Rabbi, it is good for us to be here. Let’s make three tents: one for you, one for Moses, and one for Elijah.” 
+<sup class="vn">6</sup>For he didn’t know what to say, for they were very afraid. 
+</p>
+<p class="text">
+<sup class="vn">7</sup>A cloud came, overshadowing them, and a voice came out of the cloud, “This is my beloved Son. Listen to him.” 
+</p>
+<p class="text">
+<sup class="vn">8</sup>Suddenly looking around, they saw no one with them any more, except Jesus only. 
+</p>
+<p class="text">
+<sup class="vn">9</sup>As they were coming down from the mountain, he commanded them that they should tell no one what things they had seen, until after the Son of Man had risen from the dead. 
+<sup class="vn">10</sup>They kept this saying to themselves, questioning what the “rising from the dead” meant. 
+</p>
+<p class="text">
+<sup class="vn">11</sup>They asked him, saying, “Why do the scribes say that Elijah must come first?” 
+</p>
+<p class="text">
+<sup class="vn">12</sup>He said to them, <span class="red">“Elijah indeed comes first, and restores all things. How is it written about the Son of Man, that he should suffer many things and be despised?</span> 
+<sup class="vn">13</sup><span class="red">But I tell you that Elijah has come, and they have also done to him whatever they wanted to, even as it is written about him.”</span> 
+</p>
+<p class="text">
+<sup class="vn">14</sup>Coming to the disciples, he saw a great multitude around them, and scribes questioning them. 
+<sup class="vn">15</sup>Immediately all the multitude, when they saw him, were greatly amazed, and running to him, greeted him. 
+<sup class="vn">16</sup>He asked the scribes, <span class="red">“What are you asking them?”</span> 
+</p>
+<p class="text">
+<sup class="vn">17</sup>One of the multitude answered, “Teacher, I brought to you my son, who has a mute spirit; 
+<sup class="vn">18</sup>and wherever it seizes him, it throws him down; and he foams at the mouth, grinds his teeth, and becomes rigid. I asked your disciples to cast it out, and they weren’t able.” 
+</p>
+<p class="text">
+<sup class="vn">19</sup>He answered him, <span class="red">“Unbelieving generation, how long shall I be with you? How long shall I bear with you? Bring him to me.”</span> 
+</p>
+<p class="text">
+<sup class="vn">20</sup>They brought him to him, and when he saw him, immediately the spirit convulsed him and he fell on the ground, wallowing and foaming at the mouth. 
+</p>
+<p class="text">
+<sup class="vn">21</sup>He asked his father, <span class="red">“How long has it been since this has been happening to him?”</span> He said, “From childhood. 
+</p>
+<p class="text">
+<sup class="vn">22</sup>Often it has cast him both into the fire and into the water to destroy him. But if you can do anything, have compassion on us and help us.” 
+</p>
+<p class="text">
+<sup class="vn">23</sup>Jesus said to him, <span class="red">“If you can believe, all things are possible to him who believes.”</span> 
+</p>
+<p class="text">
+<sup class="vn">24</sup>Immediately the father of the child cried out with tears, “I believe. Help my unbelief!” 
+</p>
+<p class="text">
+<sup class="vn">25</sup>When Jesus saw that a multitude came running together, he rebuked the unclean spirit, saying to him, <span class="red">“You mute and deaf spirit, I command you, come out of him, and never enter him again!”</span> 
+</p>
+<p class="text">
+<sup class="vn">26</sup>After crying out and convulsing him greatly, it came out of him. The boy became like one dead, so much that most of them said, “He is dead.” 
+<sup class="vn">27</sup>But Jesus took him by the hand and raised him up; and he arose. 
+</p>
+<p class="text">
+<sup class="vn">28</sup>When he had come into the house, his disciples asked him privately, “Why couldn’t we cast it out?” 
+</p>
+<p class="text">
+<sup class="vn">29</sup>He said to them, <span class="red">“This kind can come out by nothing but by prayer and fasting.”</span> 
+</p>
+<p class="text">
+<sup class="vn">30</sup>They went out from there and passed through Galilee. He didn’t want anyone to know it, 
+<sup class="vn">31</sup>for he was teaching his disciples, and said to them, <span class="red">“The Son of Man is being handed over to the hands of men, and they will kill him; and when he is killed, on the third day he will rise again.”</span> 
+</p>
+<p class="text">
+<sup class="vn">32</sup>But they didn’t understand the saying, and were afraid to ask him. 
+</p>
+<p class="text">
+<sup class="vn">33</sup>He came to Capernaum, and when he was in the house he asked them, <span class="red">“What were you arguing among yourselves on the way?”</span> 
+</p>
+<p class="text">
+<sup class="vn">34</sup>But they were silent, for they had disputed with one another on the way about who was the greatest. 
+</p>
+<p class="text">
+<sup class="vn">35</sup>He sat down and called the twelve; and he said to them, <span class="red">“If any man wants to be first, he shall be last of all, and servant of all.”</span> 
+<sup class="vn">36</sup>He took a little child and set him in the middle of them. Taking him in his arms, he said to them, 
+<sup class="vn">37</sup><span class="red">“Whoever receives one such little child in my name receives me; and whoever receives me, doesn’t receive me, but him who sent me.”</span> 
+</p>
+<p class="text">
+<sup class="vn">38</sup>John said to him, “Teacher, we saw someone who doesn’t follow us casting out demons in your name; and we forbade him, because he doesn’t follow us.” 
+</p>
+<p class="text">
+<sup class="vn">39</sup>But Jesus said, <span class="red">“Don’t forbid him, for there is no one who will do a mighty work in my name and be able quickly to speak evil of me.</span> 
+<sup class="vn">40</sup><span class="red">For whoever is not against us is on our side.</span> 
+<sup class="vn">41</sup><span class="red">For whoever will give you a cup of water to drink in my name because you are Christ’s, most certainly I tell you, he will in no way lose his reward.</span> 
+</p>
+<p class="text">
+<sup class="vn">42</sup><span class="red">“Whoever will cause one of these little ones who believe in me to stumble, it would be better for him if he were thrown into the sea with a millstone hung around his neck.</span> 
+<sup class="vn">43</sup><span class="red">If your hand causes you to stumble, cut it off. It is better for you to enter into life maimed, rather than having your two hands to go into Gehenna, <sup class="fn"><a id="ref-Gospel-9-1" href="#fn-Gospel-9-1">1</a></sup> into the unquenchable fire,</span> 
+<sup class="vn">44</sup><span class="red">‘where their worm doesn’t die, and the fire is not quenched.’ <sup class="fn"><a id="ref-Gospel-9-2" href="#fn-Gospel-9-2">2</a></sup></span> 
+<sup class="vn">45</sup><span class="red">If your foot causes you to stumble, cut it off. It is better for you to enter into life lame, rather than having your two feet to be cast into Gehenna, <sup class="fn"><a id="ref-Gospel-9-3" href="#fn-Gospel-9-3">3</a></sup> into the fire that will never be quenched—</span> 
+<sup class="vn">46</sup><span class="red">‘where their worm doesn’t die, and the fire is not quenched.’ <sup class="fn"><a id="ref-Gospel-9-4" href="#fn-Gospel-9-4">4</a></sup></span> 
+<sup class="vn">47</sup><span class="red">If your eye causes you to stumble, throw it out. It is better for you to enter into God’s Kingdom with one eye, rather than having two eyes to be cast into the Gehenna<sup class="fn"><a id="ref-Gospel-9-5" href="#fn-Gospel-9-5">5</a></sup> of fire,</span> 
+<sup class="vn">48</sup><span class="red">‘where their worm doesn’t die, and the fire is not quenched.’</span> 
+<sup class="vn">49</sup><span class="red">For everyone will be salted with fire, and every sacrifice will be seasoned with salt.</span> 
+<sup class="vn">50</sup><span class="red">Salt is good, but if the salt has lost its saltiness, with what will you season it? Have salt in yourselves, and be at peace with one another.”</span> 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-9-1"><span class="fnref">9:43</span> or, Hell</li>
+<li id="fn-Gospel-9-2"><span class="fnref">9:44</span> NU omits verse 44.</li>
+<li id="fn-Gospel-9-3"><span class="fnref">9:45</span> or, Hell</li>
+<li id="fn-Gospel-9-4"><span class="fnref">9:46</span> NU omits verse 46.</li>
+<li id="fn-Gospel-9-5"><span class="fnref">9:47</span> or, Hell</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>9:44 — Isaiah 66:24 · 9:48 — Isaiah 66:24</p></div>
+<h2 class="chapter" id="gospel-10">GOSPEL 10</h2>
+<p class="text">
+<sup class="vn">1</sup>He arose from there and came into the borders of Judea and beyond the Jordan. Multitudes came together to him again. As he usually did, he was again teaching them. 
+</p>
+<p class="text">
+<sup class="vn">2</sup>Pharisees came to him testing him, and asked him, “Is it lawful for a man to divorce his wife?” 
+</p>
+<p class="text">
+<sup class="vn">3</sup>He answered, <span class="red">“What did Moses command you?”</span> 
+</p>
+<p class="text">
+<sup class="vn">4</sup>They said, “Moses allowed a certificate of divorce to be written, and to divorce her.” 
+</p>
+<p class="text">
+<sup class="vn">5</sup>But Jesus said to them, <span class="red">“For your hardness of heart, he wrote you this commandment.</span> 
+<sup class="vn">6</sup><span class="red">But from the beginning of the creation, God made them male and female.</span> 
+<sup class="vn">7</sup><span class="red">For this cause a man will leave his father and mother, and will join to his wife,</span> 
+<sup class="vn">8</sup><span class="red">and the two will become one flesh, so that they are no longer two, but one flesh.</span> 
+<sup class="vn">9</sup><span class="red">What therefore God has joined together, let no man separate.”</span> 
+</p>
+<p class="text">
+<sup class="vn">10</sup>In the house, his disciples asked him again about the same matter. 
+<sup class="vn">11</sup>He said to them, <span class="red">“Whoever divorces his wife and marries another commits adultery against her.</span> 
+<sup class="vn">12</sup><span class="red">If a woman herself divorces her husband and marries another, she commits adultery.”</span> 
+</p>
+<p class="text">
+<sup class="vn">13</sup>They were bringing to him little children, that he should touch them, but the disciples rebuked those who were bringing them. 
+<sup class="vn">14</sup>But when Jesus saw it, he was moved with indignation and said to them, <span class="red">“Allow the little children to come to me! Don’t forbid them, for God’s Kingdom belongs to such as these.</span> 
+<sup class="vn">15</sup><span class="red">Most certainly I tell you, whoever will not receive God’s Kingdom like a little child, he will in no way enter into it.”</span> 
+<sup class="vn">16</sup>He took them in his arms and blessed them, laying his hands on them. 
+</p>
+<p class="text">
+<sup class="vn">17</sup>As he was going out into the way, one ran to him, knelt before him, and asked him, “Good Teacher, what shall I do that I may inherit eternal life?” 
+</p>
+<p class="text">
+<sup class="vn">18</sup>Jesus said to him, <span class="red">“Why do you call me good? No one is good except one—God.</span> 
+<sup class="vn">19</sup><span class="red">You know the commandments: ‘Do not murder,’ ‘Do not commit adultery,’ ‘Do not steal,’ ‘Do not give false testimony,’ ‘Do not defraud,’ ‘Honor your father and mother.’”</span> 
+</p>
+<p class="text">
+<sup class="vn">20</sup>He said to him, “Teacher, I have observed all these things from my youth.” 
+</p>
+<p class="text">
+<sup class="vn">21</sup>Jesus looking at him loved him, and said to him, <span class="red">“One thing you lack. Go, sell whatever you have and give to the poor, and you will have treasure in heaven; and come, follow me, taking up the cross.”</span><sup class="fn"><a id="ref-Gospel-10-1" href="#fn-Gospel-10-1">1</a></sup> 
+</p>
+<p class="text">
+<sup class="vn">22</sup>But his face fell at that saying, and he went away sorrowful, for he was one who had great possessions. 
+</p>
+<p class="text">
+<sup class="vn">23</sup>Jesus looked around and said to his disciples, <span class="red">“How difficult it is for those who have riches to enter into God’s Kingdom!”</span> 
+</p>
+<p class="text">
+<sup class="vn">24</sup>The disciples were amazed at his words. But Jesus answered again, <span class="red">“Children, how hard it is for those who trust in riches to enter into God’s Kingdom!</span> 
+<sup class="vn">25</sup><span class="red">It is easier for a camel to go through a needle’s eye than for a rich man to enter into God’s Kingdom.”</span> 
+</p>
+<p class="text">
+<sup class="vn">26</sup>They were exceedingly astonished, saying to him, “Then who can be saved?” 
+</p>
+<p class="text">
+<sup class="vn">27</sup>Jesus, looking at them, said, <span class="red">“With men it is impossible, but not with God, for all things are possible with God.”</span> 
+</p>
+<p class="text">
+<sup class="vn">28</sup>Peter began to tell him, “Behold, we have left all and have followed you.” 
+</p>
+<p class="text">
+<sup class="vn">29</sup>Jesus said, <span class="red">“Most certainly I tell you, there is no one who has left house, or brothers, or sisters, or father, or mother, or wife, or children, or land, for my sake, and for the sake of the Gospel,</span> 
+<sup class="vn">30</sup><span class="red">but he will receive one hundred times more now in this time: houses, brothers, sisters, mothers, children, and land, with persecutions; and in the age to come eternal life.</span> 
+<sup class="vn">31</sup><span class="red">But many who are first will be last, and the last first.”</span> 
+</p>
+<p class="text">
+<sup class="vn">32</sup>They were on the way, going up to Jerusalem; and Jesus was going in front of them, and they were amazed; and those who followed were afraid. He again took the twelve, and began to tell them the things that were going to happen to him. 
+<sup class="vn">33</sup><span class="red">“Behold, we are going up to Jerusalem. The Son of Man will be delivered to the chief priests and the scribes. They will condemn him to death, and will deliver him to the Gentiles.</span> 
+<sup class="vn">34</sup><span class="red">They will mock him, spit on him, scourge him, and kill him. On the third day he will rise again.”</span> 
+</p>
+<p class="text">
+<sup class="vn">35</sup>James and John, the sons of Zebedee, came near to him, saying, “Teacher, we want you to do for us whatever we will ask.” 
+</p>
+<p class="text">
+<sup class="vn">36</sup>He said to them, <span class="red">“What do you want me to do for you?”</span> 
+</p>
+<p class="text">
+<sup class="vn">37</sup>They said to him, “Grant to us that we may sit, one at your right hand and one at your left hand, in your glory.” 
+</p>
+<p class="text">
+<sup class="vn">38</sup>But Jesus said to them, <span class="red">“You don’t know what you are asking. Are you able to drink the cup that I drink, and to be baptized with the baptism that I am baptized with?”</span> 
+</p>
+<p class="text">
+<sup class="vn">39</sup>They said to him, “We are able.” Jesus said to them, <span class="red">“You shall indeed drink the cup that I drink, and you shall be baptized with the baptism that I am baptized with;</span> 
+</p>
+<p class="text">
+<sup class="vn">40</sup><span class="red">but to sit at my right hand and at my left hand is not mine to give, but for whom it has been prepared.”</span> 
+</p>
+<p class="text">
+<sup class="vn">41</sup>When the ten heard it, they began to be indignant toward James and John. 
+</p>
+<p class="text">
+<sup class="vn">42</sup>Jesus summoned them and said to them, <span class="red">“You know that they who are recognized as rulers over the nations lord it over them, and their great ones exercise authority over them.</span> 
+<sup class="vn">43</sup><span class="red">But it shall not be so among you, but whoever wants to become great among you shall be your servant.</span> 
+<sup class="vn">44</sup><span class="red">Whoever of you wants to become first among you shall be bondservant of all.</span> 
+<sup class="vn">45</sup><span class="red">For the Son of Man also came not to be served but to serve, and to give his life as a ransom for many.”</span> 
+</p>
+<p class="text">
+<sup class="vn">46</sup>They came to Jericho. As he went out from Jericho with his disciples and a great multitude, the son of Timaeus, Bartimaeus, a blind beggar, was sitting by the road. 
+<sup class="vn">47</sup>When he heard that it was Jesus the Nazarene, he began to cry out and say, “Jesus, you son of David, have mercy on me!” 
+<sup class="vn">48</sup>Many rebuked him, that he should be quiet, but he cried out much more, “You son of David, have mercy on me!” 
+</p>
+<p class="text">
+<sup class="vn">49</sup>Jesus stood still and said, <span class="red">“Call him.”</span> They called the blind man, saying to him, “Cheer up! Get up. He is calling you!” 
+</p>
+<p class="text">
+<sup class="vn">50</sup>He, casting away his cloak, sprang up, and came to Jesus. 
+</p>
+<p class="text">
+<sup class="vn">51</sup>Jesus asked him, <span class="red">“What do you want me to do for you?”</span> The blind man said to him, “Rabboni,<sup class="fn"><a id="ref-Gospel-10-2" href="#fn-Gospel-10-2">2</a></sup> that I may see again.” 
+</p>
+<p class="text">
+<sup class="vn">52</sup>Jesus said to him, <span class="red">“Go your way. Your faith has made you well.”</span> Immediately he received his sight and followed Jesus on the way. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-10-1"><span class="fnref">10:21</span> “Taking up the cross” (Greek ἄρας τὸν σταυρόν) stands in the Byzantine Majority and Textus Receptus tradition — the received text of the Gospel (so the WEB base text and KJV). The 021 keeps it in the text (decision 2026-10-20). At 8:34 the phrase is carried on every manuscript line.</li>
+<li id="fn-Gospel-10-2"><span class="fnref">10:51</span> Rabboni is a transliteration of the Aramaic word for “great teacher.”</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>10:6 — Garden 1:27 · 10:8 — Garden 2:24 · 10:19 — Exodus 20:12-16; Deuteronomy 5:16-20</p></div>
+<h2 class="chapter" id="gospel-11">GOSPEL 11</h2>
+<p class="text">
+<sup class="vn">1</sup>When they came near to Jerusalem, to Bethsphage<sup class="fn"><a id="ref-Gospel-11-1" href="#fn-Gospel-11-1">1</a></sup> and Bethany, at the Mount of Olives, he sent two of his disciples 
+<sup class="vn">2</sup>and said to them, <span class="red">“Go your way into the village that is opposite you. Immediately as you enter into it, you will find a young donkey tied, on which no one has sat. Untie him and bring him.</span> 
+<sup class="vn">3</sup><span class="red">If anyone asks you, ‘Why are you doing this?’ say, ‘The Lord needs him;’ and immediately he will send him back here.”</span> 
+</p>
+<p class="text">
+<sup class="vn">4</sup>They went away, and found a young donkey tied at the door outside in the open street, and they untied him. 
+<sup class="vn">5</sup>Some of those who stood there asked them, “What are you doing, untying the young donkey?” 
+<sup class="vn">6</sup>They said to them just as Jesus had said, and they let them go. 
+</p>
+<p class="text">
+<sup class="vn">7</sup>They brought the young donkey to Jesus and threw their garments on it, and Jesus sat on it. 
+<sup class="vn">8</sup>Many spread their garments on the way, and others were cutting down branches from the trees and spreading them on the road. 
+<sup class="vn">9</sup>Those who went in front and those who followed cried out, “Hosanna!<sup class="fn"><a id="ref-Gospel-11-2" href="#fn-Gospel-11-2">2</a></sup> Blessed is he who comes in the name of the Lord! 
+<sup class="vn">10</sup>Blessed is the kingdom of our father David that is coming in the name of the Lord! Hosanna in the highest!” 
+</p>
+<p class="text">
+<sup class="vn">11</sup>Jesus entered into the temple in Jerusalem. When he had looked around at everything, it being now evening, he went out to Bethany with the twelve. 
+</p>
+<p class="text">
+<sup class="vn">12</sup>The next day, when they had come out from Bethany, he was hungry. 
+<sup class="vn">13</sup>Seeing a fig tree afar off having leaves, he came to see if perhaps he might find anything on it. When he came to it, he found nothing but leaves, for it was not the season for figs. 
+<sup class="vn">14</sup>Jesus told it, <span class="red">“May no one ever eat fruit from you again!”</span> and his disciples heard it. 
+</p>
+<p class="text">
+<sup class="vn">15</sup>They came to Jerusalem, and Jesus entered into the temple and began to throw out those who sold and those who bought in the temple, and overthrew the money changers’ tables and the seats of those who sold the doves. 
+<sup class="vn">16</sup>He would not allow anyone to carry a container through the temple. 
+<sup class="vn">17</sup>He taught, saying to them, <span class="red">“Isn’t it written, ‘My house will be called a house of prayer for all the nations’? But you have made it a den of robbers!”</span> 
+</p>
+<p class="text">
+<sup class="vn">18</sup>The chief priests and the scribes heard it, and sought how they might destroy him. For they feared him, because all the multitude was astonished at his teaching. 
+</p>
+<p class="text">
+<sup class="vn">19</sup>When evening came, he went out of the city. 
+<sup class="vn">20</sup>As they passed by in the morning, they saw the fig tree withered away from the roots. 
+<sup class="vn">21</sup>Peter, remembering, said to him, “Rabbi, look! The fig tree which you cursed has withered away.” 
+</p>
+<p class="text">
+<sup class="vn">22</sup>Jesus answered them, <span class="red">“Have faith in God.</span> 
+<sup class="vn">23</sup><span class="red">For most certainly I tell you, whoever may tell this mountain, ‘Be taken up and cast into the sea,’ and doesn’t doubt in his heart, but believes that what he says is happening, he shall have whatever he says.</span> 
+<sup class="vn">24</sup><span class="red">Therefore I tell you, all things whatever you pray and ask for, believe that you have received them, and you shall have them.</span> 
+<sup class="vn">25</sup><span class="red">Whenever you stand praying, forgive, if you have anything against anyone; so that your Father, who is in heaven, may also forgive you your transgressions.</span> 
+<sup class="vn">26</sup><span class="red">But if you do not forgive, neither will your Father in heaven forgive your transgressions.”</span><sup class="fn"><a id="ref-Gospel-11-3" href="#fn-Gospel-11-3">3</a></sup> 
+</p>
+<p class="text">
+<sup class="vn">27</sup>They came again to Jerusalem, and as he was walking in the temple, the chief priests, the scribes, and the elders came to him, 
+<sup class="vn">28</sup>and they began saying to him, “By what authority do you do these things? Or who gave you this authority to do these things?” 
+</p>
+<p class="text">
+<sup class="vn">29</sup>Jesus said to them, <span class="red">“I will ask you one question. Answer me, and I will tell you by what authority I do these things.</span> 
+<sup class="vn">30</sup><span class="red">The baptism of John—was it from heaven, or from men? Answer me.”</span> 
+</p>
+<p class="text">
+<sup class="vn">31</sup>They reasoned with themselves, saying, “If we should say, ‘From heaven;’ he will say, ‘Why then did you not believe him?’ 
+<sup class="vn">32</sup>If we should say, ‘From men’”—they feared the people, for all held John to really be a prophet. 
+<sup class="vn">33</sup>They answered Jesus, “We don’t know.” Jesus said to them, <span class="red">“Neither will I tell you by what authority I do these things.”</span> 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-11-1"><span class="fnref">11:1</span> TR &amp; NU read “Bethphage” instead of “Bethsphage”</li>
+<li id="fn-Gospel-11-2"><span class="fnref">11:9</span> “Hosanna” means “save us” or “help us, we pray”.</li>
+<li id="fn-Gospel-11-3"><span class="fnref">11:26</span> NU omits verse 26.</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>11:9 — Psalms 118:25-26 · 11:17 — Isaiah 56:7 · 11:17 — Jeremiah 7:11</p></div>
+<h2 class="chapter" id="gospel-12">GOSPEL 12</h2>
+<p class="text">
+<sup class="vn">1</sup>He began to speak to them in parables. <span class="red">“A man planted a vineyard, put a hedge around it, dug a pit for the wine press, built a tower, rented it out to a farmer, and went into another country.</span> 
+<sup class="vn">2</sup><span class="red">When it was time, he sent a servant to the farmer to get from the farmer his share of the fruit of the vineyard.</span> 
+<sup class="vn">3</sup><span class="red">They took him, beat him, and sent him away empty.</span> 
+<sup class="vn">4</sup><span class="red">Again, he sent another servant to them; and they threw stones at him, wounded him in the head, and sent him away shamefully treated.</span> 
+<sup class="vn">5</sup><span class="red">Again he sent another, and they killed him, and many others, beating some, and killing some.</span> 
+<sup class="vn">6</sup><span class="red">Therefore still having one, his beloved son, he sent him last to them, saying, ‘They will respect my son.’</span> 
+<sup class="vn">7</sup><span class="red">But those farmers said among themselves, ‘This is the heir. Come, let’s kill him, and the inheritance will be ours.’</span> 
+<sup class="vn">8</sup><span class="red">They took him, killed him, and cast him out of the vineyard.</span> 
+<sup class="vn">9</sup><span class="red">What therefore will the lord of the vineyard do? He will come and destroy the farmers, and will give the vineyard to others.</span> 
+<sup class="vn">10</sup><span class="red">Haven’t you even read this Scripture: ‘The stone which the builders rejected was made the head of the corner.</span> 
+</p>
+<p class="text">
+<sup class="vn">11</sup><span class="red">This was from the Lord. It is marvelous in our eyes’?”</span> 
+</p>
+<p class="text">
+<sup class="vn">12</sup>They tried to seize him, but they feared the multitude; for they perceived that he spoke the parable against them. They left him and went away. 
+<sup class="vn">13</sup>They sent some of the Pharisees and the Herodians to him, that they might trap him with words. 
+<sup class="vn">14</sup>When they had come, they asked him, “Teacher, we know that you are honest, and don’t defer to anyone; for you aren’t partial to anyone, but truly teach the way of God. Is it lawful to pay taxes to Caesar, or not? 
+<sup class="vn">15</sup>Shall we give, or shall we not give?” But he, knowing their hypocrisy, said to them, <span class="red">“Why do you test me? Bring me a denarius, that I may see it.”</span> 
+</p>
+<p class="text">
+<sup class="vn">16</sup>They brought it. He said to them, <span class="red">“Whose is this image and inscription?”</span> They said to him, “Caesar’s.” 
+</p>
+<p class="text">
+<sup class="vn">17</sup>Jesus answered them, <span class="red">“Give to Caesar the things that are Caesar’s, and to God the things that are God’s.”</span> They marveled greatly at him. 
+</p>
+<p class="text">
+<sup class="vn">18</sup>Some Sadducees, who say that there is no resurrection, came to him. They asked him, saying, 
+<sup class="vn">19</sup>“Teacher, Moses wrote to us, ‘If a man’s brother dies and leaves a wife behind him, and leaves no children, that his brother should take his wife and raise up offspring for his brother.’ 
+<sup class="vn">20</sup>There were seven brothers. The first took a wife, and dying left no offspring. 
+<sup class="vn">21</sup>The second took her, and died, leaving no children behind him. The third likewise; 
+<sup class="vn">22</sup>and the seven took her and left no children. Last of all the woman also died. 
+<sup class="vn">23</sup>In the resurrection, when they rise, whose wife will she be of them? For the seven had her as a wife.” 
+</p>
+<p class="text">
+<sup class="vn">24</sup>Jesus answered them, <span class="red">“Isn’t this because you are mistaken, not knowing the Scriptures nor the power of God?</span> 
+<sup class="vn">25</sup><span class="red">For when they will rise from the dead, they neither marry nor are given in marriage, but are like angels in heaven.</span> 
+<sup class="vn">26</sup><span class="red">But about the dead, that they are raised, haven’t you read in the book of Moses about the Bush, how God spoke to him, saying, ‘I am the God of Abraham, the God of Isaac, and the God of Jacob’?</span> 
+<sup class="vn">27</sup><span class="red">He is not the God of the dead, but of the living. You are therefore badly mistaken.”</span> 
+</p>
+<p class="text">
+<sup class="vn">28</sup>One of the scribes came and heard them questioning together, and knowing that he had answered them well, asked him, “Which commandment is the greatest of all?” 
+</p>
+<p class="text">
+<sup class="vn">29</sup>Jesus answered, <span class="red">“The greatest is: ‘Hear, Israel, the Lord our God, the Lord is one.</span> 
+<sup class="vn">30</sup><span class="red">You shall love the Lord your God with all your heart, with all your soul, with all your mind, and with all your strength.’ This is the first commandment.</span> 
+<sup class="vn">31</sup><span class="red">The second is like this: ‘You shall love your neighbor as yourself.’ There is no other commandment greater than these.”</span> 
+</p>
+<p class="text">
+<sup class="vn">32</sup>The scribe said to him, “Truly, teacher, you have said well that he is one, and there is none other but he; 
+<sup class="vn">33</sup>and to love him with all the heart, with all the understanding, all the soul, and with all the strength, and to love his neighbor as himself, is more important than all whole burnt offerings and sacrifices.” 
+</p>
+<p class="text">
+<sup class="vn">34</sup>When Jesus saw that he answered wisely, he said to him, <span class="red">“You are not far from God’s Kingdom.”</span> No one dared ask him any question after that. 
+</p>
+<p class="text">
+<sup class="vn">35</sup>Jesus responded, as he taught in the temple, <span class="red">“How is it that the scribes say that the Christ is the son of David?</span> 
+<sup class="vn">36</sup><span class="red">For David himself said in the Holy Spirit, ‘The Lord said to my Lord, “Sit at my right hand, until I make your enemies the footstool of your feet.”’</span> 
+</p>
+<p class="text">
+<sup class="vn">37</sup><span class="red">Therefore David himself calls him Lord, so how can he be his son?”</span> The common people heard him gladly. 
+</p>
+<p class="text">
+<sup class="vn">38</sup>In his teaching he said to them, <span class="red">“Beware of the scribes, who like to walk in long robes, and to get greetings in the marketplaces,</span> 
+<sup class="vn">39</sup><span class="red">and to get the best seats in the synagogues and the best places at feasts,</span> 
+<sup class="vn">40</sup><span class="red">those who devour widows’ houses, and for a pretense make long prayers. These will receive greater condemnation.”</span> 
+</p>
+<p class="text">
+<sup class="vn">41</sup>Jesus sat down opposite the treasury and saw how the multitude cast money into the treasury. Many who were rich cast in much. 
+<sup class="vn">42</sup>A poor widow came and she cast in two small brass coins,<sup class="fn"><a id="ref-Gospel-12-1" href="#fn-Gospel-12-1">1</a></sup> which equal a quadrans coin.<sup class="fn"><a id="ref-Gospel-12-2" href="#fn-Gospel-12-2">2</a></sup> 
+<sup class="vn">43</sup>He called his disciples to himself and said to them, <span class="red">“Most certainly I tell you, this poor widow gave more than all those who are giving into the treasury,</span> 
+<sup class="vn">44</sup><span class="red">for they all gave out of their abundance, but she, out of her poverty, gave all that she had to live on.”</span> 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-12-1"><span class="fnref">12:42</span> literally, lepta (or widow’s mites). Lepta are very small brass coins worth half a quadrans each, which is a quarter of the copper assarion. Lepta are worth less than 1% of an agricultural worker’s daily wages.</li>
+<li id="fn-Gospel-12-2"><span class="fnref">12:42</span> A quadrans is a coin worth about 1/64 of a denarius. A denarius is about one day’s wages for an agricultural laborer.</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>12:11 — Psalms 118:22-23 · 12:26 — Exodus 3:6 · 12:30 — Deuteronomy 6:4-5 · 12:31 — Leviticus 19:18 · 12:36 — Psalms 110:1</p></div>
+<h2 class="chapter" id="gospel-13">GOSPEL 13</h2>
+<p class="text">
+<sup class="vn">1</sup>As he went out of the temple, one of his disciples said to him, “Teacher, see what kind of stones and what kind of buildings!” 
+</p>
+<p class="text">
+<sup class="vn">2</sup>Jesus said to him, <span class="red">“Do you see these great buildings? There will not be left here one stone on another, which will not be thrown down.”</span> 
+</p>
+<p class="text">
+<sup class="vn">3</sup>As he sat on the Mount of Olives opposite the temple, Peter, James, John, and Andrew asked him privately, 
+<sup class="vn">4</sup>“Tell us, when will these things be? What is the sign that these things are all about to be fulfilled?” 
+</p>
+<p class="text">
+<sup class="vn">5</sup>Jesus, answering, began to tell them, <span class="red">“Be careful that no one leads you astray.</span> 
+<sup class="vn">6</sup><span class="red">For many will come in my name, saying, ‘I am he!’<sup class="fn"><a id="ref-Gospel-13-1" href="#fn-Gospel-13-1">1</a></sup> and will lead many astray.</span> 
+</p>
+<p class="text">
+<sup class="vn">7</sup><span class="red">“When you hear of wars and rumors of wars, don’t be troubled. For those must happen, but the end is not yet.</span> 
+<sup class="vn">8</sup><span class="red">For nation will rise against nation, and kingdom against kingdom. There will be earthquakes in various places. There will be famines and troubles. These things are the beginning of birth pains.</span> 
+</p>
+<p class="text">
+<sup class="vn">9</sup><span class="red">“But watch yourselves, for they will deliver you up to councils. You will be beaten in synagogues. You will stand before rulers and kings for my sake, for a testimony to them.</span> 
+<sup class="vn">10</sup><span class="red">The Gospel must first be preached to all the nations.</span> 
+<sup class="vn">11</sup><span class="red">When they lead you away and deliver you up, don’t be anxious beforehand or premeditate what you will say, but say whatever will be given you in that hour. For it is not you who speak, but the Holy Spirit.</span> 
+</p>
+<p class="text">
+<sup class="vn">12</sup><span class="red">“Brother will deliver up brother to death, and the father his child. Children will rise up against parents and cause them to be put to death.</span> 
+<sup class="vn">13</sup><span class="red">You will be hated by all men for my name’s sake, but he who endures to the end will be saved.</span> 
+</p>
+<p class="text">
+<sup class="vn">14</sup><span class="red">“But when you see the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not”</span> (let the reader understand), <span class="red">“then let those who are in Judea flee to the mountains,</span> 
+<sup class="vn">15</sup><span class="red">and let him who is on the housetop not go down, nor enter in, to take anything out of his house.</span> 
+<sup class="vn">16</sup><span class="red">Let him who is in the field not return back to take his cloak.</span> 
+<sup class="vn">17</sup><span class="red">But woe to those who are with child and to those who nurse babies in those days!</span> 
+<sup class="vn">18</sup><span class="red">Pray that your flight won’t be in the winter.</span> 
+<sup class="vn">19</sup><span class="red">For in those days there will be oppression, such as there has not been the like from the beginning of the creation which God created until now, and never will be.</span> 
+<sup class="vn">20</sup><span class="red">Unless the Lord had shortened the days, no flesh would have been saved; but for the sake of the chosen ones, whom he picked out, he shortened the days.</span> 
+<sup class="vn">21</sup><span class="red">Then if anyone tells you, ‘Look, here is the Christ!’ or, ‘Look, there!’ don’t believe it.</span> 
+<sup class="vn">22</sup><span class="red">For false christs and false prophets will arise and will show signs and wonders, that they may lead astray, if possible, even the chosen ones.</span> 
+<sup class="vn">23</sup><span class="red">But you watch. “Behold, I have told you all things beforehand.</span> 
+</p>
+<p class="text">
+<sup class="vn">24</sup><span class="red">But in those days, after that oppression, the sun will be darkened, the moon will not give its light,</span> 
+<sup class="vn">25</sup><span class="red">the stars will be falling from the sky, and the powers that are in the heavens will be shaken.</span> 
+<sup class="vn">26</sup><span class="red">Then they will see the Son of Man coming in clouds with great power and glory.</span> 
+<sup class="vn">27</sup><span class="red">Then he will send out his angels, and will gather together his chosen ones from the four winds, from the ends of the earth to the ends of the sky.</span> 
+</p>
+<p class="text">
+<sup class="vn">28</sup><span class="red">“Now from the fig tree, learn this parable. When the branch has now become tender and produces its leaves, you know that the summer is near;</span> 
+<sup class="vn">29</sup><span class="red">even so you also, when you see these things coming to pass, know that it is near, at the doors.</span> 
+<sup class="vn">30</sup><span class="red">Most certainly I say to you, this generation<sup class="fn"><a id="ref-Gospel-13-2" href="#fn-Gospel-13-2">2</a></sup> will not pass away until all these things happen.</span> 
+<sup class="vn">31</sup><span class="red">Heaven and earth will pass away, but my words will not pass away.</span> 
+</p>
+<p class="text">
+<sup class="vn">32</sup><span class="red">“But of that day or that hour no one knows—not even the angels in heaven, nor the Son, but only the Father.</span> 
+<sup class="vn">33</sup><span class="red">Watch, keep alert, and pray; for you don’t know when the time is.</span> 
+</p>
+<p class="text">
+<sup class="vn">34</sup><span class="red">“It is like a man traveling to another country, having left his house and given authority to his servants, and to each one his work, and also commanded the doorkeeper to keep watch.</span> 
+<sup class="vn">35</sup><span class="red">Watch therefore, for you don’t know when the lord of the house is coming—whether at evening, or at midnight, or when the rooster crows, or in the morning;</span> 
+<sup class="vn">36</sup><span class="red">lest, coming suddenly, he might find you sleeping.</span> 
+<sup class="vn">37</sup><span class="red">What I tell you, I tell all: Watch!”</span> 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-13-1"><span class="fnref">13:6</span> or, “I AM!”</li>
+<li id="fn-Gospel-13-2"><span class="fnref">13:30</span> The word translated “generation” (genea) could also be translated “race”, “family”, or “people”.</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>13:14 — Daniel 9:27; 11:31; 12:11 · 13:25 — Isaiah 13:10; 34:4</p></div>
+<h2 class="chapter" id="gospel-14">GOSPEL 14</h2>
+<p class="text">
+<sup class="vn">1</sup>It was now two days before the Passover and the Feast of Unleavened Bread, and the chief priests and the scribes sought how they might seize him by deception and kill him. 
+<sup class="vn">2</sup>For they said, “Not during the feast, because there might be a riot among the people.” 
+</p>
+<p class="text">
+<sup class="vn">3</sup>While he was at Bethany, in the house of Simon the leper, as he sat at the table, a woman came having an alabaster jar of ointment of pure nard—very costly. She broke the jar and poured it over his head. 
+<sup class="vn">4</sup>But there were some who were indignant among themselves, saying, “Why has this ointment been wasted? 
+<sup class="vn">5</sup>For this might have been sold for more than three hundred denarii<sup class="fn"><a id="ref-Gospel-14-1" href="#fn-Gospel-14-1">1</a></sup> and given to the poor.” So they grumbled against her. 
+</p>
+<p class="text">
+<sup class="vn">6</sup>But Jesus said, <span class="red">“Leave her alone. Why do you trouble her? She has done a good work for me.</span> 
+<sup class="vn">7</sup><span class="red">For you always have the poor with you, and whenever you want to, you can do them good; but you will not always have me.</span> 
+<sup class="vn">8</sup><span class="red">She has done what she could. She has anointed my body beforehand for the burying.</span> 
+<sup class="vn">9</sup><span class="red">Most certainly I tell you, wherever this Gospel may be preached throughout the whole world, that which this woman has done will also be spoken of for a memorial of her.”</span> 
+</p>
+<p class="text">
+<sup class="vn">10</sup>Judas Iscariot, who was one of the twelve, went away to the chief priests, that he might deliver him to them. 
+<sup class="vn">11</sup>They, when they heard it, were glad, and promised to give him money. He sought how he might conveniently deliver him. 
+</p>
+<p class="text">
+<sup class="vn">12</sup>On the first day of unleavened bread, when they sacrificed the Passover, his disciples asked him, “Where do you want us to go and prepare that you may eat the Passover?” 
+</p>
+<p class="text">
+<sup class="vn">13</sup>He sent two of his disciples and said to them, <span class="red">“Go into the city, and there a man carrying a pitcher of water will meet you. Follow him,</span> 
+<sup class="vn">14</sup><span class="red">and wherever he enters in, tell the master of the house, ‘The Teacher says, “Where is the guest room, where I may eat the Passover with my disciples?”’</span> 
+<sup class="vn">15</sup><span class="red">He will himself show you a large upper room furnished and ready. Get ready for us there.”</span> 
+</p>
+<p class="text">
+<sup class="vn">16</sup>His disciples went out, and came into the city, and found things as he had said to them, and they prepared the Passover. 
+</p>
+<p class="text">
+<sup class="vn">17</sup>When it was evening he came with the twelve. 
+<sup class="vn">18</sup>As they sat and were eating, Jesus said, <span class="red">“Most certainly I tell you, one of you will betray me—he who eats with me.”</span> 
+</p>
+<p class="text">
+<sup class="vn">19</sup>They began to be sorrowful, and to ask him one by one, “Surely not I?” And another said, “Surely not I?” 
+</p>
+<p class="text">
+<sup class="vn">20</sup>He answered them, <span class="red">“It is one of the twelve, he who dips with me in the dish.</span> 
+<sup class="vn">21</sup><span class="red">For the Son of Man goes as it is written about him, but woe to that man by whom the Son of Man is betrayed! It would be better for that man if he had not been born.”</span> 
+</p>
+<p class="text">
+<sup class="vn">22</sup>As they were eating, Jesus took bread, and when he had blessed it, he broke it and gave to them, and said, <span class="red">“Take, eat. This is my body.”</span> 
+</p>
+<p class="text">
+<sup class="vn">23</sup>He took the cup, and when he had given thanks, he gave to them. They all drank of it. 
+<sup class="vn">24</sup>He said to them, <span class="red">“This is my blood of the new covenant, which is poured out for many.</span> 
+<sup class="vn">25</sup><span class="red">Most certainly I tell you, I will no more drink of the fruit of the vine until that day when I drink it anew in God’s Kingdom.”</span> 
+<sup class="vn">26</sup>When they had sung a hymn, they went out to the Mount of Olives. 
+</p>
+<p class="text">
+<sup class="vn">27</sup>Jesus said to them, <span class="red">“All of you will be made to stumble because of me tonight, for it is written, ‘I will strike the shepherd, and the sheep will be scattered.’</span> 
+<sup class="vn">28</sup><span class="red">However, after I am raised up, I will go before you into Galilee.”</span> 
+</p>
+<p class="text">
+<sup class="vn">29</sup>But Peter said to him, “Although all will be offended, yet I will not.” 
+</p>
+<p class="text">
+<sup class="vn">30</sup>Jesus said to him, <span class="red">“Most certainly I tell you that you today, even this night, before the rooster crows twice, you will deny me three times.”</span> 
+</p>
+<p class="text">
+<sup class="vn">31</sup>But he spoke all the more, “If I must die with you, I will not deny you.” They all said the same thing. 
+</p>
+<p class="text">
+<sup class="vn">32</sup>They came to a place which was named Gethsemane. He said to his disciples, <span class="red">“Sit here while I pray.”</span> 
+<sup class="vn">33</sup>He took with him Peter, James, and John, and began to be greatly troubled and distressed. 
+<sup class="vn">34</sup>He said to them, <span class="red">“My soul is exceedingly sorrowful, even to death. Stay here and watch.”</span> 
+</p>
+<p class="text">
+<sup class="vn">35</sup>He went forward a little, and fell on the ground, and prayed that if it were possible, the hour might pass away from him. 
+<sup class="vn">36</sup>He said, <span class="red">“Abba,<sup class="fn"><a id="ref-Gospel-14-2" href="#fn-Gospel-14-2">2</a></sup> Father, all things are possible to you. Please remove this cup from me. However, not what I desire, but what you desire.”</span> 
+</p>
+<p class="text">
+<sup class="vn">37</sup>He came and found them sleeping, and said to Peter, <span class="red">“Simon, are you sleeping? Couldn’t you watch one hour?</span> 
+<sup class="vn">38</sup><span class="red">Watch and pray, that you may not enter into temptation. The spirit indeed is willing, but the flesh is weak.”</span> 
+</p>
+<p class="text">
+<sup class="vn">39</sup>Again he went away and prayed, saying the same words. 
+<sup class="vn">40</sup>Again he returned and found them sleeping, for their eyes were very heavy; and they didn’t know what to answer him. 
+<sup class="vn">41</sup>He came the third time and said to them, <span class="red">“Sleep on now, and take your rest. It is enough. The hour has come. Behold, the Son of Man is betrayed into the hands of sinners.</span> 
+<sup class="vn">42</sup><span class="red">Arise! Let’s get going. Behold, he who betrays me is at hand.”</span> 
+</p>
+<p class="text">
+<sup class="vn">43</sup>Immediately, while he was still speaking, Judas, one of the twelve, came—and with him a multitude with swords and clubs, from the chief priests, the scribes, and the elders. 
+<sup class="vn">44</sup>Now he who betrayed him had given them a sign, saying, “Whomever I will kiss, that is he. Seize him, and lead him away safely.” 
+<sup class="vn">45</sup>When he had come, immediately he came to him and said, “Rabbi! Rabbi!” and kissed him. 
+<sup class="vn">46</sup>They laid their hands on him and seized him. 
+<sup class="vn">47</sup>But a certain one of those who stood by drew his sword and struck the servant of the high priest, and cut off his ear. 
+</p>
+<p class="text">
+<sup class="vn">48</sup>Jesus answered them, <span class="red">“Have you come out, as against a robber, with swords and clubs to seize me?</span> 
+<sup class="vn">49</sup><span class="red">I was daily with you in the temple teaching, and you didn’t arrest me. But this is so that the Scriptures might be fulfilled.”</span> 
+</p>
+<p class="text">
+<sup class="vn">50</sup>They all left him, and fled. 
+<sup class="vn">51</sup>A certain young man followed him, having a linen cloth thrown around himself over his naked body. The young men grabbed him, 
+<sup class="vn">52</sup>but he left the linen cloth and fled from them naked. 
+<sup class="vn">53</sup>They led Jesus away to the high priest. All the chief priests, the elders, and the scribes came together with him. 
+</p>
+<p class="text">
+<sup class="vn">54</sup>Peter had followed him from a distance, until he came into the court of the high priest. He was sitting with the officers, and warming himself in the light of the fire. 
+<sup class="vn">55</sup>Now the chief priests and the whole council sought witnesses against Jesus to put him to death, and found none. 
+<sup class="vn">56</sup>For many gave false testimony against him, and their testimony didn’t agree with each other. 
+<sup class="vn">57</sup>Some stood up and gave false testimony against him, saying, 
+<sup class="vn">58</sup>“We heard him say, ‘I will destroy this temple that is made with hands, and in three days I will build another made without hands.’” 
+<sup class="vn">59</sup>Even so, their testimony didn’t agree. 
+</p>
+<p class="text">
+<sup class="vn">60</sup>The high priest stood up in the middle, and asked Jesus, “Have you no answer? What is it which these testify against you?” 
+<sup class="vn">61</sup>But he stayed quiet, and answered nothing. Again the high priest asked him, “Are you the Christ, the Son of the Blessed?” 
+</p>
+<p class="text">
+<sup class="vn">62</sup>Jesus said, <span class="red">“I am. You will see the Son of Man sitting at the right hand of Power, and coming with the clouds of the sky.”</span> 
+</p>
+<p class="text">
+<sup class="vn">63</sup>The high priest tore his clothes and said, “What further need have we of witnesses? 
+<sup class="vn">64</sup>You have heard the blasphemy! What do you think?” They all condemned him to be worthy of death. 
+<sup class="vn">65</sup>Some began to spit on him, and to cover his face, and to beat him with fists, and to tell him, “Prophesy!” The officers struck him with the palms of their hands. 
+</p>
+<p class="text">
+<sup class="vn">66</sup>As Peter was in the courtyard below, one of the maids of the high priest came, 
+<sup class="vn">67</sup>and seeing Peter warming himself, she looked at him and said, “You were also with the Nazarene, Jesus!” 
+</p>
+<p class="text">
+<sup class="vn">68</sup>But he denied it, saying, “I neither know nor understand what you are saying.” He went out on the porch, and the rooster crowed. 
+</p>
+<p class="text">
+<sup class="vn">69</sup>The maid saw him and began again to tell those who stood by, “This is one of them.” 
+<sup class="vn">70</sup>But he again denied it. After a little while again those who stood by said to Peter, “You truly are one of them, for you are a Galilean, and your speech shows it.” 
+<sup class="vn">71</sup>But he began to curse and to swear, “I don’t know this man of whom you speak!” 
+</p>
+<p class="text">
+<sup class="vn">72</sup>The rooster crowed the second time. Peter remembered the words that Jesus said to him, <span class="red">“Before the rooster crows twice, you will deny me three times.”</span> When he thought about that, he wept. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-14-1"><span class="fnref">14:5</span> 300 denarii was about a year’s wages for an agricultural laborer.</li>
+<li id="fn-Gospel-14-2"><span class="fnref">14:36</span> Abba is a Greek spelling for the Aramaic word for “Father” or “Daddy” used in a familiar, respectful, and loving way.</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>14:27 — Zechariah 13:7</p></div>
+<h2 class="chapter" id="gospel-15">GOSPEL 15</h2>
+<p class="text">
+<sup class="vn">1</sup>Immediately in the morning the chief priests, with the elders, scribes, and the whole council, held a consultation, bound Jesus, carried him away, and delivered him up to Pilate. 
+<sup class="vn">2</sup>Pilate asked him, “Are you the King of the Jews?” He answered, <span class="red">“So you say.”</span> 
+</p>
+<p class="text">
+<sup class="vn">3</sup>The chief priests accused him of many things. 
+<sup class="vn">4</sup>Pilate again asked him, “Have you no answer? See how many things they testify against you!” 
+</p>
+<p class="text">
+<sup class="vn">5</sup>But Jesus made no further answer, so that Pilate marveled. 
+</p>
+<p class="text">
+<sup class="vn">6</sup>Now at the feast he used to release to them one prisoner, whomever they asked of him. 
+<sup class="vn">7</sup>There was one called Barabbas, bound with his fellow insurgents, men who in the insurrection had committed murder. 
+<sup class="vn">8</sup>The multitude, crying aloud, began to ask him to do as he always did for them. 
+<sup class="vn">9</sup>Pilate answered them, saying, “Do you want me to release to you the King of the Jews?” 
+<sup class="vn">10</sup>For he perceived that for envy the chief priests had delivered him up. 
+<sup class="vn">11</sup>But the chief priests stirred up the multitude, that he should release Barabbas to them instead. 
+<sup class="vn">12</sup>Pilate again asked them, “What then should I do to him whom you call the King of the Jews?” 
+</p>
+<p class="text">
+<sup class="vn">13</sup>They cried out again, “Crucify him!” 
+</p>
+<p class="text">
+<sup class="vn">14</sup>Pilate said to them, “Why, what evil has he done?” But they cried out exceedingly, “Crucify him!” 
+</p>
+<p class="text">
+<sup class="vn">15</sup>Pilate, wishing to please the multitude, released Barabbas to them, and handed over Jesus, when he had flogged him, to be crucified. 
+</p>
+<p class="text">
+<sup class="vn">16</sup>The soldiers led him away within the court, which is the Praetorium; and they called together the whole cohort. 
+<sup class="vn">17</sup>They clothed him with purple; and weaving a crown of thorns, they put it on him. 
+<sup class="vn">18</sup>They began to salute him, “Hail, King of the Jews!” 
+<sup class="vn">19</sup>They struck his head with a reed and spat on him, and bowing their knees, did homage to him. 
+<sup class="vn">20</sup>When they had mocked him, they took the purple cloak off him, and put his own garments on him. They led him out to crucify him. 
+</p>
+<p class="text">
+<sup class="vn">21</sup>They compelled one passing by, coming from the country, Simon of Cyrene, the father of Alexander and Rufus, to go with them that he might bear his cross. 
+<sup class="vn">22</sup>They brought him to the place called Golgotha, which is, being interpreted, “The place of a skull.” 
+<sup class="vn">23</sup>They offered him wine mixed with myrrh to drink, but he didn’t take it. 
+</p>
+<p class="text">
+<sup class="vn">24</sup>Crucifying him, they parted his garments among them, casting lots on them, what each should take. 
+<sup class="vn">25</sup>It was the third hour<sup class="fn"><a id="ref-Gospel-15-1" href="#fn-Gospel-15-1">1</a></sup> when they crucified him. 
+<sup class="vn">26</sup>The superscription of his accusation was written over him: “THE KING OF THE JEWS.” 
+<sup class="vn">27</sup>With him they crucified two robbers, one on his right hand, and one on his left. 
+<sup class="vn">28</sup>The Scripture was fulfilled which says, “He was counted with transgressors.”<sup class="fn"><a id="ref-Gospel-15-2" href="#fn-Gospel-15-2">2</a></sup> 
+</p>
+<p class="text">
+<sup class="vn">29</sup>Those who passed by blasphemed him, wagging their heads and saying, “Ha! You who destroy the temple and build it in three days, 
+<sup class="vn">30</sup>save yourself, and come down from the cross!” 
+</p>
+<p class="text">
+<sup class="vn">31</sup>Likewise, also the chief priests mocking among themselves with the scribes said, “He saved others. He can’t save himself. 
+<sup class="vn">32</sup>Let the Christ, the King of Israel, now come down from the cross, that we may see and believe him.”<sup class="fn"><a id="ref-Gospel-15-3" href="#fn-Gospel-15-3">3</a></sup> Those who were crucified with him also insulted him. 
+</p>
+<p class="text">
+<sup class="vn">33</sup>When the sixth hour<sup class="fn"><a id="ref-Gospel-15-4" href="#fn-Gospel-15-4">4</a></sup> had come, there was darkness over the whole land until the ninth hour.<sup class="fn"><a id="ref-Gospel-15-5" href="#fn-Gospel-15-5">5</a></sup> 
+<sup class="vn">34</sup>At the ninth hour Jesus cried with a loud voice, saying, <span class="red">“Eloi, Eloi, lama sabachthani?”</span> which is, being interpreted, “My God, my God, why have you forsaken me?” 
+</p>
+<p class="text">
+<sup class="vn">35</sup>Some of those who stood by, when they heard it, said, “Behold, he is calling Elijah.” 
+</p>
+<p class="text">
+<sup class="vn">36</sup>One ran, and filling a sponge full of vinegar, put it on a reed and gave it to him to drink, saying, “Let him be. Let’s see whether Elijah comes to take him down.” 
+</p>
+<p class="text">
+<sup class="vn">37</sup>Jesus cried out with a loud voice, and gave up the spirit. 
+<sup class="vn">38</sup>The veil of the temple was torn in two from the top to the bottom. 
+<sup class="vn">39</sup>When the centurion, who stood by opposite him, saw that he cried out like this and breathed his last, he said, “Truly this man was the Son of God!” 
+</p>
+<p class="text">
+<sup class="vn">40</sup>There were also women watching from afar, among whom were both Mary Magdalene and Mary the mother of James the less and of Joses, and Salome; 
+<sup class="vn">41</sup>who, when he was in Galilee, followed him and served him; and many other women who came up with him to Jerusalem. 
+</p>
+<p class="text">
+<sup class="vn">42</sup>When evening had now come, because it was the Preparation Day, that is, the day before the Sabbath, 
+<sup class="vn">43</sup>Joseph of Arimathaea, a prominent council member who also himself was looking for God’s Kingdom, came. He boldly went in to Pilate, and asked for Jesus’ body. 
+<sup class="vn">44</sup>Pilate was surprised to hear that he was already dead; and summoning the centurion, he asked him whether he had been dead long. 
+<sup class="vn">45</sup>When he found out from the centurion, he granted the body to Joseph. 
+<sup class="vn">46</sup>He bought a linen cloth, and taking him down, wound him in the linen cloth and laid him in a tomb which had been cut out of a rock. He rolled a stone against the door of the tomb. 
+<sup class="vn">47</sup>Mary Magdalene and Mary the mother of Joses, saw where he was laid. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-15-1"><span class="fnref">15:25</span> 9:00 a.m.</li>
+<li id="fn-Gospel-15-2"><span class="fnref">15:28</span> NU omits verse 28.</li>
+<li id="fn-Gospel-15-3"><span class="fnref">15:32</span> TR omits “him”</li>
+<li id="fn-Gospel-15-4"><span class="fnref">15:33</span> or, noon</li>
+<li id="fn-Gospel-15-5"><span class="fnref">15:33</span> 3:00 p.m.</li>
+</ol></div>
+<div class="xrefs"><h3>Cross-references</h3><p>15:34 — Psalms 22:1</p></div>
+<h2 class="chapter" id="gospel-16">GOSPEL 16</h2>
+<p class="text">
+<sup class="vn">1</sup>When the Sabbath was past, Mary Magdalene, and Mary the mother of James, and Salome bought spices, that they might come and anoint him. 
+<sup class="vn">2</sup>Very early on the first day of the week, they came to the tomb when the sun had risen. 
+<sup class="vn">3</sup>They were saying among themselves, “Who will roll away the stone from the door of the tomb for us?” 
+<sup class="vn">4</sup>for it was very big. Looking up, they saw that the stone was rolled back. 
+</p>
+<p class="text">
+<sup class="vn">5</sup>Entering into the tomb, they saw a young man sitting on the right side, dressed in a white robe; and they were amazed. 
+<sup class="vn">6</sup>He said to them, “Don’t be amazed. You seek Jesus, the Nazarene, who has been crucified. He has risen! He is not here. See the place where they laid him! 
+<sup class="vn">7</sup>But go, tell his disciples and Peter, ‘He goes before you into Galilee. There you will see him, as he said to you.’” 
+</p>
+<p class="text">
+<sup class="vn">8</sup>They went out,<sup class="fn"><a id="ref-Gospel-16-1" href="#fn-Gospel-16-1">1</a></sup> and fled from the tomb, for trembling and astonishment had come on them. They said nothing to anyone; for they were afraid.<sup class="fn"><a id="ref-Gospel-16-2" href="#fn-Gospel-16-2">2</a></sup> 
+</p>
+<p class="text">
+<sup class="vn">9</sup><sup class="fn"><a id="ref-Gospel-16-3" href="#fn-Gospel-16-3">3</a></sup>Now when he had risen early on the first day of the week, he appeared first to Mary Magdalene, from whom he had cast out seven demons. 
+<sup class="vn">10</sup>She went and told those who had been with him, as they mourned and wept. 
+<sup class="vn">11</sup>When they heard that he was alive and had been seen by her, they disbelieved. 
+</p>
+<p class="text">
+<sup class="vn">12</sup>After these things he was revealed in another form to two of them as they walked, on their way into the country. 
+<sup class="vn">13</sup>They went away and told it to the rest. They didn’t believe them, either. 
+</p>
+<p class="text">
+<sup class="vn">14</sup>Afterward he was revealed to the eleven themselves as they sat at the table; and he rebuked them for their unbelief and hardness of heart, because they didn’t believe those who had seen him after he had risen. 
+<sup class="vn">15</sup>He said to them, <span class="red">“Go into all the world and preach the Gospel to the whole creation.</span> 
+<sup class="vn">16</sup><span class="red">He who believes and is baptized will be rescued; but he who disbelieves will be condemned.</span> 
+<sup class="vn">17</sup><span class="red">These signs will accompany those who believe: in my name they will cast out demons; they will speak with new languages;</span> 
+<sup class="vn">18</sup><span class="red">they will take up serpents; and if they drink any deadly thing, it will in no way hurt them; they will lay hands on the sick, and they will recover.”</span> 
+</p>
+<p class="text">
+<sup class="vn">19</sup>So then the Lord,<sup class="fn"><a id="ref-Gospel-16-4" href="#fn-Gospel-16-4">4</a></sup> after he had spoken to them, was received up into heaven and sat down at the right hand of God. 
+<sup class="vn">20</sup>They went out and preached everywhere, the Lord working with them and confirming the word by the signs that followed. 
+</p>
+<div class="notes"><h3>Notes</h3><ol>
+<li id="fn-Gospel-16-1"><span class="fnref">16:8</span> TR adds “quickly”</li>
+<li id="fn-Gospel-16-2"><span class="fnref">16:8</span> One isolated manuscript omits verses 9-20 but adds this “short ending of the Gospel” to the end of verse 8: They told all that had been commanded them briefly to those around Peter. After that, Jesus himself sent them out, from east to west, with the sacred and imperishable proclamation of eternal salvation.</li>
+<li id="fn-Gospel-16-3"><span class="fnref">16:9</span> NU includes the text of verses 9-20, but mentions in a footnote that a few manuscripts omitted it. The translators of the World English Bible regard Gospel 16:9-20 as reliable based on an overwhelming majority of textual evidence, including not only the authoritative Greek Majority Text New Testament, but also the TR and many of the manuscripts cited in the NU text.</li>
+<li id="fn-Gospel-16-4"><span class="fnref">16:19</span> NU adds “Jesus”</li>
+</ol></div>
+<h1 class="book" id="go">GO</h1>
+<p class="text">
+<sup class="vn">1</sup>This is the day that God has made, and He has handed it to you. 
+<sup class="vn">2</sup>Now, complete it with Him. 
+<sup class="vn">3</sup>The question is not if gravity is real. The question is if you will rise. 
+</p>
+<div class="notes"><h3>Notes</h3>
+<p>The reader's story — to be written.</p>
+<p>The three lines: 1 gift, 2 call to action, 3 question.</p>
+</div>
+<p class="credit">The 021 Bible — Garden · Gospel · Go. A living translation, updated as accuracy improves.
+Previous versions remain free.</p>
+</div>
+
+<script>
+var _tb = document.getElementById('theme-toggle');
+function applyTheme(dark){document.body.classList.toggle('dark',dark);if(_tb)_tb.textContent=dark?'☀️ Light':'🌙 Dark';}
+var _stored=null;try{_stored=localStorage.getItem('021-theme');}catch(e){}
+if(_stored==='dark'||_stored==='light'){applyTheme(_stored==='dark');}
+function toggleTheme(){var dark=!document.body.classList.contains('dark');applyTheme(dark);try{localStorage.setItem('021-theme',dark?'dark':'light');}catch(e){}}
+var _sizes=[16,17,18,19,20,22,24];var _tsi=2;
+function applyTextSize(i){_tsi=Math.max(0,Math.min(_sizes.length-1,i));document.documentElement.style.setProperty('--reader',_sizes[_tsi]+'px');var l=document.getElementById('ts-label');if(l)l.textContent=_sizes[_tsi]+'px';}
+var _tss=null;try{_tss=localStorage.getItem('021-text-size');}catch(e){}
+if(_tss!==null){var _p=_sizes.indexOf(parseInt(_tss,10));if(_p>=0)_tsi=_p;}
+applyTextSize(_tsi);
+function textSize(d){applyTextSize(_tsi+d);try{localStorage.setItem('021-text-size',String(_sizes[_tsi]));}catch(e){}}
+var _tt=document.getElementById('to-top');
+function _ttshow(){if(_tt)_tt.classList.toggle('show',window.scrollY>400);}
+window.addEventListener('scroll',_ttshow,{passive:true});_ttshow();
+</script>
+</body>
+</html>
