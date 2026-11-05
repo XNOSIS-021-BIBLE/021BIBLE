@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>021 Bible — Study Version (Tradition Style)</title>
+<title>021 BIBLE - Study Version (Tradition Style)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <style>
   :root { --bg: #ffffff; --fg: #1c1c1e; --muted: #555; --faint: #777; --credit: #888; --line: #e3e3e6; --accent: #c0392b; --accent-border: #c0392b; --red: #b91c1c; --note-fg: #333; }
   body.dark { --bg: #141416; --fg: #e8e6e3; --muted: #a1a1a6; --faint: #8e8e93; --credit: #8e8e93; --line: #2c2c31; --accent: #e0655a; --accent-border: #d64541; --red: #ff7a6b; --note-fg: #c9c9ce; }
@@ -41,14 +44,26 @@
   .textsize { margin-left: 8px; white-space: nowrap; }
   .textsize button { font-family: inherit; font-size: 15px; font-weight: 700; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 11px; cursor: pointer; margin: 0 2px; }
   #ts-label { font-size: 14px; color: var(--muted); margin: 0 2px; }
+
+  .downloads { text-align: center; border: 1px solid var(--line); border-radius: 12px; padding: 14px 12px 12px; margin: 16px 0 6px; }
+  .downloads .d-title { font-weight: 700; letter-spacing: 1.5px; font-size: 14px; text-transform: uppercase; color: var(--muted); }
+  .downloads a.dl { display: inline-block; margin: 10px 6px 2px; padding: 8px 18px; border: 1px solid var(--accent-border); border-radius: 999px; color: var(--accent); text-decoration: none; font-weight: 700; font-size: 15px; }
+  .downloads .d-note { font-size: 13.5px; color: var(--faint); margin-top: 9px; }
+
+  /* DRAFT ONLY (Oct 28, 2026): popup study notes - chapter-end notes kept intact as fallback. */
+  dialog#note-popup { border: 1px solid var(--line); border-radius: 12px; max-width: 560px; width: min(92vw, 560px); padding: 20px 22px; background: var(--bg); color: var(--fg); font-size: 17px; line-height: 1.6; }
+  dialog#note-popup::backdrop { background: rgba(0,0,0,.45); }
+  dialog#note-popup .np-close { float: right; border: 1px solid var(--line); background: transparent; color: var(--fg); border-radius: 8px; padding: 4px 10px; cursor: pointer; font-size: 14px; }
+  dialog#note-popup .fnref { font-weight: 700; color: var(--accent); }
 </style>
 </head>
 <body>
 <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
 <button id="to-top" class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">↑</button>
 <div class="wrap">
-  <div class="sitehead"><div class="t">021 BIBLE</div><div class="s">Study Version — Tradition Style</div></div>
+  <div class="sitehead"><div class="t">021 BIBLE</div><div class="s">Study Version - Tradition Style</div></div>
   <div class="nav"><a href="#garden">Garden</a> · <a href="#gospel">Gospel</a> · <a href="#go">Go</a></div>
+  <div class="downloads"><div class="d-title">Free Downloads</div><a class="dl" href="021-bible.html" download>HTML</a><a class="dl" href="021-bible.pdf" download>PDF</a><!-- After you publish a Release with the MP3 asset, replace the href below with the direct asset URL for one-click download. --><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases">MP3 Audio</a><div class="d-note">Free to share with acknowledgment - see LICENSE. MP3 audio is hosted under Releases.</div></div>
   <div class="chapnav"><select id="chapter-jump" onchange="var v=this.value;if(v){document.getElementById(v).scrollIntoView();this.selectedIndex=0;}"><option value="">Jump to chapter…</option><optgroup label="Garden"><option value="garden-1">Garden 1</option><option value="garden-2">Garden 2</option><option value="garden-3">Garden 3</option><option value="garden-4">Garden 4</option><option value="garden-5">Garden 5</option></optgroup><optgroup label="Gospel"><option value="gospel-1">Gospel 1</option><option value="gospel-2">Gospel 2</option><option value="gospel-3">Gospel 3</option><option value="gospel-4">Gospel 4</option><option value="gospel-5">Gospel 5</option><option value="gospel-6">Gospel 6</option><option value="gospel-7">Gospel 7</option><option value="gospel-8">Gospel 8</option><option value="gospel-9">Gospel 9</option><option value="gospel-10">Gospel 10</option><option value="gospel-11">Gospel 11</option><option value="gospel-12">Gospel 12</option><option value="gospel-13">Gospel 13</option><option value="gospel-14">Gospel 14</option><option value="gospel-15">Gospel 15</option><option value="gospel-16">Gospel 16</option></optgroup><option value="go">Go</option></select><span class="textsize"><button onclick="textSize(-1)" aria-label="Smaller text">A−</button><span id="ts-label">18px</span><button onclick="textSize(1)" aria-label="Larger text">A+</button></span></div>
 <h1 class="book" id="garden">GARDEN</h1>
 <h2 class="chapter" id="garden-1">GARDEN 1</h2>
@@ -138,7 +153,7 @@
 <sup class="vn">25</sup>The man and his wife were both naked, and they were not ashamed. 
 </p>
 <div class="notes"><h3>Notes</h3><ol>
-<li id="fn-Garden-2-1"><span class="fnref">2:4</span> God’s Proper Name (Hebrew “יהוה”) is rendered “Yahweh” in the 021 Bible. Most English translations substitute “LORD” for the Name; the source text gives the Name itself. <strong>Study note — the Name.</strong> 021 chose to use the actual name of God, “Yahweh,” rather than the traditional “Lord,” since the origin text uses YHWH and “lord” is a misdirect pointing to slaves and masters, which is not what was intended by the original text. “LORD” is not a translation of any word in the phrase YHWH Elohim; it is a substitute the tradition reads over the Name. The Name is given to be called on — “then men began to call on Yahweh’s name” (Gen 4:26) — not hidden under a title. (Decision and rationale logged 2026-10-20; see Changelog.)</li>
+<li id="fn-Garden-2-1"><span class="fnref">2:4</span> God’s Proper Name (Hebrew “יהוה”) is rendered “Yahweh” in the 021 BIBLE. Most English translations substitute “LORD” for the Name; the source text gives the Name itself. <strong>Study note - the Name.</strong> 021 chose to use the actual name of God, “Yahweh,” rather than the traditional “Lord,” since the origin text uses YHWH and “lord” is a misdirect pointing to slaves and masters, which is not what was intended by the original text. “LORD” is not a translation of any word in the phrase YHWH Elohim; it is a substitute the tradition reads over the Name. The Name is given to be called on, “then men began to call on Yahweh’s name” (Gen 4:26), not hidden under a title. (Decision and rationale logged 2026-10-20; see Changelog.)</li>
 <li id="fn-Garden-2-2"><span class="fnref">2:12</span> or, aromatic resin</li>
 <li id="fn-Garden-2-3"><span class="fnref">2:18</span> or, suitable for, or appropriate for.</li>
 </ol></div>
@@ -197,7 +212,7 @@
 <sup class="vn">21</sup>Yahweh God made garments of animal skins for Adam and for his wife, and clothed them. 
 </p>
 <p class="text">
-<sup class="vn">22</sup>Yahweh God said, “Behold, the man has become like one of us, knowing good and evil. Now, lest he reach out his hand, and also take of the tree of life, and eat, and live forever—” 
+<sup class="vn">22</sup>Yahweh God said, “Behold, the man has become like one of us, knowing good and evil. Now, lest he reach out his hand, and also take of the tree of life, and eat, and live forever,” 
 <sup class="vn">23</sup>Therefore Yahweh God sent him out from the garden of Eden, to till the ground from which he was taken. 
 <sup class="vn">24</sup>So he drove out the man; and he placed cherubim<sup class="fn"><a id="ref-Garden-3-1" href="#fn-Garden-3-1">1</a></sup> at the east of the garden of Eden, and a flaming sword which turned every way, to guard the way to the tree of life. 
 </p>
@@ -386,7 +401,7 @@
 <li id="fn-Gospel-1-3"><span class="fnref">1:8</span> The Greek word (en) translated here as “in” could also be translated as “with” in some contexts.</li>
 <li id="fn-Gospel-1-4"><span class="fnref">1:31</span> NU omits “immediately”.</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>1:2 — Malachi 3:1 · 1:3 — Isaiah 40:3</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>1:2 - Malachi 3:1 · 1:3 - Isaiah 40:3</p></div>
 <h2 class="chapter" id="gospel-2">GOSPEL 2</h2>
 <p class="text">
 <sup class="vn">1</sup>When he entered again into Capernaum after some days, it was heard that he was at home. 
@@ -402,7 +417,7 @@
 <p class="text">
 <sup class="vn">8</sup>Immediately Jesus, perceiving in his spirit that they so reasoned within themselves, said to them, <span class="red">“Why do you reason these things in your hearts?</span> 
 <sup class="vn">9</sup><span class="red">Which is easier, to tell the paralytic, ‘Your sins are forgiven;’ or to say, ‘Arise, and take up your bed, and walk’?</span> 
-<sup class="vn">10</sup><span class="red">But that you may know that the Son of Man has authority on earth to forgive sins”</span>—he said to the paralytic— 
+<sup class="vn">10</sup><span class="red">But that you may know that the Son of Man has authority on earth to forgive sins”</span>, he said to the paralytic,  
 <sup class="vn">11</sup><span class="red">“I tell you, arise, take up your mat, and go to your house.”</span> 
 </p>
 <p class="text">
@@ -433,7 +448,7 @@
 <sup class="vn">24</sup>The Pharisees said to him, “Behold, why do they do that which is not lawful on the Sabbath day?” 
 </p>
 <p class="text">
-<sup class="vn">25</sup>He said to them, <span class="red">“Did you never read what David did when he had need and was hungry—he, and those who were with him?</span> 
+<sup class="vn">25</sup>He said to them, <span class="red">“Did you never read what David did when he had need and was hungry, he, and those who were with him?</span> 
 <sup class="vn">26</sup><span class="red">How he entered into God’s house at the time of Abiathar the high priest, and ate the show bread, which is not lawful to eat except for the priests, and gave also to those who were with him?”</span> 
 </p>
 <p class="text">
@@ -481,7 +496,7 @@
 <p class="text">
 <sup class="vn">28</sup><span class="red">“Most certainly I tell you, all sins of the descendants of man will be forgiven, including their blasphemies with which they may blaspheme;</span> 
 <sup class="vn">29</sup><span class="red">but whoever may blaspheme against the Holy Spirit never has forgiveness, but is subject to eternal condemnation.”</span><sup class="fn"><a id="ref-Gospel-3-1" href="#fn-Gospel-3-1">1</a></sup> 
-<sup class="vn">30</sup>—because they said, “He has an unclean spirit.” 
+<sup class="vn">30</sup> - because they said, “He has an unclean spirit.” 
 </p>
 <p class="text">
 <sup class="vn">31</sup>His mother and his brothers came, and standing outside, they sent to him, calling him. 
@@ -564,7 +579,7 @@
 <li id="fn-Gospel-4-1"><span class="fnref">4:4</span> TR adds “of the air”</li>
 <li id="fn-Gospel-4-2"><span class="fnref">4:21</span> literally, a modion, a dry measuring basket containing about a peck (about 9 liters)</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>4:12 — Isaiah 6:9-10</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>4:12 - Isaiah 6:9-10</p></div>
 <h2 class="chapter" id="gospel-5">GOSPEL 5</h2>
 <p class="text">
 <sup class="vn">1</sup>They came to the other side of the sea, into the country of the Gadarenes. 
@@ -728,7 +743,7 @@
 <sup class="vn">53</sup>When they had crossed over, they came to land at Gennesaret and moored to the shore. 
 <sup class="vn">54</sup>When they had come out of the boat, immediately the people recognized him, 
 <sup class="vn">55</sup>and ran around that whole region, and began to bring those who were sick on their mats to where they heard he was. 
-<sup class="vn">56</sup>Wherever he entered—into villages, or into cities, or into the country—they laid the sick in the marketplaces and begged him that they might just touch the fringe<sup class="fn"><a id="ref-Gospel-6-5" href="#fn-Gospel-6-5">5</a></sup> of his garment; and as many as touched him were made well. 
+<sup class="vn">56</sup>Wherever he entered, into villages, or into cities, or into the country, they laid the sick in the marketplaces and begged him that they might just touch the fringe<sup class="fn"><a id="ref-Gospel-6-5" href="#fn-Gospel-6-5">5</a></sup> of his garment; and as many as touched him were made well. 
 </p>
 <div class="notes"><h3>Notes</h3><ol>
 <li id="fn-Gospel-6-1"><span class="fnref">6:33</span> TR reads “The multitudes” instead of “They”</li>
@@ -737,7 +752,7 @@
 <li id="fn-Gospel-6-4"><span class="fnref">6:50</span> or, “I AM!”</li>
 <li id="fn-Gospel-6-5"><span class="fnref">6:56</span> or, tassel</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>6:48 — See Job 9:8</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>6:48 - See Job 9:8</p></div>
 <h2 class="chapter" id="gospel-7">GOSPEL 7</h2>
 <p class="text">
 <sup class="vn">1</sup>Then the Pharisees and some of the scribes gathered together to him, having come from Jerusalem. 
@@ -753,7 +768,7 @@
 <sup class="vn">7</sup><span class="red">They worship me in vain, teaching as doctrines the commandments of men.’</span> 
 </p>
 <p class="text">
-<sup class="vn">8</sup><span class="red">“For you set aside the commandment of God, and hold tightly to the tradition of men—the washing of pitchers and cups, and you do many other such things.”</span> 
+<sup class="vn">8</sup><span class="red">“For you set aside the commandment of God, and hold tightly to the tradition of men, the washing of pitchers and cups, and you do many other such things.”</span> 
 <sup class="vn">9</sup>He said to them, <span class="red">“Full well do you reject the commandment of God, that you may keep your tradition.</span> 
 <sup class="vn">10</sup><span class="red">For Moses said, ‘Honor your father and your mother;’ and, ‘He who speaks evil of father or mother, let him be put to death.’</span> 
 <sup class="vn">11</sup><span class="red">But you say, ‘If a man tells his father or his mother, “Whatever profit you might have received from me is Corban,”’”</span><sup class="fn"><a id="ref-Gospel-7-1" href="#fn-Gospel-7-1">1</a></sup> that is to say, given to God, 
@@ -803,7 +818,7 @@
 <li id="fn-Gospel-7-2"><span class="fnref">7:16</span> NU omits verse 16.</li>
 <li id="fn-Gospel-7-3"><span class="fnref">7:19</span> NU ends Jesus’ direct quote and question after “latrine”, ending the verse with “Thus he declared all foods clean.</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>7:7 — Isaiah 29:13 · 7:10 — Exodus 20:12; Deuteronomy 5:16 · 7:10 — Exodus 21:17; Leviticus 20:9</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>7:7 - Isaiah 29:13 · 7:10 - Exodus 20:12; Deuteronomy 5:16 · 7:10 - Exodus 21:17; Leviticus 20:9</p></div>
 <h2 class="chapter" id="gospel-8">GOSPEL 8</h2>
 <p class="text">
 <sup class="vn">1</sup>In those days, when there was a very great multitude, and they had nothing to eat, Jesus called his disciples to himself and said to them, 
@@ -982,7 +997,7 @@
 <sup class="vn">42</sup><span class="red">“Whoever will cause one of these little ones who believe in me to stumble, it would be better for him if he were thrown into the sea with a millstone hung around his neck.</span> 
 <sup class="vn">43</sup><span class="red">If your hand causes you to stumble, cut it off. It is better for you to enter into life maimed, rather than having your two hands to go into Gehenna, <sup class="fn"><a id="ref-Gospel-9-1" href="#fn-Gospel-9-1">1</a></sup> into the unquenchable fire,</span> 
 <sup class="vn">44</sup><span class="red">‘where their worm doesn’t die, and the fire is not quenched.’ <sup class="fn"><a id="ref-Gospel-9-2" href="#fn-Gospel-9-2">2</a></sup></span> 
-<sup class="vn">45</sup><span class="red">If your foot causes you to stumble, cut it off. It is better for you to enter into life lame, rather than having your two feet to be cast into Gehenna, <sup class="fn"><a id="ref-Gospel-9-3" href="#fn-Gospel-9-3">3</a></sup> into the fire that will never be quenched—</span> 
+<sup class="vn">45</sup><span class="red">If your foot causes you to stumble, cut it off. It is better for you to enter into life lame, rather than having your two feet to be cast into Gehenna, <sup class="fn"><a id="ref-Gospel-9-3" href="#fn-Gospel-9-3">3</a></sup> into the fire that will never be quenched, </span> 
 <sup class="vn">46</sup><span class="red">‘where their worm doesn’t die, and the fire is not quenched.’ <sup class="fn"><a id="ref-Gospel-9-4" href="#fn-Gospel-9-4">4</a></sup></span> 
 <sup class="vn">47</sup><span class="red">If your eye causes you to stumble, throw it out. It is better for you to enter into God’s Kingdom with one eye, rather than having two eyes to be cast into the Gehenna<sup class="fn"><a id="ref-Gospel-9-5" href="#fn-Gospel-9-5">5</a></sup> of fire,</span> 
 <sup class="vn">48</sup><span class="red">‘where their worm doesn’t die, and the fire is not quenched.’</span> 
@@ -996,7 +1011,7 @@
 <li id="fn-Gospel-9-4"><span class="fnref">9:46</span> NU omits verse 46.</li>
 <li id="fn-Gospel-9-5"><span class="fnref">9:47</span> or, Hell</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>9:44 — Isaiah 66:24 · 9:48 — Isaiah 66:24</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>9:44 - Isaiah 66:24 · 9:48 - Isaiah 66:24</p></div>
 <h2 class="chapter" id="gospel-10">GOSPEL 10</h2>
 <p class="text">
 <sup class="vn">1</sup>He arose from there and came into the borders of Judea and beyond the Jordan. Multitudes came together to him again. As he usually did, he was again teaching them. 
@@ -1032,7 +1047,7 @@
 <sup class="vn">17</sup>As he was going out into the way, one ran to him, knelt before him, and asked him, “Good Teacher, what shall I do that I may inherit eternal life?” 
 </p>
 <p class="text">
-<sup class="vn">18</sup>Jesus said to him, <span class="red">“Why do you call me good? No one is good except one—God.</span> 
+<sup class="vn">18</sup>Jesus said to him, <span class="red">“Why do you call me good? No one is good except one, God.</span> 
 <sup class="vn">19</sup><span class="red">You know the commandments: ‘Do not murder,’ ‘Do not commit adultery,’ ‘Do not steal,’ ‘Do not give false testimony,’ ‘Do not defraud,’ ‘Honor your father and mother.’”</span> 
 </p>
 <p class="text">
@@ -1115,10 +1130,10 @@
 <sup class="vn">52</sup>Jesus said to him, <span class="red">“Go your way. Your faith has made you well.”</span> Immediately he received his sight and followed Jesus on the way. 
 </p>
 <div class="notes"><h3>Notes</h3><ol>
-<li id="fn-Gospel-10-1"><span class="fnref">10:21</span> “Taking up the cross” (Greek ἄρας τὸν σταυρόν) stands in the Byzantine Majority and Textus Receptus tradition — the received text of the Gospel (so the WEB base text and KJV). The 021 keeps it in the text (decision 2026-10-20). At 8:34 the phrase is carried on every manuscript line.</li>
+<li id="fn-Gospel-10-1"><span class="fnref">10:21</span> “Taking up the cross” (Greek ἄρας τὸν σταυρόν) stands in the Byzantine Majority and Textus Receptus tradition, the received text of the Gospel (so the WEB base text and KJV). The 021 keeps it in the text (decision 2026-10-20). At 8:34 the phrase is carried on every manuscript line.</li>
 <li id="fn-Gospel-10-2"><span class="fnref">10:51</span> Rabboni is a transliteration of the Aramaic word for “great teacher.”</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>10:6 — Garden 1:27 · 10:8 — Garden 2:24 · 10:19 — Exodus 20:12-16; Deuteronomy 5:16-20</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>10:6 - Garden 1:27 · 10:8 - Garden 2:24 · 10:19 - Exodus 20:12-16; Deuteronomy 5:16-20</p></div>
 <h2 class="chapter" id="gospel-11">GOSPEL 11</h2>
 <p class="text">
 <sup class="vn">1</sup>When they came near to Jerusalem, to Bethsphage<sup class="fn"><a id="ref-Gospel-11-1" href="#fn-Gospel-11-1">1</a></sup> and Bethany, at the Mount of Olives, he sent two of his disciples 
@@ -1170,11 +1185,11 @@
 </p>
 <p class="text">
 <sup class="vn">29</sup>Jesus said to them, <span class="red">“I will ask you one question. Answer me, and I will tell you by what authority I do these things.</span> 
-<sup class="vn">30</sup><span class="red">The baptism of John—was it from heaven, or from men? Answer me.”</span> 
+<sup class="vn">30</sup><span class="red">The baptism of John, was it from heaven, or from men? Answer me.”</span> 
 </p>
 <p class="text">
 <sup class="vn">31</sup>They reasoned with themselves, saying, “If we should say, ‘From heaven;’ he will say, ‘Why then did you not believe him?’ 
-<sup class="vn">32</sup>If we should say, ‘From men’”—they feared the people, for all held John to really be a prophet. 
+<sup class="vn">32</sup>If we should say, ‘From men’”, they feared the people, for all held John to really be a prophet. 
 <sup class="vn">33</sup>They answered Jesus, “We don’t know.” Jesus said to them, <span class="red">“Neither will I tell you by what authority I do these things.”</span> 
 </p>
 <div class="notes"><h3>Notes</h3><ol>
@@ -1182,7 +1197,7 @@
 <li id="fn-Gospel-11-2"><span class="fnref">11:9</span> “Hosanna” means “save us” or “help us, we pray”.</li>
 <li id="fn-Gospel-11-3"><span class="fnref">11:26</span> NU omits verse 26.</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>11:9 — Psalms 118:25-26 · 11:17 — Isaiah 56:7 · 11:17 — Jeremiah 7:11</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>11:9 - Psalms 118:25-26 · 11:17 - Isaiah 56:7 · 11:17 - Jeremiah 7:11</p></div>
 <h2 class="chapter" id="gospel-12">GOSPEL 12</h2>
 <p class="text">
 <sup class="vn">1</sup>He began to speak to them in parables. <span class="red">“A man planted a vineyard, put a hedge around it, dug a pit for the wine press, built a tower, rented it out to a farmer, and went into another country.</span> 
@@ -1262,7 +1277,7 @@
 <li id="fn-Gospel-12-1"><span class="fnref">12:42</span> literally, lepta (or widow’s mites). Lepta are very small brass coins worth half a quadrans each, which is a quarter of the copper assarion. Lepta are worth less than 1% of an agricultural worker’s daily wages.</li>
 <li id="fn-Gospel-12-2"><span class="fnref">12:42</span> A quadrans is a coin worth about 1/64 of a denarius. A denarius is about one day’s wages for an agricultural laborer.</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>12:11 — Psalms 118:22-23 · 12:26 — Exodus 3:6 · 12:30 — Deuteronomy 6:4-5 · 12:31 — Leviticus 19:18 · 12:36 — Psalms 110:1</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>12:11 - Psalms 118:22-23 · 12:26 - Exodus 3:6 · 12:30 - Deuteronomy 6:4-5 · 12:31 - Leviticus 19:18 · 12:36 - Psalms 110:1</p></div>
 <h2 class="chapter" id="gospel-13">GOSPEL 13</h2>
 <p class="text">
 <sup class="vn">1</sup>As he went out of the temple, one of his disciples said to him, “Teacher, see what kind of stones and what kind of buildings!” 
@@ -1316,12 +1331,12 @@
 <sup class="vn">31</sup><span class="red">Heaven and earth will pass away, but my words will not pass away.</span> 
 </p>
 <p class="text">
-<sup class="vn">32</sup><span class="red">“But of that day or that hour no one knows—not even the angels in heaven, nor the Son, but only the Father.</span> 
+<sup class="vn">32</sup><span class="red">“But of that day or that hour no one knows, not even the angels in heaven, nor the Son, but only the Father.</span> 
 <sup class="vn">33</sup><span class="red">Watch, keep alert, and pray; for you don’t know when the time is.</span> 
 </p>
 <p class="text">
 <sup class="vn">34</sup><span class="red">“It is like a man traveling to another country, having left his house and given authority to his servants, and to each one his work, and also commanded the doorkeeper to keep watch.</span> 
-<sup class="vn">35</sup><span class="red">Watch therefore, for you don’t know when the lord of the house is coming—whether at evening, or at midnight, or when the rooster crows, or in the morning;</span> 
+<sup class="vn">35</sup><span class="red">Watch therefore, for you don’t know when the lord of the house is coming, whether at evening, or at midnight, or when the rooster crows, or in the morning;</span> 
 <sup class="vn">36</sup><span class="red">lest, coming suddenly, he might find you sleeping.</span> 
 <sup class="vn">37</sup><span class="red">What I tell you, I tell all: Watch!”</span> 
 </p>
@@ -1329,14 +1344,14 @@
 <li id="fn-Gospel-13-1"><span class="fnref">13:6</span> or, “I AM!”</li>
 <li id="fn-Gospel-13-2"><span class="fnref">13:30</span> The word translated “generation” (genea) could also be translated “race”, “family”, or “people”.</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>13:14 — Daniel 9:27; 11:31; 12:11 · 13:25 — Isaiah 13:10; 34:4</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>13:14 - Daniel 9:27; 11:31; 12:11 · 13:25 - Isaiah 13:10; 34:4</p></div>
 <h2 class="chapter" id="gospel-14">GOSPEL 14</h2>
 <p class="text">
 <sup class="vn">1</sup>It was now two days before the Passover and the Feast of Unleavened Bread, and the chief priests and the scribes sought how they might seize him by deception and kill him. 
 <sup class="vn">2</sup>For they said, “Not during the feast, because there might be a riot among the people.” 
 </p>
 <p class="text">
-<sup class="vn">3</sup>While he was at Bethany, in the house of Simon the leper, as he sat at the table, a woman came having an alabaster jar of ointment of pure nard—very costly. She broke the jar and poured it over his head. 
+<sup class="vn">3</sup>While he was at Bethany, in the house of Simon the leper, as he sat at the table, a woman came having an alabaster jar of ointment of pure nard, very costly. She broke the jar and poured it over his head. 
 <sup class="vn">4</sup>But there were some who were indignant among themselves, saying, “Why has this ointment been wasted? 
 <sup class="vn">5</sup>For this might have been sold for more than three hundred denarii<sup class="fn"><a id="ref-Gospel-14-1" href="#fn-Gospel-14-1">1</a></sup> and given to the poor.” So they grumbled against her. 
 </p>
@@ -1363,7 +1378,7 @@
 </p>
 <p class="text">
 <sup class="vn">17</sup>When it was evening he came with the twelve. 
-<sup class="vn">18</sup>As they sat and were eating, Jesus said, <span class="red">“Most certainly I tell you, one of you will betray me—he who eats with me.”</span> 
+<sup class="vn">18</sup>As they sat and were eating, Jesus said, <span class="red">“Most certainly I tell you, one of you will betray me, he who eats with me.”</span> 
 </p>
 <p class="text">
 <sup class="vn">19</sup>They began to be sorrowful, and to ask him one by one, “Surely not I?” And another said, “Surely not I?” 
@@ -1414,7 +1429,7 @@
 <sup class="vn">42</sup><span class="red">Arise! Let’s get going. Behold, he who betrays me is at hand.”</span> 
 </p>
 <p class="text">
-<sup class="vn">43</sup>Immediately, while he was still speaking, Judas, one of the twelve, came—and with him a multitude with swords and clubs, from the chief priests, the scribes, and the elders. 
+<sup class="vn">43</sup>Immediately, while he was still speaking, Judas, one of the twelve, came, and with him a multitude with swords and clubs, from the chief priests, the scribes, and the elders. 
 <sup class="vn">44</sup>Now he who betrayed him had given them a sign, saying, “Whomever I will kiss, that is he. Seize him, and lead him away safely.” 
 <sup class="vn">45</sup>When he had come, immediately he came to him and said, “Rabbi! Rabbi!” and kissed him. 
 <sup class="vn">46</sup>They laid their hands on him and seized him. 
@@ -1469,7 +1484,7 @@
 <li id="fn-Gospel-14-1"><span class="fnref">14:5</span> 300 denarii was about a year’s wages for an agricultural laborer.</li>
 <li id="fn-Gospel-14-2"><span class="fnref">14:36</span> Abba is a Greek spelling for the Aramaic word for “Father” or “Daddy” used in a familiar, respectful, and loving way.</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>14:27 — Zechariah 13:7</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>14:27 - Zechariah 13:7</p></div>
 <h2 class="chapter" id="gospel-15">GOSPEL 15</h2>
 <p class="text">
 <sup class="vn">1</sup>Immediately in the morning the chief priests, with the elders, scribes, and the whole council, held a consultation, bound Jesus, carried him away, and delivered him up to Pilate. 
@@ -1561,7 +1576,7 @@
 <li id="fn-Gospel-15-4"><span class="fnref">15:33</span> or, noon</li>
 <li id="fn-Gospel-15-5"><span class="fnref">15:33</span> 3:00 p.m.</li>
 </ol></div>
-<div class="xrefs"><h3>Cross-references</h3><p>15:34 — Psalms 22:1</p></div>
+<div class="xrefs"><h3>Cross-references</h3><p>15:34 - Psalms 22:1</p></div>
 <h2 class="chapter" id="gospel-16">GOSPEL 16</h2>
 <p class="text">
 <sup class="vn">1</sup>When the Sabbath was past, Mary Magdalene, and Mary the mother of James, and Salome bought spices, that they might come and anoint him. 
@@ -1610,10 +1625,10 @@
 <sup class="vn">3</sup>The question is not if gravity is real. The question is if you will rise. 
 </p>
 <div class="notes"><h3>Notes</h3>
-<p>The reader's story — to be written.</p>
+<p>The reader's story, to be written.</p>
 <p>The three lines: 1 gift, 2 call to action, 3 question.</p>
 </div>
-<p class="credit">The 021 Bible — Garden · Gospel · Go. A living translation, updated as accuracy improves.
+<p class="credit">The 021 BIBLE - Garden · Gospel · Go. A living translation, updated as accuracy improves.
 Previous versions remain free.</p>
 </div>
 
@@ -1633,5 +1648,28 @@ var _tt=document.getElementById('to-top');
 function _ttshow(){if(_tt)_tt.classList.toggle('show',window.scrollY>400);}
 window.addEventListener('scroll',_ttshow,{passive:true});_ttshow();
 </script>
+
+<script>
+/* DRAFT ONLY (Oct 28, 2026): study notes open as popups where you read.
+   Intercepts the existing sup.fn links; the chapter-end <li id="fn-..."> notes stay in place. */
+document.querySelectorAll('sup.fn a').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var note = document.getElementById(a.getAttribute('href').slice(1));
+    if (!note) return;
+    var d = document.getElementById('note-popup');
+    if (!d) {
+      d = document.createElement('dialog');
+      d.id = 'note-popup';
+      document.body.appendChild(d);
+    }
+    d.innerHTML = '<button class="np-close" aria-label="Close note">Close</button>' + note.innerHTML;
+    d.querySelector('.np-close').addEventListener('click', function(){ d.close(); });
+    d.addEventListener('click', function(ev){ if (ev.target === d) d.close(); }, { once: true });
+    d.showModal();
+  });
+});
+</script>
+<footer style="text-align:center; color: var(--note-fg); border-top: 1px solid var(--line); margin-top: 40px; padding: 20px 12px 30px; font-size: 14px;">021 BIBLE · 021.LIFE</footer>
 </body>
 </html>
