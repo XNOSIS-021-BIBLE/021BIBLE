@@ -37,7 +37,7 @@ https://www.021.life</description>
       <itunes:name>021 LIFE</itunes:name>
       <itunes:email>dm@021.life</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://021.bible/021-bible-album-art.png" />
+    <itunes:image href="https://021.bible/021-life-podcast-art.png" />
     <itunes:category text="Society &amp; Culture">
       <itunes:category text="Philosophy" />
     </itunes:category>
@@ -49,6 +49,7 @@ https://www.021.life</description>
     <item>
       <title>021 BIBLE</title>
       <itunes:title>021 BIBLE</itunes:title>
+      <itunes:image href="https://021.bible/021-bible-album-art.png" />
       <description>Garden, Gospel, Go: the complete 021 BIBLE, read aloud in 91 minutes. Free to share with acknowledgment, see 021.bible.</description>
       <content:encoded>&lt;p&gt;Garden, Gospel, Go: the complete 021 BIBLE, read aloud in 91 minutes. Free to share with acknowledgment, see &lt;a href="https://021.bible"&gt;021.bible&lt;/a&gt;.&lt;/p&gt;</content:encoded>
       <enclosure url="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021.BIBLE.v1.0.audiobook.male.helio.voice.1h31m.audio.mp3" length="67145227" type="audio/mpeg" />
