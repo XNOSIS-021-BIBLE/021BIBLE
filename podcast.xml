@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>021 LIFE Podcast</title>
+    <link>https://021.life</link>
+    <language>en-us</language>
+    <copyright>Copyright 2026 XNOSIS</copyright>
+    <itunes:author>021</itunes:author>
+    <itunes:summary>All people are made to be Creators.
+
+Yet we all face that voice: "Do something else."
+
+Creators single-handedly make the world go round, yet they do it with one hand tied behind their back.
+
+At the 021 LIFE Podcast, we turn Creators into CoCreators, connecting them with God (The Creator), so they can reach their personal maximum velocity.
+
+Why?
+
+Because Creators are God's chosen people.
+
+https://www.021.life</itunes:summary>
+    <description>All people are made to be Creators.
+
+Yet we all face that voice: "Do something else."
+
+Creators single-handedly make the world go round, yet they do it with one hand tied behind their back.
+
+At the 021 LIFE Podcast, we turn Creators into CoCreators, connecting them with God (The Creator), so they can reach their personal maximum velocity.
+
+Why?
+
+Because Creators are God's chosen people.
+
+https://www.021.life</description>
+    <itunes:owner>
+      <itunes:name>021 LIFE</itunes:name>
+      <itunes:email>dm@021.life</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://021.bible/021-bible-album-art.png" />
+    <itunes:category text="Society &amp; Culture">
+      <itunes:category text="Philosophy" />
+    </itunes:category>
+    <itunes:category text="Religion &amp; Spirituality">
+      <itunes:category text="Christianity" />
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <item>
+      <title>021 BIBLE</title>
+      <itunes:title>021 BIBLE</itunes:title>
+      <description>Garden, Gospel, Go: the complete 021 BIBLE, read aloud in 91 minutes. Free to share with acknowledgment, see 021.bible.</description>
+      <content:encoded>&lt;p&gt;Garden, Gospel, Go: the complete 021 BIBLE, read aloud in 91 minutes. Free to share with acknowledgment, see &lt;a href="https://021.bible"&gt;021.bible&lt;/a&gt;.&lt;/p&gt;</content:encoded>
+      <enclosure url="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021.BIBLE.v1.0.audiobook.male.helio.voice.1h31m.audio.mp3" length="67145227" type="audio/mpeg" />
+      <guid isPermaLink="false">021-bible-v1.0-episode-1</guid>
+      <pubDate>Thu, 05 Nov 2026 12:00:00 -0800</pubDate>
+      <itunes:duration>5485</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
