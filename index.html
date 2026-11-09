@@ -19,6 +19,18 @@
   .sitehead .t { font-size: 40px; font-weight: 700; letter-spacing: 2px; }
   .sitehead .s { color: var(--muted); font-size: 16px; margin-top: 2px; }
   .nav { text-align: center; margin: 14px 0 6px; }
+  .topnav { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 14px 0 4px; }
+  .dd { position: relative; }
+  .dd > button { font-family: inherit; font-size: 15px; font-weight: 700; color: var(--accent); background: var(--bg); border: 1px solid var(--accent-border); border-radius: 999px; padding: 7px 16px; cursor: pointer; }
+  .dd > button::after { content: " \25be"; font-size: 12px; }
+  .dd .menu { display: none; position: absolute; left: 50%; transform: translateX(-50%); top: calc(100% + 6px); z-index: 20; min-width: 230px; max-height: 70vh; overflow: auto; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 6px; box-shadow: 0 8px 24px rgba(0,0,0,.18); text-align: left; }
+  .dd:hover .menu, .dd:focus-within .menu, .dd.open .menu { display: block; }
+  .dd .menu a, .dd .menu span.soon { display: block; padding: 7px 12px; border-radius: 8px; color: var(--fg); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .dd .menu a:hover { background: var(--line); }
+  .dd .menu .mh { padding: 7px 12px 3px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); font-weight: 700; }
+  .dd .menu span.soon { color: var(--faint); font-weight: 400; cursor: default; }
+  @media (max-width: 560px) { .dd .menu { min-width: 200px; } }
+
   .nav a { color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 10px; }
   h1.book { text-align: center; font-size: 30px; letter-spacing: 3px; margin: 44px 0 2px; }
   .epigraph { text-align: center; color: var(--muted); font-style: italic; margin: 0 0 10px; }
@@ -62,8 +74,15 @@
 <button id="to-top" class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" title="Back to top">↑</button>
 <div class="wrap">
   <div class="sitehead"><div class="t">021 BIBLE</div><div class="s">Study Version - Tradition Style</div></div>
+
+  <nav class="topnav" aria-label="021 BIBLE">
+    <div class="dd"><button type="button" aria-haspopup="true" onclick="toggleDD(this)">Chapters</button><div class="menu"><div class="mh">Garden</div><a href="#garden-1">Garden 1</a><a href="#garden-2">Garden 2</a><a href="#garden-3">Garden 3</a><a href="#garden-4">Garden 4</a><a href="#garden-5">Garden 5</a><div class="mh">Gospel</div><a href="#gospel-1">Gospel 1</a><a href="#gospel-2">Gospel 2</a><a href="#gospel-3">Gospel 3</a><a href="#gospel-4">Gospel 4</a><a href="#gospel-5">Gospel 5</a><a href="#gospel-6">Gospel 6</a><a href="#gospel-7">Gospel 7</a><a href="#gospel-8">Gospel 8</a><a href="#gospel-9">Gospel 9</a><a href="#gospel-10">Gospel 10</a><a href="#gospel-11">Gospel 11</a><a href="#gospel-12">Gospel 12</a><a href="#gospel-13">Gospel 13</a><a href="#gospel-14">Gospel 14</a><a href="#gospel-15">Gospel 15</a><a href="#gospel-16">Gospel 16</a><div class="mh">Go</div><a href="#go">Go</a></div></div>
+    <div class="dd"><button type="button" aria-haspopup="true" onclick="toggleDD(this)">Download</button><div class="menu"><a href="021-bible.html" download>HTML, read offline</a><a href="021-bible.pdf" download>PDF, print and share</a><a href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021.BIBLE.v1.0.audiobook.male.helio.voice.1h31m.audio.mp3" download>MP3 audio (1:31:25)</a><a href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021-bible-video-river-night-screen-720p.mp4" download>MP4 video, night river (720p)</a></div></div>
+    <div class="dd"><button type="button" aria-haspopup="true" onclick="toggleDD(this)">Stream</button><div class="menu"><a href="https://youtu.be/ywiX-T5HUao" target="_blank" rel="noopener">YouTube, watch and listen</a><a href="https://podcasts.apple.com/us/podcast/id1896670629" target="_blank" rel="noopener">Apple Podcasts, 021 LIFE Podcast</a><span class="soon">Spotify, submitted, link coming soon</span></div></div>
+    <div class="dd"><button type="button" aria-haspopup="true" onclick="toggleDD(this)">Purchase</button><div class="menu"><span class="soon">Kindle, coming soon</span><span class="soon">Audible, coming soon</span><span class="soon">Music stores, coming soon</span></div></div>
+  </nav>
   <div class="nav"><a href="#garden">Garden</a> · <a href="#gospel">Gospel</a> · <a href="#go">Go</a></div>
-  <div class="downloads"><div class="d-title">Free Downloads</div><a class="dl" href="021-bible.html" download>HTML</a><a class="dl" href="021-bible.pdf" download>PDF</a><!-- After you publish a Release with the MP3 asset, replace the href below with the direct asset URL for one-click download. --><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases">MP3 Audio</a></div>
+  <div class="downloads"><div class="d-title">Free Downloads</div><a class="dl" href="021-bible.html" download>HTML</a><a class="dl" href="021-bible.pdf" download>PDF</a><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021.BIBLE.v1.0.audiobook.male.helio.voice.1h31m.audio.mp3" download>MP3 Audio</a><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021-bible-video-river-night-screen-720p.mp4" download>MP4 Night River</a></div>
   <div class="chapnav"><select id="chapter-jump" onchange="var v=this.value;if(v){document.getElementById(v).scrollIntoView();this.selectedIndex=0;}"><option value="">Jump to chapter…</option><optgroup label="Garden"><option value="garden-1">Garden 1</option><option value="garden-2">Garden 2</option><option value="garden-3">Garden 3</option><option value="garden-4">Garden 4</option><option value="garden-5">Garden 5</option></optgroup><optgroup label="Gospel"><option value="gospel-1">Gospel 1</option><option value="gospel-2">Gospel 2</option><option value="gospel-3">Gospel 3</option><option value="gospel-4">Gospel 4</option><option value="gospel-5">Gospel 5</option><option value="gospel-6">Gospel 6</option><option value="gospel-7">Gospel 7</option><option value="gospel-8">Gospel 8</option><option value="gospel-9">Gospel 9</option><option value="gospel-10">Gospel 10</option><option value="gospel-11">Gospel 11</option><option value="gospel-12">Gospel 12</option><option value="gospel-13">Gospel 13</option><option value="gospel-14">Gospel 14</option><option value="gospel-15">Gospel 15</option><option value="gospel-16">Gospel 16</option></optgroup><option value="go">Go</option></select><span class="textsize"><button onclick="textSize(-1)" aria-label="Smaller text">A−</button><span id="ts-label">18px</span><button onclick="textSize(1)" aria-label="Larger text">A+</button></span></div>
 <h1 class="book" id="garden">GARDEN</h1>
 <h2 class="chapter" id="garden-1">GARDEN 1</h2>
@@ -1649,6 +1668,13 @@ function _ttshow(){if(_tt)_tt.classList.toggle('show',window.scrollY>400);}
 window.addEventListener('scroll',_ttshow,{passive:true});_ttshow();
 </script>
 
+
+<script>
+/* Top dropdowns (Nov 9, 2026): tap toggles on touch; hover/focus opens on desktop. */
+function toggleDD(btn){var dd=btn.parentElement;var was=dd.classList.contains('open');document.querySelectorAll('.dd.open').forEach(function(d){d.classList.remove('open');});if(!was)dd.classList.add('open');}
+document.addEventListener('click',function(e){if(!e.target.closest('.dd'))document.querySelectorAll('.dd.open').forEach(function(d){d.classList.remove('open');});});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.dd.open').forEach(function(d){d.classList.remove('open');});});
+</script>
 <script>
 /* DRAFT ONLY (Oct 28, 2026): study notes open as popups where you read.
    Intercepts the existing sup.fn links; the chapter-end <li id="fn-..."> notes stay in place. */
