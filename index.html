@@ -56,6 +56,12 @@
   .textsize { margin-left: 8px; white-space: nowrap; }
   .textsize button { font-family: inherit; font-size: 15px; font-weight: 700; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 11px; cursor: pointer; margin: 0 2px; }
   .ts-label { font-size: 14px; color: var(--muted); margin: 0 2px; }
+  .searchrow { display: flex; justify-content: center; gap: 6px; margin: 8px 0 2px; }
+  .searchrow input { font-family: inherit; font-size: 15px; font-weight: 600; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; width: min(430px, 66vw); }
+  .searchrow button { font-family: inherit; font-size: 15px; font-weight: 700; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .verse-flash { background-color: color-mix(in srgb, var(--accent) 20%, transparent); border-radius: 6px; transition: background-color 1.2s ease; }
+  #note-popup .note-badge { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent-border); border-radius: 999px; padding: 3px 10px; }
+  #note-popup a.sr-go { color: var(--accent); font-weight: 700; text-decoration: none; }
 
   .downloads { text-align: center; border: 1px solid var(--line); border-radius: 12px; padding: 14px 12px 12px; margin: 16px 0 6px; }
   .downloads .d-title { font-weight: 700; letter-spacing: 1.5px; font-size: 14px; text-transform: uppercase; color: var(--muted); }
@@ -76,9 +82,9 @@
   <div class="sitehead"><div class="t">021 BIBLE</div><div class="s">V1.0 - Study Version - Tradition Style</div></div>
 
   <div class="nav"><a href="#garden">Garden</a> · <a href="#gospel">Gospel</a> · <a href="#go">Go</a></div>
-  <div class="chapnav"><select id="chapter-jump-top" onchange="var v=this.value;if(v){document.getElementById(v).scrollIntoView();this.selectedIndex=0;}"><option value="">Jump to chapter…</option><optgroup label="Garden"><option value="garden-1">Garden 1</option><option value="garden-2">Garden 2</option><option value="garden-3">Garden 3</option><option value="garden-4">Garden 4</option><option value="garden-5">Garden 5</option></optgroup><optgroup label="Gospel"><option value="gospel-1">Gospel 1</option><option value="gospel-2">Gospel 2</option><option value="gospel-3">Gospel 3</option><option value="gospel-4">Gospel 4</option><option value="gospel-5">Gospel 5</option><option value="gospel-6">Gospel 6</option><option value="gospel-7">Gospel 7</option><option value="gospel-8">Gospel 8</option><option value="gospel-9">Gospel 9</option><option value="gospel-10">Gospel 10</option><option value="gospel-11">Gospel 11</option><option value="gospel-12">Gospel 12</option><option value="gospel-13">Gospel 13</option><option value="gospel-14">Gospel 14</option><option value="gospel-15">Gospel 15</option><option value="gospel-16">Gospel 16</option></optgroup><option value="go">Go</option></select><span class="textsize"><button onclick="textSize(-1)" aria-label="Smaller text">A−</button><span class="ts-label">18px</span><button onclick="textSize(1)" aria-label="Larger text">A+</button></span></div>
+  <div class="chapnav"><select id="chapter-jump-top" onchange="var v=this.value;if(v){document.getElementById(v).scrollIntoView();this.selectedIndex=0;}"><option value="">Jump to chapter…</option><optgroup label="Garden"><option value="garden-1">Garden 1</option><option value="garden-2">Garden 2</option><option value="garden-3">Garden 3</option><option value="garden-4">Garden 4</option><option value="garden-5">Garden 5</option></optgroup><optgroup label="Gospel"><option value="gospel-1">Gospel 1</option><option value="gospel-2">Gospel 2</option><option value="gospel-3">Gospel 3</option><option value="gospel-4">Gospel 4</option><option value="gospel-5">Gospel 5</option><option value="gospel-6">Gospel 6</option><option value="gospel-7">Gospel 7</option><option value="gospel-8">Gospel 8</option><option value="gospel-9">Gospel 9</option><option value="gospel-10">Gospel 10</option><option value="gospel-11">Gospel 11</option><option value="gospel-12">Gospel 12</option><option value="gospel-13">Gospel 13</option><option value="gospel-14">Gospel 14</option><option value="gospel-15">Gospel 15</option><option value="gospel-16">Gospel 16</option></optgroup><option value="go">Go</option></select><span class="textsize"><button onclick="textSize(-1)" aria-label="Smaller text">A−</button><span class="ts-label">18px</span><button onclick="textSize(1)" aria-label="Larger text">A+</button></span><form class="searchrow" onsubmit="return runVerseSearch(this)"><input type="search" placeholder="Type the words you remember\u2026" aria-label="Search by remembered words"><button type="submit">Search</button></form></div>
   <div class="downloads"><div class="d-title">Free Downloads</div><a class="dl" href="021-bible.html" download>HTML</a><a class="dl" href="021-bible.pdf" download>PDF</a><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021.BIBLE.v1.0.audiobook.male.helio.voice.1h31m.audio.mp3" download>MP3 Audio</a><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021-bible-video-river-screen-720p.mp4" download>MP4 Day River</a><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021-bible-video-river-night-screen-720p.mp4" download>MP4 Night River</a><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021-bible-video-river-screen-720p-captioned.mp4" download>MP4 Day River, Captions</a><a class="dl" href="https://github.com/XNOSIS-021-BIBLE/021BIBLE/releases/download/v1.0/021-bible-video-river-night-screen-720p-captioned.mp4" download>MP4 Night River, Captions</a><div class="d-title" style="margin-top:14px; font-size:12px;">Stream Free</div><a class="dl" href="https://youtu.be/ywiX-T5HUao" target="_blank" rel="noopener">YouTube</a><a class="dl" href="https://podcasts.apple.com/us/podcast/id1896670629" target="_blank" rel="noopener">Apple Podcasts</a><a class="dl" href="https://open.spotify.com/episode/6aTEvh5gicJ3DyemXXdlEc" target="_blank" rel="noopener">Spotify</a><div class="d-title" style="margin-top:14px; font-size:12px;">For your big screen</div><div class="d-note">Put the river on. Let the Word be sown while the morning happens.</div><a class="dl" href="https://youtu.be/vgMdtNJ8foA" target="_blank" rel="noopener">Day River</a><a class="dl" href="https://youtu.be/cTfhn-5Nmtg" target="_blank" rel="noopener">Night River</a><a class="dl" href="https://youtu.be/buXVSu3aV_w" target="_blank" rel="noopener">Blackout</a><a class="dl" href="https://youtu.be/XOmHEHx-2jg" target="_blank" rel="noopener">Dimmed</a></div>
-  <div class="chapnav"><select id="chapter-jump" onchange="var v=this.value;if(v){document.getElementById(v).scrollIntoView();this.selectedIndex=0;}"><option value="">Jump to chapter…</option><optgroup label="Garden"><option value="garden-1">Garden 1</option><option value="garden-2">Garden 2</option><option value="garden-3">Garden 3</option><option value="garden-4">Garden 4</option><option value="garden-5">Garden 5</option></optgroup><optgroup label="Gospel"><option value="gospel-1">Gospel 1</option><option value="gospel-2">Gospel 2</option><option value="gospel-3">Gospel 3</option><option value="gospel-4">Gospel 4</option><option value="gospel-5">Gospel 5</option><option value="gospel-6">Gospel 6</option><option value="gospel-7">Gospel 7</option><option value="gospel-8">Gospel 8</option><option value="gospel-9">Gospel 9</option><option value="gospel-10">Gospel 10</option><option value="gospel-11">Gospel 11</option><option value="gospel-12">Gospel 12</option><option value="gospel-13">Gospel 13</option><option value="gospel-14">Gospel 14</option><option value="gospel-15">Gospel 15</option><option value="gospel-16">Gospel 16</option></optgroup><option value="go">Go</option></select><span class="textsize"><button onclick="textSize(-1)" aria-label="Smaller text">A−</button><span class="ts-label">18px</span><button onclick="textSize(1)" aria-label="Larger text">A+</button></span></div>
+  <div class="chapnav"><select id="chapter-jump" onchange="var v=this.value;if(v){document.getElementById(v).scrollIntoView();this.selectedIndex=0;}"><option value="">Jump to chapter…</option><optgroup label="Garden"><option value="garden-1">Garden 1</option><option value="garden-2">Garden 2</option><option value="garden-3">Garden 3</option><option value="garden-4">Garden 4</option><option value="garden-5">Garden 5</option></optgroup><optgroup label="Gospel"><option value="gospel-1">Gospel 1</option><option value="gospel-2">Gospel 2</option><option value="gospel-3">Gospel 3</option><option value="gospel-4">Gospel 4</option><option value="gospel-5">Gospel 5</option><option value="gospel-6">Gospel 6</option><option value="gospel-7">Gospel 7</option><option value="gospel-8">Gospel 8</option><option value="gospel-9">Gospel 9</option><option value="gospel-10">Gospel 10</option><option value="gospel-11">Gospel 11</option><option value="gospel-12">Gospel 12</option><option value="gospel-13">Gospel 13</option><option value="gospel-14">Gospel 14</option><option value="gospel-15">Gospel 15</option><option value="gospel-16">Gospel 16</option></optgroup><option value="go">Go</option></select><span class="textsize"><button onclick="textSize(-1)" aria-label="Smaller text">A−</button><span class="ts-label">18px</span><button onclick="textSize(1)" aria-label="Larger text">A+</button></span><form class="searchrow" onsubmit="return runVerseSearch(this)"><input type="search" placeholder="Type the words you remember\u2026" aria-label="Search by remembered words"><button type="submit">Search</button></form></div>
 <h1 class="book" id="garden">GARDEN</h1>
 <h2 class="chapter" id="garden-1">GARDEN 1</h2>
 <p class="text">
@@ -1693,5 +1699,574 @@ document.querySelectorAll('sup.fn a').forEach(function(a){
 });
 </script>
 <footer style="text-align:center; color: var(--note-fg); border-top: 1px solid var(--line); margin-top: 40px; padding: 20px 12px 30px; font-size: 14px;"><p style="margin:6px 0;">021 BIBLE V1.0 is free to share with acknowledgment - see license below. Free Downloads are hosted by GitHub Releases. To make the 021 BIBLE a quick and easy web app on your phone, tablet, etc, simply bookmark this page to your home screen.</p><p style="margin:6px 0;">Listen: <a href="https://youtu.be/ywiX-T5HUao" target="_blank" rel="noopener">Watch and listen on YouTube</a> · <a href="https://podcasts.apple.com/us/podcast/id1896670629" target="_blank" rel="noopener">Listen on Apple Podcasts</a> · <a href="https://open.spotify.com/episode/6aTEvh5gicJ3DyemXXdlEc" target="_blank" rel="noopener">Listen on Spotify</a><!-- Other listening links join this line later. --></p><p style="margin:6px 0;">Copyright © 2026 XNOSIS. All rights reserved except as stated here. The 021 BIBLE text is free to read, print, and electronically distribute, and to record in your own voice, provided you acknowledge the 021 BIBLE (021.LIFE) as the source. No other use is granted under this notice.</p><p style="margin:6px 0;">021 BIBLE · <a href="https://021.life">021.LIFE</a></p></footer>
+
+<script>
+      var VERSES = [
+        /* ---------- GARDEN (Genesis 1–5) ---------- */
+        { book: "Garden", ch: 1, v: 1, text: "In the beginning, God created the heavens and the earth.",
+          hear: "in the beginning god created the heaven and the earth kjv" },
+        { book: "Garden", ch: 1, v: 2, text: "Now the earth was formless and empty. Darkness was on the surface of the deep. God\u2019s Spirit was hovering over the surface of the waters.",
+          hear: "spirit of god moved upon the face of the waters spirit hovered over the waters holy spirit was already there" },
+        { book: "Garden", ch: 1, v: 3, text: "God said, \u201CLet there be light,\u201D and there was light.",
+          hear: "let there be light and there was light god said" },
+        { book: "Garden", ch: 1, v: 27, text: "God created man in his own image. In God\u2019s image he created him; male and female he created them.",
+          hear: "god created man in his own image male and female created he them imago dei image of god" },
+        { book: "Garden", ch: 1, v: 31, text: "God saw everything that he had made, and, behold, it was very good. There was evening and there was morning, a sixth day.",
+          hear: "god saw all that he had made and it was very good" },
+        { book: "Garden", ch: 2, v: 18, text: "Yahweh God said, \u201CIt is not good that the man should be alone. I will make him a helper comparable to him.\u201D",
+          hear: "it is not good for the man to be alone i will make a helper suitable for him help meet" },
+        { book: "Garden", ch: 2, v: 23, text: "The man said, \u201CThis is now bone of my bones, and flesh of my flesh. She will be called \u2018woman,\u2019 because she was taken out of Man.\u201D",
+          hear: "bone of my bones and flesh of my flesh she shall be called woman because she was taken out of man" },
+        { book: "Garden", ch: 2, v: 24, text: "Therefore a man will leave his father and his mother, and will join with his wife, and they will be one flesh.",
+          hear: "a man shall leave his father and mother and be united to his wife and they shall become one flesh cleave unto his wife" },
+        { book: "Garden", ch: 3, v: 5, text: "\u201CFor God knows that in the day you eat it, your eyes will be opened, and you will be like God, knowing good and evil.\u201D",
+          hear: "ye shall be as gods knowing good and evil your eyes shall be opened serpent said you will be like god" },
+        { book: "Garden", ch: 3, v: 9, text: "Yahweh God called to the man, and said to him, \u201CWhere are you?\u201D",
+          hear: "where art thou god called to adam where are you" },
+        { book: "Garden", ch: 4, v: 7, text: "\u201CIf you do well, won\u2019t it be lifted up? If you don\u2019t do well, sin crouches at the door. Its desire is for you, but you are to rule over it.\u201D",
+          hear: "if thou doest well shalt thou not be accepted sin lieth at the door sin is crouching at your door you must rule over it master it" },
+        { book: "Garden", ch: 4, v: 9, text: "Yahweh said to Cain, \u201CWhere is Abel, your brother?\u201D He said, \u201CI don\u2019t know. Am I my brother\u2019s keeper?\u201D",
+          hear: "where is abel thy brother am i my brother's keeper cain said" },
+        { book: "Garden", ch: 4, v: 15, text: "Yahweh said to him, \u201CTherefore whoever slays Cain, vengeance will be taken on him sevenfold.\u201D Yahweh appointed a sign for Cain, lest any finding him should strike him.",
+          hear: "the lord put a mark on cain mark of cain lest anyone finding him should kill him god protected cain sign for cain" },
+        { book: "Garden", ch: 5, v: 24, text: "Enoch walked with God, and he was not, for God took him.",
+          hear: "enoch walked with god and he was not for god took him enoch was no more because god took him away" },
+
+        /* ---------- GOSPEL (Mark) ---------- */
+        { book: "Gospel", ch: 1, v: 1, text: "The beginning of the Good News of Jesus Christ, the Son of God.",
+          hear: "the beginning of the gospel of jesus christ good news starts here" },
+        { book: "Gospel", ch: 1, v: 11, text: "A voice came out of the sky: \u201CYou are my beloved Son, in whom I am well pleased.\u201D",
+          hear: "thou art my beloved son in whom i am well pleased voice from heaven baptism" },
+        { book: "Gospel", ch: 1, v: 15, text: "\u201CThe time is fulfilled, and God\u2019s Kingdom is at hand! Repent, and believe in the Good News.\u201D",
+          hear: "the kingdom of god is near repent and believe the good news gospel the time has come" },
+        { book: "Gospel", ch: 1, v: 17, text: "Jesus said to them, \u201CCome after me, and I will make you fishers for men.\u201D",
+          hear: "follow me and i will make you fishers of men come follow me i will send you out to fish for people" },
+        { book: "Gospel", ch: 1, v: 25, text: "Jesus rebuked him, saying, \u201CBe quiet, and come out of him!\u201D",
+          hear: "be silent come out of him hold thy peace unclean spirit jesus rebuked" },
+        { book: "Gospel", ch: 1, v: 40, text: "A leper came to him, begging him, kneeling down to him, and saying to him, \u201CIf you want to, you can make me clean.\u201D",
+          hear: "a man with leprosy came lord if you are willing you can make me clean if thou wilt thou canst make me clean" },
+        { book: "Gospel", ch: 1, v: 41, text: "Being moved with compassion, he stretched out his hand, and touched him, and said to him, \u201CI want to. Be made clean.\u201D",
+          hear: "i am willing be healed i will be thou clean i am willing be clean jesus reached out his hand and touched the man with leprosy" },
+        { book: "Gospel", ch: 1, v: 42, text: "When he had said this, immediately the leprosy departed from him and he was made clean.",
+          hear: "immediately the leprosy left him and he was cleansed healed instantly" },
+        { book: "Gospel", ch: 2, v: 5, text: "Jesus, seeing their faith, said to the paralytic, \u201CSon, your sins are forgiven you.\u201D",
+          hear: "son thy sins be forgiven thee child your sins are forgiven paralyzed man lowered through roof faith" },
+        { book: "Gospel", ch: 2, v: 17, text: "Jesus said to them, \u201CThose who are healthy have no need for a physician, but those who are sick. I came not to call the righteous, but sinners to repentance.\u201D",
+          hear: "it is not the healthy who need a doctor but the sick i have not come to call the righteous but sinners" },
+        { book: "Gospel", ch: 2, v: 27, text: "He said to them, \u201CThe Sabbath was made for man, not man for the Sabbath.\u201D",
+          hear: "the sabbath was made for man and not man for the sabbath" },
+        { book: "Gospel", ch: 3, v: 5, text: "He said to the man, \u201CStretch out your hand.\u201D He stretched it out, and his hand was restored as healthy as the other.",
+          hear: "stretch forth thine hand withered hand shriveled hand healed on sabbath" },
+        { book: "Gospel", ch: 3, v: 24, text: "\u201CIf a kingdom is divided against itself, that kingdom cannot stand.\u201D",
+          hear: "a kingdom divided against itself cannot stand house divided if a house be divided against itself" },
+        { book: "Gospel", ch: 3, v: 35, text: "\u201CFor whoever does the will of God is my brother, my sister, and mother.\u201D",
+          hear: "who is my mother and my brothers whoever does god's will is my brother and sister and mother" },
+        { book: "Gospel", ch: 4, v: 8, text: "\u201COther fell into the good ground, and yielded fruit, growing up and increasing. Some brought forth thirty times, some sixty times, and some one hundred times as much.\u201D",
+          hear: "seed fell on good soil yielded thirty sixty hundred fold other seed fell into good ground parable of the sower talents increase" },
+        { book: "Gospel", ch: 4, v: 9, text: "He said, \u201CWhoever has ears to hear, let him hear.\u201D",
+          hear: "he who has ears to hear let him hear whoever has ears let them hear parable of the sower" },
+        { book: "Gospel", ch: 4, v: 20, text: "\u201CThose which were sown on the good ground are those who hear the word, accept it, and bear fruit, some thirty times, some sixty times, and some one hundred times.\u201D",
+          hear: "seed sown on good soil hear the word and accept it produce a crop thirty sixty hundred fold sower soils" },
+        { book: "Gospel", ch: 4, v: 39, text: "He awoke, and rebuked the wind, and said to the sea, \u201C Peace! Be still!\u201D The wind ceased, and there was a great calm.",
+          hear: "peace be still jesus calmed the storm rebuked the wind waves quiet be still" },
+        { book: "Gospel", ch: 4, v: 40, text: "He said to them, \u201CWhy are you so afraid? How is it that you have no faith?\u201D",
+          hear: "why are ye so fearful why are you so afraid do you still have no faith storm boat" },
+        { book: "Gospel", ch: 5, v: 9, text: "He asked him, \u201CWhat is your name?\u201D He answered, \u201CMy name is Legion, for we are many.\u201D",
+          hear: "what is thy name legion for we are many demons pigs demoniac" },
+        { book: "Gospel", ch: 5, v: 34, text: "He said to her, \u201CDaughter, your faith has made you well. Go in peace, and be cured of your disease.\u201D",
+          hear: "thy faith hath made thee whole go in peace daughter your faith has healed you woman issue of blood touched garment" },
+        { book: "Gospel", ch: 5, v: 36, text: "But Jesus, when he heard the message spoken, immediately said to the ruler of the synagogue, \u201CDon\u2019t be afraid, only believe.\u201D",
+          hear: "be not afraid only believe fear not believe only jairus daughter dead do not be afraid just believe" },
+        { book: "Gospel", ch: 5, v: 41, text: "Taking the child by the hand, he said to her, \u201CTalitha cumi!\u201D which means, being interpreted, \u201CYoung girl, I tell you, get up!\u201D",
+          hear: "talitha cumi little girl i say to thee arise jairus daughter raised from dead" },
+        { book: "Gospel", ch: 6, v: 4, text: "Jesus said to them, \u201CA prophet is not without honor, except in his own country, and among his own relatives, and in his own house.\u201D",
+          hear: "a prophet is not without honour but in his own country hometown no prophet is accepted in his hometown" },
+        { book: "Gospel", ch: 6, v: 34, text: "Jesus came out, saw a great multitude, and he had compassion on them, because they were like sheep without a shepherd, and he began to teach them many things.",
+          hear: "sheep without a shepherd lord is my shepherd psalm 23 jesus had compassion on the crowd multitude" },
+        { book: "Gospel", ch: 6, v: 50, text: "For they all saw him, and were troubled. But he immediately spoke with them, and said to them, \u201CCheer up! It is I! Don\u2019t be afraid.\u201D",
+          hear: "take courage it is i do not be afraid jesus walking on water walking on the sea ghost" },
+        { book: "Gospel", ch: 7, v: 6, text: "He answered them, \u201CWell did Isaiah prophesy of you hypocrites, as it is written, \u2018This people honors me with their lips, but their heart is far from me.\u2019\u201D",
+          hear: "you hypocrites isaiah was right when he prophesied these people honor me with their lips but their hearts are far from me" },
+        { book: "Gospel", ch: 7, v: 21, text: "\u201CFor from within, out of the hearts of men, proceed evil thoughts, adulteries, sexual sins, murders, thefts.\u201D",
+          hear: "for it is from within out of a person's heart that evil thoughts come what comes out of a man defiles him" },
+        { book: "Gospel", ch: 7, v: 28, text: "But she answered him, \u201CYes, Lord. Yet even the dogs under the table eat the children\u2019s crumbs.\u201D",
+          hear: "lord even the dogs under the table eat the children's crumbs syrophoenician woman daughter demon" },
+        { book: "Gospel", ch: 7, v: 34, text: "Looking up to heaven, he sighed, and said to him, \u201CEphphatha!\u201D that is, \u201CBe opened!\u201D",
+          hear: "ephphatha be opened deaf man mute be opened ears" },
+        { book: "Gospel", ch: 8, v: 29, text: "He said to them, \u201CBut who do you say that I am?\u201D Peter answered, \u201CYou are the Christ.\u201D",
+          hear: "who do men say that i am but what about you who do you say i am peter answered you are the messiah the christ" },
+        { book: "Gospel", ch: 8, v: 33, text: "But he, turning around, and seeing his disciples, rebuked Peter, and said, \u201CGet behind me, Satan! For you have in mind not the things of God, but the things of men.\u201D",
+          hear: "get thee behind me satan you do not have in mind the concerns of god but merely human concerns" },
+        { book: "Gospel", ch: 8, v: 35, text: "\u201CFor whoever wants to save his life will lose it; and whoever will lose his life for my sake and the sake of the Good News will save it.\u201D",
+          hear: "whosoever will save his life shall lose it whoever loses their life for me and for the gospel will save it take up cross" },
+        { book: "Gospel", ch: 8, v: 36, text: "\u201CFor what does it profit a man to gain the whole world and forfeit his life?\u201D",
+          hear: "what shall it profit a man if he shall gain the whole world and lose his own soul" },
+        { book: "Gospel", ch: 9, v: 7, text: "A cloud came, overshadowing them, and a voice came out of the cloud, \u201CThis is my beloved Son. Listen to him.\u201D",
+          hear: "this is my son whom i love listen to him transfiguration voice from cloud moses elijah" },
+        { book: "Gospel", ch: 9, v: 23, text: "Jesus said to him, \u201CIf you can believe, all things are possible to him who believes.\u201D",
+          hear: "everything is possible for one who believes all things are possible to him that believeth if you can nothing is impossible to him who believes" },
+        { book: "Gospel", ch: 9, v: 24, text: "Immediately the father of the child cried out with tears, \u201CI believe. Help my unbelief!\u201D",
+          hear: "lord i believe help thou mine unbelief i do believe help me overcome my unbelief father boy evil spirit" },
+        { book: "Gospel", ch: 9, v: 50, text: "\u201CSalt is good, but if the salt has lost its saltiness, with what will you season it? Have salt in yourselves, and be at peace with one another.\u201D",
+          hear: "salt is good but if it loses its saltiness how can you make it salty again" },
+        { book: "Gospel", ch: 10, v: 9, text: "\u201CWhat therefore God has joined together, let no man separate.\u201D",
+          hear: "what god hath joined together let not man put asunder let no one separate marriage divorce" },
+        { book: "Gospel", ch: 10, v: 14, text: "Jesus said, \u201CAllow the little children to come to me! Don\u2019t forbid them, for God\u2019s Kingdom belongs to such as these.\u201D",
+          hear: "suffer the little children to come unto me let the little children come to me do not hinder them kingdom of god belongs to such as these" },
+        { book: "Gospel", ch: 10, v: 21, text: "Jesus looking at him loved him, and said to him, \u201COne thing you lack. Go, sell whatever you have, and give to the poor, and you will have treasure in heaven; and come, follow me, taking up the cross.\u201D",
+          hear: "one thing thou lackest go sell everything you have and give to the poor rich young ruler treasure in heaven" },
+        { book: "Gospel", ch: 10, v: 25, text: "\u201CIt is easier for a camel to go through a needle\u2019s eye than for a rich man to enter into God\u2019s Kingdom.\u201D",
+          hear: "easier for a camel to go through the eye of a needle than for a rich man to enter the kingdom of god" },
+        { book: "Gospel", ch: 10, v: 27, text: "Jesus, looking at them, said, \u201CWith men it is impossible, but not with God, for all things are possible with God.\u201D",
+          hear: "with man this is impossible but not with god all things are possible with god with men it is impossible" },
+        { book: "Gospel", ch: 10, v: 31, text: "\u201CBut many who are first will be last, and the last first.\u201D",
+          hear: "many that are first shall be last and the last first" },
+        { book: "Gospel", ch: 10, v: 45, text: "\u201CFor the Son of Man also came not to be served, but to serve, and to give his life as a ransom for many.\u201D",
+          hear: "the son of man did not come to be served but to serve and to give his life as a ransom for many" },
+        { book: "Gospel", ch: 10, v: 47, text: "When he heard that it was Jesus the Nazarene, he began to cry out, and say, \u201CJesus, you son of David, have mercy on me!\u201D",
+          hear: "jesus son of david have mercy on me blind bartimaeus cried out" },
+        { book: "Gospel", ch: 10, v: 51, text: "Jesus asked him, \u201CWhat do you want me to do for you?\u201D The blind man said to him, \u201CRabbi, that I may see again.\u201D",
+          hear: "what wilt thou that i should do unto thee lord that i might receive my sight bartimaeus i want to see" },
+        { book: "Gospel", ch: 10, v: 52, text: "Jesus said to him, \u201CGo your way. Your faith has made you well.\u201D Immediately he received his sight, and followed Jesus on the way.",
+          hear: "thy faith hath made thee whole go your faith has healed you bartimaeus received sight" },
+        { book: "Gospel", ch: 11, v: 9, text: "Those who went in front, and those who followed, cried out, \u201CHosanna! Blessed is he who comes in the name of the Lord!\u201D",
+          hear: "hosanna blessed is he that cometh in the name of the lord triumphal entry palm branches" },
+        { book: "Gospel", ch: 11, v: 23, text: "\u201CFor most certainly I tell you, whoever may tell this mountain, \u2018Be taken up and cast into the sea,\u2019 and doesn\u2019t doubt in his heart, but believes that what he says is happening, he shall have whatever he says.\u201D",
+          hear: "truly i tell you if anyone says to this mountain go throw yourself into the sea and does not doubt faith that moves mountains" },
+        { book: "Gospel", ch: 11, v: 25, text: "\u201CWhenever you stand praying, forgive, if you have anything against anyone; so that your Father, who is in heaven, may also forgive you your transgressions.\u201D",
+          hear: "when ye stand praying forgive if ye have ought against any that your father may forgive you your trespasses" },
+        { book: "Gospel", ch: 12, v: 17, text: "Jesus said to them, \u201CGive to Caesar the things that are Caesar\u2019s, and to God the things that are God\u2019s.\u201D Their faces showed amazement at him.",
+          hear: "render to caesar the things that are caesar's and to god the things that are god's give back to caesar coin tax" },
+        { book: "Gospel", ch: 12, v: 29, text: "Jesus answered, \u201CThe greatest is: \u2018Hear, Israel, the Lord our God, the Lord is one.\u2019\u201D",
+          hear: "hear o israel the lord our god is one lord shema first commandment greatest" },
+        { book: "Gospel", ch: 12, v: 30, text: "\u201CYou shall love the Lord your God with all your heart, and with all your soul, and with all your mind, and with all your strength.\u201D This is the first commandment.",
+          hear: "love the lord your god with all your heart soul mind and strength greatest commandment thou shalt love" },
+        { book: "Gospel", ch: 12, v: 31, text: "\u201CThe second is like this: \u2018You shall love your neighbor as yourself.\u2019 There is no other commandment greater than these.\u201D",
+          hear: "love thy neighbour as thyself love your neighbor as yourself second greatest commandment" },
+        { book: "Gospel", ch: 12, v: 44, text: "\u201CFor they all gave out of their abundance, but she, out of her poverty, gave all that she had to live on.\u201D",
+          hear: "widow's mite widow gave two small coins all she had to live on she put in everything poor widow offering" },
+        { book: "Gospel", ch: 13, v: 31, text: "\u201CHeaven and earth will pass away, but my words will not pass away.\u201D",
+          hear: "heaven and earth shall pass away but my words shall not pass away" },
+        { book: "Gospel", ch: 14, v: 22, text: "As they were eating, Jesus took bread, and when he had blessed, he broke it, and gave to them, and said, \u201CTake, eat. This is my body.\u201D",
+          hear: "take eat this is my body last supper bread broke blessed" },
+        { book: "Gospel", ch: 14, v: 24, text: "He said to them, \u201CThis is my blood of the new covenant, which is poured out for many.\u201D",
+          hear: "this is my blood of the covenant which is poured out for many cup wine last supper" },
+        { book: "Gospel", ch: 14, v: 36, text: "He said, \u201CAbba, Father, all things are possible to you. Please remove this cup from me. However, not what I desire, but what you desire.\u201D",
+          hear: "abba father everything is possible for you take this cup from me yet not what i will but what you will gethsemane" },
+        { book: "Gospel", ch: 14, v: 38, text: "\u201CWatch and pray, that you may not enter into temptation. The spirit indeed is willing, but the flesh is weak.\u201D",
+          hear: "watch ye and pray lest ye enter into temptation the spirit truly is ready but the flesh is weak spirit is willing flesh is weak" },
+        { book: "Gospel", ch: 14, v: 72, text: "The rooster crowed the second time. Peter remembered the word, how that Jesus said to him, \u201CBefore the rooster crows twice, you will deny me three times.\u201D When he thought about that, he wept.",
+          hear: "before the cock crow twice thou shalt deny me thrice peter denied three times rooster crowed and he broke down and wept" },
+        { book: "Gospel", ch: 15, v: 2, text: "Pilate asked him, \u201CAre you the King of the Jews?\u201D He answered, \u201CSo you say.\u201D",
+          hear: "art thou the king of the jews jesus answered you have said so pilate" },
+        { book: "Gospel", ch: 15, v: 34, text: "At the ninth hour Jesus cried with a loud voice, saying, \u201CEloi, Eloi, lama sabachthani?\u201D which is, being interpreted, \u201CMy God, my God, why have you forsaken me?\u201D",
+          hear: "my god my god why hast thou forsaken me eloi eloi lema sabachthani jesus cried out on the cross" },
+        { book: "Gospel", ch: 15, v: 38, text: "The veil of the temple was torn in two from the top to the bottom.",
+          hear: "the curtain of the temple was torn in two from top to bottom veil rent" },
+        { book: "Gospel", ch: 15, v: 39, text: "When the centurion, who stood by opposite him, saw that he cried out like this and breathed his last, he said, \u201CTruly this man was the Son of God!\u201D",
+          hear: "surely this man was the son of god centurion at the cross truly this man was the son of god" },
+        { book: "Gospel", ch: 16, v: 6, text: "He said to them, \u201CDon\u2019t be amazed. You seek Jesus, the Nazarene, who has been crucified. He has risen. He is not here. See the place where they laid him!\u201D",
+          hear: "he is risen he is not here do not be alarmed you are looking for jesus the nazarene who was crucified empty tomb angel young man" },
+        { book: "Gospel", ch: 16, v: 7, text: "\u201CBut go, tell his disciples and Peter, \u2018He goes before you into Galilee. There you will see him, as he said to you.\u2019\u201D",
+          hear: "go tell his disciples and peter he is going ahead of you into galilee there you will see him" },
+        { book: "Gospel", ch: 16, v: 15, text: "He said to them, \u201CGo into all the world, and preach the Good News to the whole creation.\u201D",
+          hear: "go ye into all the world and preach the gospel to every creature go into all the world proclaim the good news great commission" }
+      ];
+
+      /* ============================================================
+         Parallels. Some verses people remember are not directly
+         found in 021 BIBLE (Garden · Gospel · Go) — they live in
+         the rest of the Old Testament, or in the other Gospels.
+         The search never corrects the seeker: it answers with
+         the 021 parallel, and keeps the verse they remembered in
+         a labeled note, marked "Outside 021 BIBLE," for going deeper.
+           phrases — remembered wording that points here
+           combos  — word sets that together point here
+           targets — the 021 verses that answer (book, ch, v)
+           imperial — the remembered verse(s), shown in the note
+         ============================================================ */
+      var PARALLELS = [
+        {
+          id: "good-news-poor",
+          title: "Good news to the poor",
+          phrases: ["good news to the poor", "good news for the poor", "preach good news to the poor",
+            "preach the gospel to the poor", "gospel to the poor", "anointed me to preach",
+            "good news to the humble", "proclaim good news to the poor", "bring good news to the poor"],
+          combos: [["poor", "news"], ["poor", "gospel"], ["poor", "preach"]],
+          targets: [[ "Gospel", 1, 15 ], [ "Gospel", 16, 15 ], [ "Gospel", 1, 1 ]],
+          bridge: "Isaiah spoke it as a promise, and Luke tells of Jesus reading it aloud. In the 021 BIBLE, " +
+            "that same Good News is where the Gospel opens: Jesus arrives proclaiming it, and sends it " +
+            "out to the whole creation. That is your parallel, in the 021\u2019s own words.",
+          imperial: [
+            { ref: "Isaiah 61:1", tag: "Old Testament", text: "The Spirit of the Lord Yahweh is on me; because Yahweh has anointed me to preach good news to the humble. He has sent me to bind up the brokenhearted, to proclaim liberty to the captives, and release to those who are bound." },
+            { ref: "Luke 4:18", tag: "New Testament", text: "\u201CThe Spirit of the Lord is on me, because he has anointed me to preach good news to the poor. He has sent me to heal the brokenhearted, to proclaim release to the captives, recovering of sight to the blind, to deliver those who are crushed.\u201D" }
+          ]
+        },
+        {
+          id: "talents",
+          title: "Parable of the talents",
+          phrases: ["parable of the talents", "parable of the talent", "talents", "talent",
+            "bags of gold", "good and faithful servant", "well done good and faithful"],
+          combos: [["faithful", "servant"]],
+          targets: [[ "Gospel", 4, 20 ], [ "Gospel", 4, 8 ]],
+          bridge: "Matthew tells it as a master entrusting talents to his servants, and the trust coming " +
+            "back multiplied. The Gospel tells the same increase the Garden way: what is sown in good " +
+            "ground bears fruit, thirty times, sixty times, a hundred times. That is your parallel, " +
+            "in the 021\u2019s own words.",
+          imperial: [
+            { ref: "Matthew 25:14\u201315", tag: "New Testament", text: "\u201CFor it is like a man, going into another country, who called his own servants, and entrusted his goods to them. To one he gave five talents, to another two, to another one; to each according to his own ability. Then he went on his journey.\u201D" },
+            { ref: "Matthew 25:21", tag: "New Testament", text: "His lord said to him, \u2018Well done, good and faithful servant. You have been faithful over a few things, I will set you over many things. Enter into the joy of your lord.\u2019" }
+          ]
+        },
+        {
+          id: "lords-prayer",
+          title: "Our Father \u2014 the Lord\u2019s Prayer",
+          phrases: ["our father", "lords prayer", "lord's prayer", "hallowed be", "thy kingdom come", "daily bread", "pray like this"],
+          combos: [["father", "heaven"]],
+          targets: [[ "Gospel", 14, 36 ], [ "Gospel", 11, 25 ]],
+          bridge: "Matthew carries the prayer as a set form, opening \u201COur Father.\u201D In the Gospel, " +
+            "Jesus prays that same prayer from the inside: \u201CAbba, Father\u201D in the garden, and the " +
+            "teaching to forgive as you stand praying. That is your parallel, in the 021\u2019s own words.",
+          imperial: [
+            { ref: "Matthew 6:9\u201310", tag: "New Testament", text: "Pray like this: \u2018Our Father in heaven, may your name be kept holy. Let your Kingdom come. Let your will be done on earth as it is in heaven.\u2019" }
+          ]
+        },
+        {
+          id: "shepherd",
+          title: "The Lord is my shepherd",
+          phrases: ["lord is my shepherd", "my shepherd", "psalm 23", "i shall not want", "sheep without a shepherd"],
+          combos: [["shepherd", "lord"], ["shepherd", "psalm"]],
+          targets: [[ "Gospel", 6, 34 ]],
+          bridge: "David sang it in the psalm: Yahweh is my shepherd. In the Gospel you meet the shepherd " +
+            "himself: Jesus sees the crowd, has compassion on them, because they were like sheep without " +
+            "a shepherd, and he begins to teach them. That is your parallel, in the 021\u2019s own words.",
+          imperial: [
+            { ref: "Psalm 23:1", tag: "Old Testament", text: "Yahweh is my shepherd; I shall lack nothing." }
+          ]
+        },
+        {
+          id: "ten-commandments",
+          title: "The Ten Commandments",
+          phrases: ["ten commandments", "10 commandments", "thou shalt not", "tablets of stone", "moses commandments"],
+          combos: [["commandments", "moses"]],
+          targets: [[ "Gospel", 12, 29 ], [ "Gospel", 12, 30 ], [ "Gospel", 12, 31 ]],
+          bridge: "Exodus carries the ten words given through Moses. In the Gospel, Jesus gathers the whole " +
+            "law into its greatest commandments: hear, love God with all you are, and love your neighbor " +
+            "as yourself. That is your parallel, in the 021\u2019s own words.",
+          imperial: [
+            { ref: "Exodus 20:2\u20133", tag: "Old Testament", text: "\u201CI am Yahweh your God, who brought you out of the land of Egypt, out of the house of bondage. You shall have no other gods before me.\u201D" }
+          ]
+        }
+      ];
+
+      function findParallels(query) {
+        var qn = " " + normalize(query) + " ";
+        var toks = {};
+        tokens(query).forEach(function (t) { toks[t] = true; });
+        var out = [];
+        PARALLELS.forEach(function (p) {
+          var hit = false;
+          p.phrases.forEach(function (ph) {
+            if (qn.indexOf(" " + ph) !== -1 || qn.indexOf(ph + " ") !== -1 || qn.indexOf(ph) !== -1) hit = true;
+          });
+          if (!hit && p.combos) {
+            p.combos.forEach(function (combo) {
+              var all = true;
+              combo.forEach(function (w) { if (!toks[w]) all = false; });
+              if (all) hit = true;
+            });
+          }
+          if (hit) out.push(p);
+        });
+        return out;
+      }
+
+      function verseAt(book, ch, v) {
+        for (var i = 0; i < VERSES.length; i++) {
+          var x = VERSES[i];
+          if (x.book === book && x.ch === ch && x.v === v) return x;
+        }
+        return null;
+      }
+
+      /* ---------- Word bridges ----------
+         Archaic and version wording is folded to the 021 wording.
+         Groups share one canonical token so a remembered word can
+         reach its 021 cousin. */
+      var CANON = {};
+      function group(canonical, words) {
+        words.forEach(function (w) { CANON[w] = canonical; });
+      }
+      group("you", ["thou", "thee", "ye", "you", "yourself", "yourselves"]);
+      group("your", ["thy", "thine", "your"]);
+      group("has", ["hath", "has", "hast"]);
+      group("have", ["have", "hast"]);
+      group("say", ["say", "saith", "says", "said", "saying", "telleth", "tell", "told"]);
+      group("want", ["want", "willing", "will", "wilt", "wish", "ready"]);
+      group("clean", ["clean", "healed", "heal", "healing", "cleansed", "cured", "cure", "whole", "well", "restored", "recover", "recovered"]);
+      group("believe", ["believe", "believes", "believeth", "believed", "faith", "trust"]);
+      group("afraid", ["afraid", "fear", "fearful", "terrified", "frightened", "alarm", "alarmed", "troubled"]);
+      group("follow", ["follow", "followed", "following", "follows"]);
+      group("rise", ["rise", "risen", "arise", "arose", "rose", "raising", "raised"]);
+      group("sabbath", ["sabbath"]);
+
+      var STOP = {};
+      ("a an the and or but of to in on for with is are was were be been it its this that these those i you he she we they him her them his hers our your my me us am do does did not no so as at by from into out if then than too very can could shall should will would may might who whom what when where why how all any each".split(" ")).forEach(function (w) { STOP[w] = true; });
+
+      function normalize(s) {
+        return s.toLowerCase()
+          .replace(/[\u2018\u2019]/g, "'")
+          .replace(/[\u201C\u201D]/g, '"')
+          .replace(/[^a-z0-9\s']/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+      function tokens(s) {
+        var raw = normalize(s).split(" ").filter(Boolean);
+        var out = [];
+        raw.forEach(function (w) {
+          w = w.replace(/^'+|'+$/g, "");
+          if (!w) return;
+          var c = CANON[w] || w;
+          out.push(c);
+        });
+        return out;
+      }
+      function contentTokens(s) {
+        return tokens(s).filter(function (w) { return !STOP[w]; });
+      }
+
+      /* Document frequency, for weighting rare words higher */
+      var DF = {};
+      VERSES.forEach(function (v) {
+        var seen = {};
+        contentTokens(v.text + " " + v.hear).forEach(function (t) {
+          if (!seen[t]) { seen[t] = true; DF[t] = (DF[t] || 0) + 1; }
+        });
+      });
+      var N = VERSES.length;
+      function idf(t) { return Math.log(1 + N / (1 + (DF[t] || 0))); }
+
+      function refOf(v) { return v.book + " " + v.ch + ":" + v.v; }
+
+      var BOOK_ALIASES = {
+        mark: "Gospel", gospel: "Gospel", genesis: "Garden", garden: "Garden", go: "Go"
+      };
+
+      function parseReference(q) {
+        var m = normalize(q).match(/^(mark|gospel|genesis|garden|go)?\s*(\d{1,3})\s*[:. ]\s*(\d{1,3})$/);
+        if (!m) return null;
+        var book = m[1] ? BOOK_ALIASES[m[1]] : null;
+        var ch = parseInt(m[2], 10), vs = parseInt(m[3], 10);
+        for (var i = 0; i < VERSES.length; i++) {
+          var v = VERSES[i];
+          if ((!book || v.book === book) && v.ch === ch && v.v === vs) return v;
+        }
+        return null;
+      }
+
+      function search(query) {
+        var refHit = parseReference(query);
+        if (refHit) return [{ v: refHit, score: 999, why: ["You asked for it by reference."], viaRef: true }];
+
+        var qNorm = normalize(query);
+        var qTokens = contentTokens(query);
+        if (!qTokens.length) return [];
+        var qSet = {};
+        qTokens.forEach(function (t) { qSet[t] = true; });
+
+        var results = [];
+        VERSES.forEach(function (v) {
+          var textToks = contentTokens(v.text);
+          var hearToks = contentTokens(v.hear);
+          var textSet = {}, hearSet = {};
+          textToks.forEach(function (t) { textSet[t] = true; });
+          hearToks.forEach(function (t) { hearSet[t] = true; });
+
+          var score = 0, matched = [], bridged = [];
+          var seenQ = {};
+          qTokens.forEach(function (qt) {
+            if (seenQ[qt]) return;
+            seenQ[qt] = true;
+            if (textSet[qt]) { score += 3.2 * idf(qt); matched.push(qt); }
+            else if (hearSet[qt]) { score += 2.4 * idf(qt); matched.push(qt); }
+          });
+
+          /* Phrase bonuses: remembered wording found whole */
+          var textNorm = normalize(v.text), hearNorm = normalize(v.hear);
+          if (qNorm.length >= 8) {
+            if (hearNorm.indexOf(qNorm) !== -1) score += 26;
+            else if (textNorm.indexOf(qNorm) !== -1) score += 22;
+          }
+          /* Long shared runs of words */
+          if (qTokens.length >= 3) {
+            var run = longestRun(qTokens, tokens(v.hear).concat(tokens(v.text)));
+            if (run >= 3) score += run * 2.2;
+          }
+
+          if (score <= 0) return;
+
+          /* Explain the bridge: query words whose canonical form
+             reached a different surface word in the 021 text */
+          var why = [];
+          var rawQ = normalize(query).split(" ");
+          var surface = normalize(v.text).split(" ");
+          rawQ.forEach(function (rw) {
+            var c = CANON[rw];
+            if (!c || rw === c) return;
+            if (surface.indexOf(c) !== -1 && surface.indexOf(rw) === -1) {
+              var pair = rw + " \u2192 " + c;
+              if (bridged.indexOf(pair) === -1) bridged.push(pair);
+            }
+          });
+          if (bridged.length) why.push({ bridges: bridged });
+          if (hearNorm.indexOf(qNorm) !== -1 && qNorm.length >= 8)
+            why.push("Your words matched the other versions\u2019 wordings of this verse.");
+          results.push({ v: v, score: score, why: why, matched: matched });
+        });
+
+        results.sort(function (a, b) { return b.score - a.score; });
+        /* A longer query must land on more than one of its words */
+        var distinctQ = Object.keys(qSet).length;
+        if (distinctQ >= 3) {
+          results = results.filter(function (r) { return r.matched.length >= 2; });
+        }
+        /* Drop weak noise: keep results at least 30% of the best,
+           unless the best itself is weak */
+        if (results.length > 1) {
+          var best = results[0].score;
+          results = results.filter(function (r, i) { return i === 0 || r.score >= Math.max(3, best * 0.3); });
+        }
+        return results.slice(0, 6);
+      }
+
+      function longestRun(a, b) {
+        var best = 0, cur = 0;
+        var bSet = {};
+        b.forEach(function (t) { bSet[t] = true; });
+        a.forEach(function (t) {
+          if (bSet[t]) { cur++; if (cur > best) best = cur; } else cur = 0;
+        });
+        return best;
+      }
+/* ---------- Page runner: remembered-words search (added Nov 15, 2026) ---------- */
+function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function chapterIdFor(book, ch){
+  if(book==='Garden') return 'garden-'+ch;
+  if(book==='Gospel') return 'gospel-'+ch;
+  return 'go';
+}
+
+function landOnEl(el){
+  el.scrollIntoView({block:'center', behavior:'smooth'});
+  el.classList.remove('verse-flash');
+  void el.offsetWidth;
+  el.classList.add('verse-flash');
+  setTimeout(function(){ el.classList.remove('verse-flash'); }, 3000);
+}
+
+function landOnVerse(book, ch, v){
+  var head = document.getElementById(chapterIdFor(book, ch));
+  if(!head) return false;
+  var el = head, target = head;
+  while(true){
+    el = el.nextElementSibling;
+    if(!el || el.tagName==='H1' || el.tagName==='H2') break;
+    if(el.querySelector){
+      var sups = el.querySelectorAll('sup.vn'), found = false;
+      for(var i=0;i<sups.length;i++){ if(sups[i].textContent.trim()===String(v)){ found = true; break; } }
+      if(found){ target = el; break; }
+    }
+  }
+  landOnEl(target);
+  return true;
+}
+
+function openSearchNote(html){
+  var d = document.getElementById('note-popup');
+  if(!d){
+    d = document.createElement('dialog');
+    d.id = 'note-popup';
+    document.body.appendChild(d);
+  }
+  if(d.open) d.close();
+  d.innerHTML = '<button class="np-close" aria-label="Close note">Close</button>' + html;
+  d.querySelector('.np-close').addEventListener('click', function(){ d.close(); });
+  d.querySelectorAll('a.sr-go').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      d.close();
+      landOnVerse(a.getAttribute('data-book'), parseInt(a.getAttribute('data-ch'),10), parseInt(a.getAttribute('data-v'),10));
+    });
+  });
+  if(typeof d.showModal==='function') d.showModal();
+}
+
+function fullTextFind(q){
+  var words = contentTokens(q);
+  if(!words.length) return null;
+  var heads = document.querySelectorAll('h2.chapter, h1.book');
+  for(var h=0; h<heads.length; h++){
+    var el = heads[h];
+    while(true){
+      el = el.nextElementSibling;
+      if(!el || el.tagName==='H1' || el.tagName==='H2') break;
+      if(el.tagName!=='P') continue;
+      var set = {};
+      contentTokens(el.textContent).forEach(function(t){ set[t]=true; });
+      var ok = true;
+      for(var i=0;i<words.length;i++){ if(!set[words[i]]){ ok=false; break; } }
+      if(ok) return el;
+    }
+  }
+  return null;
+}
+
+function runVerseSearch(form){
+  var input = form.querySelector('input');
+  var q = (input.value || '').trim();
+  if(!q) return false;
+  document.querySelectorAll('.searchrow input').forEach(function(i){ i.value = q; });
+  var parallels = findParallels(q);
+  var hits = search(q);
+  if(parallels.length){
+    var p = parallels[0];
+    var t = p.targets[0];
+    var tv = verseAt(t[0], t[1], t[2]);
+    if(tv) landOnVerse(tv.book, tv.ch, tv.v);
+    var html = '<div><span class="note-badge">Note &middot; Outside 021 BIBLE</span></div>';
+    html += '<p style="margin:10px 0;">' + escHtml(p.bridge) + '</p>';
+    p.imperial.forEach(function(im){
+      html += '<p style="margin:10px 0;"><span class="fnref">' + escHtml(im.ref) + '</span> (' + escHtml(im.tag) + ')<br>' + escHtml(im.text) + '</p>';
+    });
+    html += '<p style="margin:12px 0 2px;">Your parallel in the 021 BIBLE:</p>';
+    p.targets.forEach(function(tt){
+      var v2 = verseAt(tt[0], tt[1], tt[2]);
+      if(v2) html += '<p style="margin:4px 0;"><a href="#" class="sr-go" data-book="' + v2.book + '" data-ch="' + v2.ch + '" data-v="' + v2.v + '">' + refOf(v2) + '</a> &middot; ' + escHtml(v2.text) + '</p>';
+    });
+    openSearchNote(html);
+    return false;
+  }
+  if(hits.length){
+    var top = hits[0];
+    landOnVerse(top.v.book, top.v.ch, top.v.v);
+    if(!top.viaRef && hits.length > 1){
+      var html2 = '<p style="margin:2px 0 8px;">Closest matches for &ldquo;' + escHtml(q) + '&rdquo;:</p>';
+      hits.slice(0,4).forEach(function(r){
+        html2 += '<p style="margin:6px 0;"><a href="#" class="sr-go" data-book="' + r.v.book + '" data-ch="' + r.v.ch + '" data-v="' + r.v.v + '">' + refOf(r.v) + '</a> &middot; ' + escHtml(r.v.text) + '</p>';
+      });
+      openSearchNote(html2);
+    }
+    return false;
+  }
+  var ft = fullTextFind(q);
+  if(ft){ landOnEl(ft); return false; }
+  openSearchNote('<p style="margin:2px 0;"><strong>Nothing heard that one yet.</strong></p>' +
+    '<p style="margin:8px 0;">This search knows the best-known verses by the words people remember them in, including the wordings of other versions. Try a few words from the verse itself, like &ldquo;peace be still&rdquo;, or a story you remember, like &ldquo;talent reward&rdquo;. You can also type a reference, like Gospel 9:23.</p>');
+  return false;
+}
+
+</script>
 </body>
 </html>
