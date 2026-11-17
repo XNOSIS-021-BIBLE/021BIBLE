@@ -1967,13 +1967,17 @@ document.querySelectorAll('sup.fn a').forEach(function(a){
 
       function findParallels(query) {
         var qn = " " + normalize(query) + " ";
+        var qc = " " + tokens(query).map(function (t) { return fuzzyToken(t) || t; }).join(" ") + " ";
         var toks = {};
         tokens(query).forEach(function (t) { toks[t] = true; });
+        pairMerges(tokens(query)).forEach(function (t) { toks[t] = true; });
+        Object.keys(toks).forEach(function (t) { var f = fuzzyToken(t); if (f) toks[f] = true; });
         var out = [];
         PARALLELS.forEach(function (p) {
           var hit = false;
           p.phrases.forEach(function (ph) {
             if (qn.indexOf(" " + ph) !== -1 || qn.indexOf(ph + " ") !== -1 || qn.indexOf(ph) !== -1) hit = true;
+            if (qc.indexOf(ph) !== -1) hit = true;
           });
           if (!hit && p.combos) {
             p.combos.forEach(function (combo) {
@@ -2042,11 +2046,62 @@ document.querySelectorAll('sup.fn a').forEach(function(a){
         return tokens(s).filter(function (w) { return !STOP[w]; });
       }
 
+      /* Grace for the way people actually type: run-together words
+         ("strongman" for "strong man") are indexed as merged tokens on
+         both sides, and a query word found nowhere gets one careful
+         guess at the nearest real word (small misspellings forgiven). */
+      function pairMerges(toks) {
+        var out = [];
+        for (var i = 0; i + 1 < toks.length; i++) out.push(toks[i] + toks[i + 1]);
+        return out;
+      }
+      function docTokens(s) {
+        var raw = tokens(s);
+        var out = contentTokens(s);
+        for (var i = 0; i + 1 < raw.length; i++) {
+          if (STOP[raw[i]] && STOP[raw[i + 1]]) continue;
+          var m = raw[i] + raw[i + 1];
+          if (out.indexOf(m) === -1) out.push(m);
+        }
+        return out;
+      }
+      function lev(a, b) {
+        if (Math.abs(a.length - b.length) > 2) return 99;
+        var prev2 = null, prev = [], cur = [], i, j;
+        for (j = 0; j <= b.length; j++) prev[j] = j;
+        for (i = 1; i <= a.length; i++) {
+          cur[0] = i;
+          for (j = 1; j <= b.length; j++) {
+            var cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+            if (prev2 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1])
+              cur[j] = Math.min(cur[j], prev2[j - 2] + 1);
+          }
+          prev2 = prev; prev = cur; cur = [];
+        }
+        return prev[b.length];
+      }
+      var VOCAB = null;
+      function fuzzyToken(t) {
+        if (t.length < 4) return null;
+        if (!VOCAB) { VOCAB = {}; Object.keys(DF).forEach(function (w) { VOCAB[w] = true; }); }
+        if (VOCAB[t]) return null;
+        var maxD = t.length >= 5 ? 2 : 1, best = null, bestD = maxD + 1;
+        Object.keys(VOCAB).forEach(function (w) {
+          if (w[0] !== t[0] || Math.abs(w.length - t.length) > maxD) return;
+          var d = lev(t, w);
+          if (d > maxD) return;
+          if (d === 2 && w.slice(0, 2) !== t.slice(0, 2)) return;
+          if (d < bestD || (d === bestD && best && (DF[w] || 0) > (DF[best] || 0))) { bestD = d; best = w; }
+        });
+        return best;
+      }
+
       /* Document frequency, for weighting rare words higher */
       var DF = {};
       VERSES.forEach(function (v) {
         var seen = {};
-        contentTokens(v.text + " " + v.hear).forEach(function (t) {
+        docTokens(v.text).concat(docTokens(v.hear)).forEach(function (t) {
           if (!seen[t]) { seen[t] = true; DF[t] = (DF[t] || 0) + 1; }
         });
       });
@@ -2076,15 +2131,18 @@ document.querySelectorAll('sup.fn a').forEach(function(a){
         if (refHit) return [{ v: refHit, score: 999, why: ["You asked for it by reference."], viaRef: true }];
 
         var qNorm = normalize(query);
-        var qTokens = contentTokens(query);
+        var qTokens = docTokens(query);
         if (!qTokens.length) return [];
+        qTokens.slice().forEach(function (t) {
+          if (!DF[t]) { var f = fuzzyToken(t); if (f && qTokens.indexOf(f) === -1) qTokens.push(f); }
+        });
         var qSet = {};
         qTokens.forEach(function (t) { qSet[t] = true; });
 
         var results = [];
         VERSES.forEach(function (v) {
-          var textToks = contentTokens(v.text);
-          var hearToks = contentTokens(v.hear);
+          var textToks = docTokens(v.text);
+          var hearToks = docTokens(v.hear);
           var textSet = {}, hearSet = {};
           textToks.forEach(function (t) { textSet[t] = true; });
           hearToks.forEach(function (t) { hearSet[t] = true; });
@@ -2220,9 +2278,14 @@ function fullTextFind(q){
       if(!el || el.tagName==='H1' || el.tagName==='H2') break;
       if(el.tagName!=='P') continue;
       var set = {};
-      contentTokens(el.textContent).forEach(function(t){ set[t]=true; });
+      docTokens(el.textContent).forEach(function(t){ set[t]=true; });
       var ok = true;
-      for(var i=0;i<words.length;i++){ if(!set[words[i]]){ ok=false; break; } }
+      for(var i=0;i<words.length;i++){
+        if(set[words[i]]) continue;
+        var fz = fuzzyToken(words[i]);
+        if(fz && set[fz]) continue;
+        ok=false; break;
+      }
       if(ok) return el;
     }
   }
